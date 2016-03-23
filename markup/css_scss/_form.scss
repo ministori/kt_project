@@ -1,0 +1,83 @@
+.button-wrap{
+  position:relative;
+  margin:30px 0 0 0;
+  text-align:right;
+
+  &.center{
+    text-align:center;
+  }
+}
+.btn{
+  display:inline-block;
+  @include size(auto, 35);
+  padding:0 45px;
+  @include font($font-stack, 15px, $white);
+  line-height:35px;
+  border:0;
+  background:#432e66;
+
+  &.gray{
+    background:#7d7d7d;
+  }
+}
+
+.search-input{
+  position:absolute;
+  top:0;
+  right:255px;
+
+  .bottom-search{
+    @include size(170, 35);
+    float:left;
+    @include font($font-stack, 15px, #7d7d7d);
+    border:1px solid #9d8dbd;
+
+    &-btn{
+      @include size(auto, 35);
+      float:left;
+      padding:0 20px;
+      @include font($font-stack, 15px, $white);
+      line-height:35px;
+      border:0;
+      background:#9d8dbd;
+    }
+  }
+}
+
+.input{
+  height:32px;
+  border:1px solid #ddd;
+
+  &.file{
+    padding:5px 10px;
+  }
+}
+
+.select{
+  height:32px;
+  border:1px solid #ddd;
+  background:$white;
+}
+
+.textarea{
+  height:200px;
+  border:1px solid #ddd;
+}
+
+.form{
+  &-mini{
+    @include size(106px, auto);
+  }
+
+  &-short{
+    @include size(161px, auto);
+  }
+
+  &-med{
+    @include size(350px, auto);
+  }
+
+  &-long{
+    @include size(891px, auto);
+  }
+}

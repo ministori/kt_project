@@ -1,0 +1,88 @@
+.left-float{
+  float:left;
+
+  &.left{
+    margin-right:10px;
+  }
+
+  &.right{
+    margin-left:10px;
+  }
+
+}
+
+.right-float{
+  float:right;
+
+  &.left{
+    margin-right:10px;
+  }
+
+  &.right{
+    margin-left:10px;
+  }
+
+}
+
+.between-mark{
+  @include size(auto, 32);
+  padding:0 5px;
+  line-height:32px;
+}
+
+.slogan{
+  @include font($font-stack, 20px, #902e8d);
+}
+
+.file-description{
+  height:32px;
+  padding:0 0 0 10px;
+  @include font($font-stack, 13px, #9d8dbd);
+  line-height:32px;
+
+}
+
+/* sub page specific style */
+
+.prg-skincare{
+
+  .section01{
+    background:#cab5e5;
+  }
+  .section02{
+    background:#f2f2f2;
+  }
+  .section03{
+    background:#f0e9f8;
+  }
+  .section04{
+    background:#f2f2f2;
+  }
+  .section05{
+    background:#edcce5;
+  }
+  .section06{
+    background:#f2f2f2;
+  }
+  .section07{
+    background:#f0e9f8;
+  }
+
+}
+
+.prg-bodycare{
+
+  .section01{
+    background:#cab5e5;
+  }
+  .section02{
+    background:#fff;
+  }
+
+}
+
+.spa{
+  .section01{
+    background:#1c120b;
+  }
+}
