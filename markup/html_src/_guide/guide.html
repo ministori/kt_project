@@ -4,10 +4,46 @@ include "_head.html"
 
   <div id="mOllehGnb">
 
-  include "_gnb_top.html"
-  include "_gnb_bottom01.html"
+  include "_gnb_header.html"
+  include "_gnb_depth1.html"
+  include "_gnb_depth2.html"
 
   </div>
+
+  include "_side_menu.html"
+  <!-- [D] 사이드메뉴 오픈, 임시 스크립트 : 개발 적용시 삭제 -->
+  <script>
+    $(function(){
+
+      $('#btnAllmenu').on('click', function(e){
+
+        e.preventDefault();
+
+        $('.mOllehDimm').css('display', 'block');
+        $('.mOllehSideMenuWrap').css({
+          transform : 'translate(0,0)',
+          display : 'block'
+        });
+        $('.mOllehBtnSideMenuClose').css('display', 'block');
+
+      });
+
+      $('.mOllehBtnSideMenuClose').on('click', function(e){
+
+        e.preventDefault();
+
+        $('.mOllehDimm').css('display', 'none');
+        $('.mOllehSideMenuWrap').css({
+          transform : 'translate(-280px,0)',
+          display : 'none'
+        });
+
+
+      });
+
+    });
+  </script>
+  <!--// [D] 사이드메뉴 오픈, 임시 스크립트 : 개발 적용시 삭제 -->
 
   <div id="mOllehContainer">
 

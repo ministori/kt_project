@@ -1,83 +1,38 @@
-.button-wrap{
-  position:relative;
-  margin:30px 0 0 0;
-  text-align:right;
+.select {
+  height:25px;
+  line-height:25px;
+  padding:0 25px 0 10px;
 
-  &.center{
-    text-align:center;
-  }
-}
-.btn{
-  display:inline-block;
-  @include size(auto, 35);
-  padding:0 45px;
-  @include font($font-stack, 15px, $white);
-  line-height:35px;
-  border:0;
-  background:#432e66;
+  border:1px solid  #ccc;
+  border-radius:3px;
+  background: #fff url(../images/common/arrow_selectbox.png) no-repeat right center;
+  background-size:25px 25px;
 
-  &.gray{
-    background:#7d7d7d;
-  }
+  box-sizing:border-box;
+
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
 }
 
-.search-input{
-  position:absolute;
-  top:0;
-  right:255px;
-
-  .bottom-search{
-    @include size(170, 35);
-    float:left;
-    @include font($font-stack, 15px, #7d7d7d);
-    border:1px solid #9d8dbd;
-
-    &-btn{
-      @include size(auto, 35);
-      float:left;
-      padding:0 20px;
-      @include font($font-stack, 15px, $white);
-      line-height:35px;
-      border:0;
-      background:#9d8dbd;
-    }
-  }
-}
-
-.input{
-  height:32px;
-  border:1px solid #ddd;
-
-  &.file{
-    padding:5px 10px;
-  }
-}
-
-.select{
-  height:32px;
-  border:1px solid #ddd;
-  background:$white;
-}
-
-.textarea{
-  height:200px;
-  border:1px solid #ddd;
-}
-
-.form{
-  &-mini{
-    @include size(106px, auto);
-  }
-
-  &-short{
-    @include size(161px, auto);
-  }
-
-  &-med{
-    @include size(350px, auto);
-  }
-
-  &-long{
-    @include size(891px, auto);
-  }
+input[type="text"],
+input[type="password"],
+input[type="tel"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  font-family: HelveticaNeue, AppleSDGothicNeo-Regular, sans-serif;
+  width: 100%;
+  color: #666;
+  padding: 0 5px 0 5px;
+  height: 28px;
+  min-height: 28px;
+  border: solid 1px #b5b5b5;
+  border-radius: 3px;
+  line-height: 25px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  text-indent: 0;
 }

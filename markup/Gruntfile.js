@@ -10,9 +10,9 @@ module.exports = function(grunt) {
     includes: {
 
 			main:{
-				cwd:'html_src',
+				cwd:'html_src/main',
 				src: ['*.html'],
-				dest: 'html',
+				dest: 'html/main',
 				options: {
 					flatten:true,
 					includePath: 'html_src/_include'
@@ -188,7 +188,7 @@ module.exports = function(grunt) {
 					dest: '_output/css/',
           options:{
             process: function(content){
-              return content.replace('', '');
+              return content.replace('/*# sourceMappingURL=biz_membership.css.map */', '');
             }
           }
 				}]
