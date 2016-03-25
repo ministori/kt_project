@@ -152,11 +152,20 @@ module.exports = function(grunt) {
 
     copy: {
 
+			list:{
+        files:[{
+          expand: true,
+          cwd: 'html_src/',
+          src: ['list.html'],
+          dest: 'html/'
+        }]
+			},
+
     	jsLib: {
     		files:[{
     			expand: true,
     			cwd: 'js_src/lib/',
-    			src: ['jquery-1.11.0.min.js', 'jquery-1.11.0.min.map', 'jquery-ui.min.js', 'jquery.slides.min.js'],
+    			src: ['jquery.mobile.min.js', 'jquery-1.11.0.min.js', 'jquery-1.11.0.min.map', 'jquery-ui.min.js'],
     			dest: 'js/lib/'
     		}]
     	},
@@ -206,7 +215,7 @@ module.exports = function(grunt) {
 
     	js: {
     		files: ['js_src/*.js'],
-    		tasks: ['concat:dist', 'reload'],
+    		tasks: ['concat:dist','copy', 'reload'],
     		options: {
       		livereload : true
       	}
@@ -214,7 +223,7 @@ module.exports = function(grunt) {
 
     	html: {
     		files: ['html_src/**'],
-    		tasks: ['includes', 'reload'],
+    		tasks: ['includes','copy', 'reload'],
     		options: {
       		livereload : true
       	}
@@ -222,7 +231,7 @@ module.exports = function(grunt) {
 
     	css: {
     		files: ['css_scss/**'],
-    		tasks: ['sass', 'reload'],
+    		tasks: ['sass','copy', 'reload'],
     		options: {
       		livereload : true
       	}
@@ -242,7 +251,6 @@ module.exports = function(grunt) {
   		'includes',
   		'concat',
   		'sass',
-  		//'copy:jsLib',
 			'copy',
   		'connect',
   		'watch'

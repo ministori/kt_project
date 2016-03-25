@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+  <script src="../js/lib/jquery-1.11.0.min.js"></script>
+  <script>
+    $(function(){
+
+      var folderName;
+
+      $('.js-row').on('click', function(){
+
+        var pageID = $(this).find('.js-page-id').text();
+        var pageName = $(this).find('.js-page-name').text();
+
+        switch(pageName){
+          case 'MAIN':
+            folderName = 'main';
+            break;
+
+          case 'MY BRP':
+            folderName = 'brp_my';
+            break;
+
+          case 'BRP 안내':
+            folderName = 'brp_guide';
+            break;
+
+          case 'BRP 가입':
+            folderName = 'brp_join';
+            break;
+
+          case '더블할인 멤버십':
+            folderName = 'discount_double';
+            break;
+
+          case 'VIP 초이스':
+            folderName = 'vip_choice';
+            break;
+
+          case '제휴할인':
+            folderName = 'discount_alliance';
+            break;
+
+          case '통신할인':
+            folderName = 'discount_comm';
+            break;
+
+          case '단말할인':
+            folderName = 'discount_terminal';
+            break;
+
+          case '이벤트':
+            folderName = 'event';
+            break;
+
+
+        }
+
+        window.open(folderName + '/' + pageID+'.html');
+
+      });
+
+    });
+  </script>
+</head>
+<body>
+
+  <h1>KT 법인 멤버십 모바일 마크업 리스트</h1>
+
+  <h2 class="category">메인</h2>
+
+  <section class="contents">
+    <table class="list-table">
+      <caption>list table</caption>
+      <colgroup>
+        <col />
+        <col />
+      </colgroup>
+      <thead>
+        <tr>
+          <th>Page ID</th>
+          <th>Page Name</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="list-table-row js-row">
+          <td class="js-page-id">MW_001</td>
+          <td class="js-page-name">MAIN</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <h2 class="category">MY BRP</h2>
+
+  <h2 class="category">BRP 안내</h2>
+
+  <h2 class="category">BRP 가입</h2>
+
+  <h2 class="category">더블할인 멤버십</h2>
+
+  <h2 class="category">VIP 초이스</h2>
+
+  <h2 class="category">제휴할인</h2>
+
+  <h2 class="category">통신할인</h2>
+
+  <h2 class="category">단말할인</h2>
+
+  <h2 class="category">이벤트</h2>
+
+</body>
+</html>

@@ -1,0 +1,155 @@
+include "_head.html"
+<body>
+<div id="mOllehWrap">
+
+  <div id="mOllehGnb">
+
+  include "_gnb_header.html"
+
+  </div>
+
+  include "_side_menu.html"
+  <!-- [D] 사이드메뉴 오픈, 임시 스크립트 : 개발 적용시 삭제 -->
+  <script>
+    $(function(){
+
+      $('#btnAllmenu').on('click', function(e){
+
+        e.preventDefault();
+
+        $('.mOllehDimm').css('display', 'block');
+        $('.mOllehSideMenuWrap').css({
+          transform : 'translate(0,0)',
+          display : 'block'
+        });
+        $('.mOllehBtnSideMenuClose').css('display', 'block');
+
+      });
+
+      $('.mOllehBtnSideMenuClose').on('click', function(e){
+
+        e.preventDefault();
+
+        $('.mOllehDimm').css('display', 'none');
+        $('.mOllehSideMenuWrap').css({
+          transform : 'translate(-280px,0)',
+          display : 'none'
+        });
+
+
+      });
+
+    });
+  </script>
+  <!--// [D] 사이드메뉴 오픈, 임시 스크립트 : 개발 적용시 삭제 -->
+
+  <div id="mOllehContainer">
+
+    <div class="search-number">
+      <label for="phone-number" class="search-number-label">회선번호</label>
+      <select id="phone-number" class="select search-number-select">
+        <option>010-1234-**78</option>
+      </select>
+      <button type="button" class="button search-number-button">조회</button>
+    </div>
+    <div class="rating">
+      <div class="grade">
+        <span class="grade-text">홍길*님 등급은</span>
+
+        <span class="grade-text bottom clearfix">
+          <!-- [D] 5개중 한가지 선택 표시 -->
+          <span class="grade-word grade-mark vip">VIP</span>
+          <!-- 임시 주석
+          <span class="grade-word grade-mark gold">Gold</span>
+          <span class="grade-word grade-mark silver">Silver</span>
+          <span class="grade-word grade-mark white">White</span>
+          <span class="grade-word grade-mark general">일반</span>
+          -->
+          <!--// [D] 5개중 한가지 선택 표시 -->
+          <span class="grade-word">입니다.</span>
+        </span>
+
+      </div>
+      <div class="point">
+        <span class="point-text">잔여포인트</span>
+        <span class="point-text point-number bottom">225,000</span>
+      </div>
+    </div>
+    <div class="barcode-section">
+        <div class="barcode-image-section">
+          <img src="../../images/common/barcode.png" alt="bar code" class="barcode-image" />
+        </div>
+        <div class="barcode-number">
+          7578-1170-7510-2290
+        </div>
+        <button class="barcode-zoom-button">확대</button>
+    </div>
+    <ul class="main-menu">
+      <li class="main-menu-item">
+        <a href="#" class="main-menu-link double-discount">
+          <span class="link-title">더블할인 멤버십</span>
+          <span class="link-desc">나를 위한 멤버십혜택</span>
+        </a>
+      </li>
+      <li class="main-menu-item">
+        <a href="#" class="main-menu-link vip-choice">
+          <span class="link-title">VIP 초이스</span>
+          <span class="link-desc">VIP 특급 무료혜택</span>
+        </a>
+      </li>
+      <li class="main-menu-item">
+        <a href="#" class="main-menu-link my-brp">
+          <span class="link-title">MY BRP</span>
+          <span class="link-desc">나의 멤버십 정보</span>
+        </a>
+      </li>
+      <li class="main-menu-item">
+        <a href="#" class="main-menu-link brp-guide">
+          <span class="link-title">BRP 안내</span>
+          <span class="link-desc">멤버십 혜택확인</span>
+        </a>
+      </li>
+      <li class="main-menu-item">
+        <a href="#" class="main-menu-link alliance-discount">
+          <span class="link-title">제휴할인</span>
+          <span class="link-desc">다양한 제휴 할인</span>
+        </a>
+      </li>
+      <li class="main-menu-item">
+        <a href="#" class="main-menu-link comm-discount">
+          <span class="link-title">통신할인</span>
+          <span class="link-desc">데이터충전/ AS 할인</span>
+        </a>
+      </li>
+      <li class="main-menu-item">
+        <a href="#" class="main-menu-link terminal-discount">
+          <span class="link-title">단말할인</span>
+          <span class="link-desc">알뜰한 쇼핑습관</span>
+        </a>
+      </li>
+      <li class="main-menu-item">
+        <a href="#" class="main-menu-link event">
+          <span class="link-title">이벤트</span>
+          <span class="link-desc">함께 즐기는 이벤</span>
+        </a>
+      </li>
+    </ul>
+
+    <div class="zoom-barcode">
+      <div class="zoom-barcode-logo">olleh</div>
+      <div class="zoom-barcode-section">
+        <img src="../../images/main/zoom_barcode.png" alt="" class="zoom-barcode-image" />
+        <div class="zoom-barcode-number">7578 - 1170 - 7510 - 2290</div>
+      </div>
+      <button type="button" class="zoom-barcode-close"><span>close</span></button>
+    </div>
+  </div>
+
+  include "_footer.html"
+
+</div>
+
+
+
+</body>
+</html>
