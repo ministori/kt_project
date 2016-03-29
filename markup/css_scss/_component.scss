@@ -1,0 +1,227 @@
+.def-list{
+
+  padding:{
+    top:11px;
+    bottom:8px;
+  }
+  border-bottom:1px solid #f0f0f0;
+
+  &:after{
+    content:"";
+    display:block;
+    clear:both;
+  }
+
+  &.total{
+    padding:{
+      top:0;
+      bottom:9px;
+    }
+    font-size:14px;
+    font-weight:bold;
+    color: $dark-gray;
+    border-bottom:1px solid #e2e2e2;
+
+    >.def-list-desc{
+      font-size:16px;
+    }
+  }
+
+  &.last{
+    padding-bottom:0;
+    border-bottom:0;
+  }
+
+  &-title{
+    float:left;
+  }
+
+  &-desc{
+    float:right;
+    font-size:13px;
+  }
+
+}
+
+.def-list-usage{
+  width:100%;
+  height:49px;
+  position:relative;
+  border-bottom:1px solid #f0f0f0;
+
+  &:last-child{
+    border-bottom:0;
+  }
+
+  &-item{
+    position:absolute;
+
+    &.title{
+      top:10px;
+      left:0;
+    }
+    &.point{
+      top:10px;
+      right:0;
+      font-size:13px;
+      color:$main-red;
+    }
+    &.date{
+      bottom:10px;
+      left:0;
+      font-size:11px;
+    }
+    &.usage{
+      right:0;
+      bottom:10px;
+      font-size:11px;
+    }
+  }
+
+}
+
+.tab-block{
+
+  &:after{
+    content:"";
+    display:block;
+    clear:both;
+  }
+  &-list{
+    width:33.33%;
+    float:left;
+    text-align:center;
+    border:{
+      right:1px solid #e2e2e2;
+    }
+    box-sizing:border-box;
+
+    &.last{
+      border:{
+        right:0;
+      }
+    }
+  }
+
+  &-link{
+    display:block;
+    height:39px;
+    padding-top:13px;
+    border:{
+      bottom:1px solid #e2e2e2;
+    }
+
+    box-sizing:border-box;
+
+    &.on{
+      color:$main-red;
+      border:{
+        bottom:1px solid #fff;
+      }
+
+      >span:after{
+        content:"";
+        display:block;
+        width:calc(100% + 10px);
+        height:2px;
+        position:absolute;
+        left:-5px;
+        bottom:-1px;
+        background:$main-red;
+      }
+    }
+
+    >span{
+      display:inline-block;
+      height:100%;
+      position:relative;
+    }
+
+  }
+}
+
+.ordinary-list{
+  &-item{
+    padding:0 0 0 8px;
+    font-size:11px;
+    color:#767676;
+    line-height:1.6;
+    background:url(../images/common/bullet_list.png) no-repeat 0 3px;
+  }
+}
+
+.icon-plus,
+.icon-minus{
+  display:block;
+  position:relative;
+  padding-left:13px;
+
+  &:after{
+    content:"";
+    display:block;
+    width:11px;
+    height:11px;
+    position:absolute;
+    top:2px;
+    left:0;
+    background:url(../images/common/spr_icon_plusminus.png) no-repeat;
+    background-size:cover;
+  }
+}
+
+.icon-minus:after{
+  background-position:-13px 0;
+}
+
+.vt-table{
+  width:100%;
+
+  thead{
+    th{
+      height:35px;
+      font-weight:bold;
+      text-align:center;
+      border:1px solid #e2e2e2;
+      background:#f9f9f9;
+
+      &:first-child{
+        border-left:0;
+      }
+
+      &:last-child{
+        border-right:0;
+      }
+    }
+  }
+
+  tbody{
+    td{
+      height:38px;
+      color:$dark-gray;
+      text-align:center;
+      border:1px solid #e2e2e2;
+
+      &:first-child{
+        border-left:0;
+      }
+
+      &:last-child{
+        border-right:0;
+      }
+
+      &.left{
+        padding-left:10px;
+        text-align:left;
+      }
+
+      &.date{
+        font-size:11px;
+      }
+
+      &.point{
+        font-size:13px;
+      }
+
+    }
+  }
+}

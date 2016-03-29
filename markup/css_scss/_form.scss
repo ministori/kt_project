@@ -14,6 +14,13 @@
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+
+  &.half{
+    width:50%;
+    &:nth-child(2){
+      width:calc(50% - 5px);
+    }
+  }
 }
 
 .input{
@@ -34,4 +41,17 @@
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+}
+
+.button{
+  display:block;
+  height:25px;
+  border-radius:3px;
+  box-sizing:border-box;
+
+  &.btn-red{
+    padding:0 11px;
+    color:$white;
+    background:$main-red;
+  }
 }

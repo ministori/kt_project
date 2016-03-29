@@ -1,9 +1,51 @@
 .clearfix{
-
   &:after{
     content:"";
     display:block;
     clear:both;
   }
+}
 
+#mOllehContainer.bg-gray{
+  background:#ececec;
+}
+
+// align
+
+.mt10{
+  margin-top:10px;
+}
+
+.mt20{
+  margin-top:20px;
+}
+
+.ml5{
+  margin-left:5px;
+}
+
+.ml10{
+  margin-left:10px;
+}
+
+.fl{
+  float:left;
+}
+
+.fr{
+  float:right;
+}
+
+
+// blind
+.blind{
+  visibility: hidden;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  font-size: 0;
+  line-height: 0;
 }
