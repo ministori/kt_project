@@ -15,7 +15,6 @@
     width:calc(100% - 113px);
     margin:0 0 0 63px;
     font-size:14px;
-    letter-spacing:-1px;
   }
 
   &-input{
@@ -35,9 +34,14 @@
     right:15px;
 
     color:$white;
+    line-height:25px;
     border-radius:3px;
     background:$main-red;
     box-sizing:border-box;
+
+    &.dark{
+      background:#404040;
+    }
 
     &.right{
       right:0;
@@ -120,6 +124,7 @@
       display:block;
       margin-top:5px;
       font-size:10px;
+      color:#c6c6c6;
     }
   }
 
@@ -537,7 +542,7 @@
 //sub
 .rating{
   .grade.sub{
-    width:65%;
+    width:68%;
     height:85px;
     border-right:1px solid #bfbfbf;
 
@@ -548,7 +553,7 @@
   }
 
   &-menu{
-    width:35%;
+    width:32%;
     float:right;
     &-item{
       &:first-child{
@@ -566,13 +571,14 @@
 
       &:hover,&:active,&:focus,&:link,&:visited{
         color:#fff;
+        font-size:11px;
       }
 
       &:after{
         content:"";
         display:block;
         position:absolute;
-        background:url(../images/my_brp/spr_icon_rating.png) no-repeat;
+        background:url(../images/brp_my/spr_icon_rating.png) no-repeat;
         background-size:cover;
       }
 
@@ -595,6 +601,7 @@
 }
 
 .contents-block{
+  position:relative;
   border-bottom:1px solid #e2e2e2;
   background:#fff;
 
@@ -607,15 +614,24 @@
     border-bottom:0;
   }
 
+  >.section-division{
+    border-top:1px solid #e2e2e2;
+    padding:5px 15px 10px;
+  }
+
   >.inner-block{
     padding:20px 15px 20px;
+
+    &.no-top{
+      padding-top:0;
+    }
   }
 }
 
-.article-title{
-  font-size:14px;
-  font-weight:bold;
-  color:#333;
+.article-division{
+  padding-bottom:15px;
+  margin-bottom:15px;
+  border-bottom:1px solid #e2e2e2;
 }
 
 .search-point{
@@ -628,8 +644,18 @@
   }
 
   &-desc{
+    position:relative;
+    padding-left:10px;
     margin-top:5px;
     color:#767676;
+
+    &:after{
+      content:"*";
+      display:block;
+      position:absolute;
+      top:2px;
+      left:0;
+    }
   }
 
   &-result{
@@ -646,15 +672,15 @@
 
     &-button{
       display:inline-block;
-      padding-right:15px;
+      padding-right:20px;
 
       &:after{
         content:"";
         display:block;
-        width:10px;
-        height:6px;
+        width:16px;
+        height:16px;
         position:absolute;
-        top:4px;
+        top:-1px;
         right:0;
         background:url(../images/common/search-more.png) no-repeat 0 0;
         background-size:cover;

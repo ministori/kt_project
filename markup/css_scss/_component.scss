@@ -1,3 +1,155 @@
+// simple component
+.icon-plus,
+.icon-minus{
+  display:inline-block;
+  position:relative;
+  padding-left:16px;
+
+  &:after{
+    content:"";
+    display:block;
+    width:13px;
+    height:13px;
+    position:absolute;
+    top:1px;
+    left:0;
+    background:url(../images/common/spr_icon_plusminus.png) no-repeat;
+    background-size:cover;
+  }
+}
+
+.icon-minus:after{
+  background-position:-13px 0;
+}
+
+.section-title{
+  position:relative;
+  padding:12px 0 12px 15px;
+  font-size:14px;
+  font-weight:bold;
+  border-bottom:1px solid #e2e2e2;
+
+  &.icon-alarm{
+    padding-left:35px;
+
+    &:after{
+      content:"";
+      display:block;
+      width:15px;
+      height:15px;
+      position:absolute;
+      top:12px;
+      left:15px;
+      background:url(../images/common/icon_alarm.png) no-repeat;
+      background-size:cover;
+    }
+
+  }
+}
+
+.article-title{
+  font-size:14px;
+  font-weight:bold;
+  color:#333;
+
+  &.division{
+    padding-bottom:5px;
+  }
+}
+
+.no-contents{
+  padding:30px 0;
+  text-align:center;
+}
+
+.description{
+  font-size:11px;
+  color:#767676;
+
+  &.bullet {
+    position: relative;
+    padding: 0 0 0 8px;
+    font-size: 11px;
+    color: #767676;
+    line-height: 1.6;
+
+    &:after {
+      content: "*";
+      display: block;
+      position: absolute;
+      top: 2px;
+      left: 0;
+    }
+  }
+
+  &.section-division{
+    border-top:1px solid #e2e2e2;
+    padding:5px 15px 10px;
+  }
+}
+
+// tab
+.tab-block{
+
+  &:after{
+    content:"";
+    display:block;
+    clear:both;
+  }
+  &-list{
+    width:33.33%;
+    float:left;
+    text-align:center;
+    border:{
+      right:1px solid #e2e2e2;
+    }
+    box-sizing:border-box;
+
+    &.last{
+      border:{
+        right:0;
+      }
+    }
+  }
+
+  &-link{
+    display:block;
+    height:39px;
+    padding-top:13px;
+    border:{
+      bottom:1px solid #e2e2e2;
+    }
+
+    box-sizing:border-box;
+
+    &.on{
+      color:$main-red;
+      border:{
+        bottom:1px solid #fff;
+      }
+
+      >span:after{
+        content:"";
+        display:block;
+        width:calc(100% + 10px);
+        height:2px;
+        position:absolute;
+        left:-5px;
+        bottom:-1px;
+        background:$main-red;
+      }
+    }
+
+    >span{
+      display:inline-block;
+      height:100%;
+      position:relative;
+    }
+
+  }
+}
+
+// list
 .def-list{
 
   padding:{
@@ -59,12 +211,13 @@
     &.title{
       top:10px;
       left:0;
+      color:#333;
     }
     &.point{
       top:10px;
       right:0;
       font-size:13px;
-      color:$main-red;
+      color:$dark-gray;
     }
     &.date{
       bottom:10px;
@@ -80,138 +233,117 @@
 
 }
 
-.tab-block{
+.ordinary-list{
+  &-item{
+    position:relative;
+    padding:0 0 0 8px;
+    font-size:11px;
+    color:#767676;
+    line-height:1.6;
+
+    &:after{
+      content:"*";
+      display:block;
+      position:absolute;
+      top:2px;
+      left:0;
+    }
+  }
+}
+
+.half-image-list{
+  border-top:1px solid #e2e2e2;
 
   &:after{
     content:"";
     display:block;
     clear:both;
   }
-  &-list{
-    width:33.33%;
-    float:left;
-    text-align:center;
-    border:{
-      right:1px solid #e2e2e2;
-    }
-    box-sizing:border-box;
 
-    &.last{
-      border:{
-        right:0;
-      }
-    }
-  }
-
-  &-link{
-    display:block;
-    height:39px;
-    padding-top:13px;
-    border:{
-      bottom:1px solid #e2e2e2;
-    }
-
-    box-sizing:border-box;
-
-    &.on{
-      color:$main-red;
-      border:{
-        bottom:1px solid #fff;
-      }
-
-      >span:after{
-        content:"";
-        display:block;
-        width:calc(100% + 10px);
-        height:2px;
-        position:absolute;
-        left:-5px;
-        bottom:-1px;
-        background:$main-red;
-      }
-    }
-
-    >span{
-      display:inline-block;
-      height:100%;
-      position:relative;
-    }
-
-  }
-}
-
-.ordinary-list{
   &-item{
-    padding:0 0 0 8px;
-    font-size:11px;
-    color:#767676;
-    line-height:1.6;
-    background:url(../images/common/bullet_list.png) no-repeat 0 3px;
+    width:50%;
+    position:relative;
+    float:left;
+    border-bottom:1px solid #e2e2e2;
+    &:nth-child(2n+1):after{
+      content:"";
+      display:block;
+      width:1px;
+      height:100%;
+      position:absolute;
+      top:0;
+      right:0;
+      background:#e2e2e2;
+    }
   }
-}
 
-.icon-plus,
-.icon-minus{
-  display:block;
-  position:relative;
-  padding-left:13px;
-
-  &:after{
-    content:"";
-    display:block;
-    width:11px;
-    height:11px;
-    position:absolute;
-    top:2px;
-    left:0;
-    background:url(../images/common/spr_icon_plusminus.png) no-repeat;
-    background-size:cover;
+  &-image{
+    width:100%;
+    max-width:292px;
   }
+
 }
 
-.icon-minus:after{
-  background-position:-13px 0;
-}
-
+// table
 .vt-table{
   width:100%;
+
+  &-wrap{
+    border:{
+      top:1px solid #e2e2e2;
+      bottom:1px solid #e2e2e2;
+    }
+  }
+
+  &.inner-wrap{
+    thead{
+      th{
+        border-top:0
+      }
+    }
+
+    tbody{
+      tr:last-child{
+        td{
+          border-bottom: 0;
+        }
+      }
+    }
+  }
 
   thead{
     th{
       height:35px;
       font-weight:bold;
       text-align:center;
-      border:1px solid #e2e2e2;
+      border:{
+        top:1px solid #e2e2e2;
+        bottom:1px solid #e2e2e2;
+      }
       background:#f9f9f9;
-
-      &:first-child{
-        border-left:0;
-      }
-
-      &:last-child{
-        border-right:0;
-      }
     }
   }
 
   tbody{
     td{
-      height:38px;
+      min-height:38px;
+      padding:10px 0;
       color:$dark-gray;
       text-align:center;
-      border:1px solid #e2e2e2;
 
-      &:first-child{
-        border-left:0;
-      }
-
-      &:last-child{
-        border-right:0;
+      border:{
+        top:1px solid #e2e2e2;
+        bottom:1px solid #e2e2e2;
       }
 
       &.left{
         padding-left:10px;
         text-align:left;
+      }
+
+      &.right{
+        padding-right:10px;
+        text-align:right;
       }
 
       &.date{
@@ -224,4 +356,73 @@
 
     }
   }
+}
+
+.hr-table{
+  width:100%;
+
+  &-wrap{
+    border:{
+      top:1px solid #e2e2e2;
+      bottom:1px solid #e2e2e2;
+    }
+  }
+
+  &.inner-wrap{
+    thead{
+      th{
+        border-top:0
+      }
+    }
+
+    tbody{
+      tr:last-child{
+        td{
+          border-bottom: 0;
+        }
+      }
+    }
+  }
+
+  tbody{
+    th{
+      height:35px;
+      font-weight:bold;
+      text-align:center;
+      border:{
+        top:1px solid #e2e2e2;
+        bottom:1px solid #e2e2e2;
+      }
+      background:#f9f9f9;
+
+      &.left{
+        padding-left:10px;
+        text-align:left;
+      }
+    }
+
+    td{
+      min-height:38px;
+      padding:10px 0;
+      color:$dark-gray;
+      text-align:center;
+
+      border:{
+        top:1px solid #e2e2e2;
+        bottom:1px solid #e2e2e2;
+      }
+
+      &.left{
+        padding-left:10px;
+        text-align:left;
+      }
+
+      &.right{
+        padding-right:10px;
+        text-align:right;
+      }
+
+    }
+  }
+
 }

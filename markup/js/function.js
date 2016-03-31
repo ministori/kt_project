@@ -46,10 +46,6 @@ $(function(){
     }, 300);
   });
 
-  $(window).on('click', function(){
-    console.log( $('.zoom-barcode-image').innerHeight() );
-  });
-
   $(window).orientationchange();
 
   $('.barcode-zoom-button').on('click', function(){
@@ -58,6 +54,20 @@ $(function(){
 
   $('.zoom-barcode-close').on('click', function(){
     barcodeZoom.moveDownZoomSection( $('.zoom-barcode') );
+  });
+
+  /**
+   * on/off toggle button
+   */
+
+  $('.js-onoff').data('toggle', 'on').on('click', function(){
+
+    if( $(this).data('toggle') == 'on' ){
+      $(this).addClass('off').data('toggle', 'off');
+    } else {
+      $(this).removeClass('off').data('toggle', 'on');
+    }
+
   });
 
 });

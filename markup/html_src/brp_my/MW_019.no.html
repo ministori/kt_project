@@ -1,0 +1,145 @@
+include "_head.html"
+<body>
+<div id="mOllehWrap">
+
+  <div id="mOllehGnb">
+
+    include "_gnb_header.html"
+    include "_gnb_depth1.html"
+    include "_gnb_depth2-2.html"
+
+  </div>
+
+  include "_side_menu.html"
+  <!-- [D] 사이드메뉴 오픈, 현재 페이지 표시 임시 스크립트 : 개발 적용시 삭제 -->
+  <script>
+    $(function(){
+
+      try {
+        var url = location.href;
+        var urlParse = url.split('?')[1].split('&');
+        $('.mOllehNavigatorList').find('li').eq(urlParse[0] - 1).addClass('on');
+        $('.mOllehNavigator3DepthList').find('li').eq(urlParse[1] - 1).addClass('on');
+      } catch(e){
+        console.log('nothing parse');
+      }
+
+      $('#btnAllmenu').on('click', function(e){
+
+        e.preventDefault();
+
+        $('.mOllehDimm').css('display', 'block');
+        $('.mOllehSideMenuWrap').css({
+          transform : 'translate(0,0)',
+          display : 'block'
+        });
+        $('.mOllehBtnSideMenuClose').css('display', 'block');
+
+      });
+
+      $('.mOllehBtnSideMenuClose').on('click', function(e){
+
+        e.preventDefault();
+
+        $('.mOllehDimm').css('display', 'none');
+        $('.mOllehSideMenuWrap').css({
+          transform : 'translate(-280px,0)',
+          display : 'none'
+        });
+
+
+      });
+
+    });
+  </script>
+  <!--// [D] 사이드메뉴 오픈, 현재 페이지 표시 임시 스크립트 : 개발 적용시 삭제 -->
+
+  <div id="mOllehContainer" class="bg-gray">
+
+    <section class="search-number top-type">
+      <h3 class="blind">회선번호조회</h3>
+      <label for="phone-number" class="search-number-label">회선번호</label>
+      <select id="phone-number" class="select search-number-select">
+        <option>010-1234-**78</option>
+      </select>
+      <button type="button" class="button search-number-button">조회</button>
+    </section>
+
+    <section class="contents-block">
+      <h3 class="blind">특별포인트 신청</h3>
+      <div class="inner-block">
+        <p>매년 1월 1일 기준, 모바일 가입 만3년, 만6년, 만9년인 회선에 특별포인트를 부여해 드립니다.</p>
+
+        <table class="vt-table mt10" summary="회선번호, 가입년월, 특별포인트 신청 항목을 표시하는 표입니다.">
+          <caption>특별포인트 신청 표</caption>
+          <colgroup>
+            <col style="width:35%" />
+            <col style="width:30%" />
+            <col style="width:35%" />
+          </colgroup>
+          <thead>
+          <tr>
+            <th>회선번호</th>
+            <th>가입년월</th>
+            <th>특별포인트 신청</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td>010-1234-**78</td>
+            <td>2011.11</td>
+            <td>대상아님</td>
+          </tr>
+          </tbody>
+        </table>
+        <p class="description bullet mt5">특별포인트는 신청 익일 지급되며, 지급 내역은 MY  비즈 멤버십 에서 확인 가능합니다.</p>
+      </div>
+    </section>
+
+    <section class="contents-block top-type last">
+      <h3 class="section-title">특별 포인트 신청 대상 기준</h3>
+      <div class="inner-block">
+        <article>
+          <table class="vt-table" summary="회선번호, 가입년월, 특별포인트 신청 항목을 표시하는 표입니다.">
+            <caption>특별포인트 신청 표</caption>
+            <colgroup>
+              <col style="width:60%" />
+              <col style="width:40%" />
+            </colgroup>
+            <thead>
+            <tr>
+              <th>대상</th>
+              <th>추가혜택</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <td class="left">모바일 가입기간 만 3년 이상 ~<br />만 4년 미만 고객</td>
+              <td>멤버십 포인트<br />1만 추가 지급</td>
+            </tr>
+            <tr>
+              <td class="left">모바일 가입기간 만 6년 이상 ~<br />만 7년 미만 고객</td>
+              <td>멤버십 포인트<br />2만 추가 지급</td>
+            </tr>
+            <tr>
+              <td class="left">모바일 가입기간 만 9년 이상 ~<br />만 10년 미만 고객</td>
+              <td>멤버십 포인트<br />3만 추가 지급</td>
+            </tr>
+            </tbody>
+          </table>
+          <p class="description mt5">예시) 가입일이 2011.01.01~2011.12.31 인 고객인 경우, 2015년 1월1일 기준 만 3년 이상 ~ 만 4년 미만 대상 고객임</p>
+          <p class="description bullet mt5">특별 포인트 소멸 기간은 부여 받은 당해년도 말까지 입니다.</p>
+        </article>
+      </div>
+    </section>
+
+  </div>
+
+  include "_footer.html"
+
+</div>
+
+
+
+</body>
+</html>

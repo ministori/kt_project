@@ -1,0 +1,138 @@
+include "_head.html"
+<body>
+<div id="mOllehWrap">
+
+  <div id="mOllehGnb">
+
+  include "_gnb_header.html"
+
+  </div>
+
+  include "_side_menu.html"
+  <!-- [D] 사이드메뉴 오픈, 현재 페이지 표시 임시 스크립트 : 개발 적용시 삭제 -->
+  <script>
+    $(function(){
+
+      var url = location.href;
+      var urlParse = url.split('?')[1].split('&');
+      $('.mOllehNavigatorList').find('li').eq(urlParse[0]-1).addClass('on');
+      $('.mOllehNavigator3DepthList').find('li').eq(urlParse[1]-1).addClass('on');
+
+      $('#btnAllmenu').on('click', function(e){
+
+        e.preventDefault();
+
+        $('.mOllehDimm').css('display', 'block');
+        $('.mOllehSideMenuWrap').css({
+          transform : 'translate(0,0)',
+          display : 'block'
+        });
+        $('.mOllehBtnSideMenuClose').css('display', 'block');
+
+      });
+
+      $('.mOllehBtnSideMenuClose').on('click', function(e){
+
+        e.preventDefault();
+
+        $('.mOllehDimm').css('display', 'none');
+        $('.mOllehSideMenuWrap').css({
+          transform : 'translate(-280px,0)',
+          display : 'none'
+        });
+
+
+      });
+
+    });
+  </script>
+  <!--// [D] 사이드메뉴 오픈, 현재 페이지 표시 임시 스크립트 : 개발 적용시 삭제 -->
+
+  <div id="mOllehContainer" class="bg-gray">
+
+    <section class="contents-block top-type last">
+      <h3 class="section-title">제휴할인</h3>
+      <div class="inner-block">
+        <article>
+          <p>영화, 외식, 커피/베이커리, 편의점, 테마파크 등 전국 2만 여개 제휴사에서 다양한 할인 혜택을 누리실 수 있습니다.</p>
+          <ul class="half-image-list mt10">
+            <li class="half-image-list-item">
+              <img src="../../images/brp_guide/alliance_brand_01.png" alt="스타벅스" class="half-image-list-image" />
+            </li>
+            <li class="half-image-list-item">
+              <img src="../../images/brp_guide/alliance_brand_02.png" alt="커피빈" class="half-image-list-image" />
+            </li>
+            <li class="half-image-list-item">
+              <img src="../../images/brp_guide/alliance_brand_03.png" alt="파리바게트" class="half-image-list-image" />
+            </li>
+            <li class="half-image-list-item">
+              <img src="../../images/brp_guide/alliance_brand_04.png" alt="뚜레주르" class="half-image-list-image" />
+            </li>
+            <li class="half-image-list-item">
+              <img src="../../images/brp_guide/alliance_brand_05.png" alt="CGV" class="half-image-list-image" />
+            </li>
+            <li class="half-image-list-item">
+              <img src="../../images/brp_guide/alliance_brand_06.png" alt="롯데시네마" class="half-image-list-image" />
+            </li>
+            <li class="half-image-list-item">
+              <img src="../../images/brp_guide/alliance_brand_07.png" alt="GS25" class="half-image-list-image" />
+            </li>
+            <li class="half-image-list-item">
+              <img src="../../images/brp_guide/alliance_brand_08.png" alt="세븐일레븐" class="half-image-list-image" />
+            </li>
+            <li class="half-image-list-item">
+              <img src="../../images/brp_guide/alliance_brand_09.png" alt="아웃백" class="half-image-list-image" />
+            </li>
+            <li class="half-image-list-item">
+              <img src="../../images/brp_guide/alliance_brand_10.png" alt="미스터피자" class="half-image-list-image" />
+            </li>
+            <li class="half-image-list-item">
+              <img src="../../images/brp_guide/alliance_brand_11.png" alt="VIPS" class="half-image-list-image" />
+            </li>
+            <li class="half-image-list-item">
+              <img src="../../images/brp_guide/alliance_brand_12.png" alt="에버랜드" class="half-image-list-image" />
+            </li>
+          </ul>
+        </article>
+      </div>
+      <a href="#" class="btn link white-small section-right-top">바로가기</a>
+    </section>
+
+    <section class="contents-block top-type last">
+      <h3 class="section-title">통신할인</h3>
+      <div class="inner-block">
+        <article>
+          <p>멤버십 포인트로 100% 할인받는 모바일 LTE 데이터 충전과 휴대폰 A/S 20% 할인까지 모든 혜택을 즐기세요.</p>
+        </article>
+      </div>
+      <a href="#" class="btn link white-small section-right-top">바로가기</a>
+    </section>
+
+    <section class="contents-block top-type last">
+      <h3 class="section-title">단말할인</h3>
+      <div class="inner-block">
+        <article>
+          <p>멤버십 포인트로 최신 핸드폰과 액세서리를 할인된 가격으로 구매할 수 있습니다.</p>
+        </article>
+      </div>
+      <a href="#" class="btn link white-small section-right-top">바로가기</a>
+    </section>
+
+    <section class="contents-block top-type last">
+      <h3 class="section-title">VIP초이스</h3>
+      <div class="inner-block">
+        <article>
+          <p>VIP 고객님에게 유명 제휴사릐 연12회(월1회) 자유선택 무료이용(포인트차감) 혜택을 제공하여 드립니다.</p>
+        </article>
+      </div>
+      <a href="#" class="btn link white-small section-right-top">바로가기</a>
+    </section>
+
+  </div>
+
+  include "_footer.html"
+
+</div>
+
+</body>
+</html>

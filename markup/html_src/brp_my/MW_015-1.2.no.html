@@ -4,14 +4,25 @@ include "_head.html"
 
   <div id="mOllehGnb">
 
-  include "_gnb_header.html"
+    include "_gnb_header.html"
+    include "_gnb_depth1.html"
+    include "_gnb_depth2-2.html"
 
   </div>
 
   include "_side_menu.html"
-  <!-- [D] 사이드메뉴 오픈, 임시 스크립트 : 개발 적용시 삭제 -->
+  <!-- [D] 사이드메뉴 오픈, 현재 페이지 표시 임시 스크립트 : 개발 적용시 삭제 -->
   <script>
     $(function(){
+
+      try {
+        var url = location.href;
+        var urlParse = url.split('?')[1].split('&');
+        $('.mOllehNavigatorList').find('li').eq(urlParse[0] - 1).addClass('on');
+        $('.mOllehNavigator3DepthList').find('li').eq(urlParse[1] - 1).addClass('on');
+      } catch(e){
+        console.log('nothing parse');
+      }
 
       $('#btnAllmenu').on('click', function(e){
 
@@ -41,7 +52,7 @@ include "_head.html"
 
     });
   </script>
-  <!--// [D] 사이드메뉴 오픈, 임시 스크립트 : 개발 적용시 삭제 -->
+  <!--// [D] 사이드메뉴 오픈, 현재 페이지 표시 임시 스크립트 : 개발 적용시 삭제 -->
 
   <div id="mOllehContainer" class="bg-gray">
 
@@ -74,7 +85,7 @@ include "_head.html"
             <span class="grade-word">입니다.</span>
           </span>
 
-          <span class="grade-desc">* 연간포인트 제공 예정일 : 2017년 1월 1일</span>
+          <span class="grade-desc icon-time">연간 포인트 제공 예정일 : 2017년 1월 1일</span>
         </div>
 
         <ul class="rating-menu">
@@ -134,40 +145,13 @@ include "_head.html"
               <select class="select half fl ml5" title="월선택">
                 <option>전체</option>
               </select>
-              <button type="button" class="search-number-button right">조회</button>
+              <button type="button" class="search-number-button dark right">조회</button>
             </div>
-            <p class="search-point-desc">* 해당 연도 전체 및 1개월 단위로 조회할 수 있습니다.</p>
+            <p class="search-point-desc">해당 연도 전체 및 1개월 단위로 조회할 수 있습니다.</p>
           </div>
           <div class="search-point-result">
-
-            <dl class="def-list-usage">
-              <dt class="def-list-usage-item title">파리바게트</dt>
-              <dd class="def-list-usage-item point"><span class="icon-minus">1,800P</span></dd>
-              <dd class="def-list-usage-item date">2015.11.16 16:53</dd>
-              <dd class="def-list-usage-item usage">완료</dd>
-            </dl>
-
-            <dl class="def-list-usage">
-              <dt class="def-list-usage-item title">롯데 VIP초이스 예매1인</dt>
-              <dd class="def-list-usage-item point"><span class="icon-minus">1,800P</span></dd>
-              <dd class="def-list-usage-item date">2015.11.16 16:53</dd>
-              <dd class="def-list-usage-item usage">완료</dd>
-            </dl>
-
-            <dl class="def-list-usage">
-              <dt class="def-list-usage-item title">스타벅스 MY초이스 사이즈업</dt>
-              <dd class="def-list-usage-item point"><span class="icon-minus">1,800P</span></dd>
-              <dd class="def-list-usage-item date">2015.11.16 16:53</dd>
-              <dd class="def-list-usage-item usage">완료</dd>
-            </dl>
-
+            <p class="no-contents">사용 내역이 없습니다.</p>
           </div>
-
-          <div class="search-point-more">
-            <button type="button" class="search-point-more-button">더보기</button>
-          </div>
-
-
         </article>
       </div>
     </section>

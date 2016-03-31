@@ -43,15 +43,81 @@
   appearance: none;
 }
 
-.button{
-  display:block;
+.btn{
+  display:inline-block;
   height:25px;
   border-radius:3px;
   box-sizing:border-box;
+  line-height:normal;
 
-  &.btn-red{
+  &.link{
+    display:block;
+    padding-top:2px !important;
+  }
+
+  &.ellipse{
+    border-radius:5em !important;
+  }
+
+  &.red{
     padding:0 11px;
     color:$white;
     background:$main-red;
   }
+
+  &.gray-small{
+    height:18px;
+    padding:0 15px;
+    font-size:10px;
+    color:$white;
+    background:#888;
+    border-radius:0;
+  }
+
+  &.gray-mid{
+    height:25px;
+    padding:0 15px;
+    font-size:11px;
+    color:$white;
+    background:#888;
+    border-radius:0;
+  }
+
+  &.white-small{
+    height:19px;
+    padding:0 15px;
+    font-size:10px;
+    border:1px solid #888;
+    border-radius:0;
+    background:#fff;
+  }
+
+  &.dark-mid-half{
+    width:calc(50% - 3px);
+    height:25px;
+    font-size:11px;
+    color:$white;
+    text-align:center;
+    background:#404040;
+    border-radius:0;
+  }
+
+  &.section-right-top{
+    position:absolute;
+    top:11px;
+    right:15px;
+  }
+
+  &.onoff-toggle{
+    width:64px;
+    height:19px;
+    text-indent:-99999em;
+    background:url(../images/brp_my/spr_btn_toggle.png) no-repeat;
+    background-size:cover;
+
+    &.off{
+      background-position:0 -19px;
+    }
+  }
+
 }

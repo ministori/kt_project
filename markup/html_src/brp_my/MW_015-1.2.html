@@ -1,0 +1,195 @@
+include "_head.html"
+<body>
+<div id="mOllehWrap">
+
+  <div id="mOllehGnb">
+
+    include "_gnb_header.html"
+    include "_gnb_depth1.html"
+    include "_gnb_depth2-2.html"
+
+  </div>
+
+  include "_side_menu.html"
+  <!-- [D] 사이드메뉴 오픈, 현재 페이지 표시 임시 스크립트 : 개발 적용시 삭제 -->
+  <script>
+    $(function(){
+
+      try {
+        var url = location.href;
+        var urlParse = url.split('?')[1].split('&');
+        $('.mOllehNavigatorList').find('li').eq(urlParse[0] - 1).addClass('on');
+        $('.mOllehNavigator3DepthList').find('li').eq(urlParse[1] - 1).addClass('on');
+      } catch(e){
+        console.log('nothing parse');
+      }
+
+      $('#btnAllmenu').on('click', function(e){
+
+        e.preventDefault();
+
+        $('.mOllehDimm').css('display', 'block');
+        $('.mOllehSideMenuWrap').css({
+          transform : 'translate(0,0)',
+          display : 'block'
+        });
+        $('.mOllehBtnSideMenuClose').css('display', 'block');
+
+      });
+
+      $('.mOllehBtnSideMenuClose').on('click', function(e){
+
+        e.preventDefault();
+
+        $('.mOllehDimm').css('display', 'none');
+        $('.mOllehSideMenuWrap').css({
+          transform : 'translate(-280px,0)',
+          display : 'none'
+        });
+
+
+      });
+
+    });
+  </script>
+  <!--// [D] 사이드메뉴 오픈, 현재 페이지 표시 임시 스크립트 : 개발 적용시 삭제 -->
+
+  <div id="mOllehContainer" class="bg-gray">
+
+    <section class="search-number top-type">
+      <h3 class="blind">회선번호조회</h3>
+      <label for="phone-number" class="search-number-label">회선번호</label>
+      <select id="phone-number" class="select search-number-select">
+        <option>010-1234-**78</option>
+      </select>
+      <button type="button" class="button search-number-button">조회</button>
+    </section>
+
+    <section class="contents-block">
+      <h3 class="blind">등급</h3>
+      <div class="rating">
+        <div class="grade sub">
+          <span class="grade-text">홍길*님 등급은</span>
+
+          <span class="grade-text bottom clearfix">
+            <!-- [D] 5개중 한가지 선택 표시 -->
+            <span class="grade-word grade-mark gold">Gold</span>
+            <!-- 임시 주석
+            <span class="grade-word grade-mark vip">VIP</span>
+            <span class="grade-word grade-mark gold">Gold</span>
+            <span class="grade-word grade-mark silver">Silver</span>
+            <span class="grade-word grade-mark white">White</span>
+            <span class="grade-word grade-mark general">일반</span>
+            -->
+            <!--// [D] 5개중 한가지 선택 표시 -->
+            <span class="grade-word">입니다.</span>
+          </span>
+
+          <span class="grade-desc icon-time">연간 포인트 제공 예정일 : 2017년 1월 1일</span>
+        </div>
+
+        <ul class="rating-menu">
+          <li class="rating-menu-item">
+            <a href="#" class="rating-menu-link mgt-card">카드관리</a>
+          </li>
+          <li class="rating-menu-item">
+            <a href="#" class="rating-menu-link rating-guide">등급기준안내</a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="contents-block">
+      <h3 class="blind">잔여포인트</h3>
+      <div class="inner-block">
+        <dl class="def-list total">
+          <dt class="def-list-title">잔여포인트</dt>
+          <dd class="def-list-desc">225,438 P</dd>
+        </dl>
+        <dl class="def-list">
+          <dt class="def-list-title">당해년도 적립 포인트</dt>
+          <dd class="def-list-desc">120,220 P</dd>
+        </dl>
+        <dl class="def-list">
+          <dt class="def-list-title">당해년도 사용 포인트</dt>
+          <dd class="def-list-desc">18,650 P</dd>
+        </dl>
+        <dl class="def-list last">
+          <dt class="def-list-title">다음달 소멸 예정 포인트</dt>
+          <dd class="def-list-desc">5,320 P</dd>
+        </dl>
+      </div>
+    </section>
+
+    <section class="contents-block top-type last">
+      <ul class="tab-block">
+        <li class="tab-block-list">
+          <a href="#" class="tab-block-link"><span>VIP초이스</span></a>
+        </li>
+        <li class="tab-block-list">
+          <a href="#" class="tab-block-link"><span>더블할인 멤버십</span></a>
+        </li>
+        <li class="tab-block-list last">
+          <a href="#" class="tab-block-link on"><span>포인트 사용내역</span></a>
+        </li>
+      </ul>
+      <h3 class="blind">포인트 사용내역</h3>
+      <div class="inner-block">
+        <article>
+          <h4 class="article-title">포인트 사용/적립내역 조회</h4>
+          <div class="search-top mt10">
+            <div class="search-point clearfix">
+              <select class="select half fl" title="년도선택">
+                <option>2015년</option>
+              </select>
+              <select class="select half fl ml5" title="월선택">
+                <option>전체</option>
+              </select>
+              <button type="button" class="search-number-button dark right">조회</button>
+            </div>
+            <p class="search-point-desc">해당 연도 전체 및 1개월 단위로 조회할 수 있습니다.</p>
+          </div>
+          <div class="search-point-result">
+
+            <dl class="def-list-usage">
+              <dt class="def-list-usage-item title">파리바게트</dt>
+              <dd class="def-list-usage-item point"><span class="icon-minus">1,800P</span></dd>
+              <dd class="def-list-usage-item date"><span class="icon-time">2015.11.16 16:53</span></dd>
+              <dd class="def-list-usage-item usage">완료</dd>
+            </dl>
+
+            <dl class="def-list-usage">
+              <dt class="def-list-usage-item title">롯데 VIP초이스 예매1인</dt>
+              <dd class="def-list-usage-item point"><span class="icon-plus">10,000P</span></dd>
+              <dd class="def-list-usage-item date"><span class="icon-time">2015.11.16 16:53</span></dd>
+              <dd class="def-list-usage-item usage">완료</dd>
+            </dl>
+
+            <dl class="def-list-usage">
+              <dt class="def-list-usage-item title">스타벅스 MY초이스 사이즈업</dt>
+              <dd class="def-list-usage-item point"><span class="icon-minus">1,800P</span></dd>
+              <dd class="def-list-usage-item date"><span class="icon-time">2015.11.16 16:53</span></dd>
+              <dd class="def-list-usage-item usage">완료</dd>
+            </dl>
+
+          </div>
+
+          <div class="search-point-more">
+            <button type="button" class="search-point-more-button">더보기</button>
+          </div>
+
+
+        </article>
+      </div>
+    </section>
+
+  </div>
+
+  include "_footer.html"
+
+</div>
+
+
+
+</body>
+</html>
