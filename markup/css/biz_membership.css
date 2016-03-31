@@ -299,7 +299,9 @@ img {
 }
 
 .main-menu {
-  border-top: 8px solid #d6d6d6;
+  margin-bottom: 20px;
+  border-top: 4px solid #d6d6d6;
+  border-bottom: 1px solid #d6d6d6;
 }
 .main-menu:after {
   content: "";
@@ -311,8 +313,8 @@ img {
   height: 73px;
   position: relative;
   float: left;
-  border-right: 2px solid #ccc;
-  border-bottom: 2px solid #ccc;
+  border-right: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
   background: #f1f1f1;
   box-sizing: border-box;
 }
@@ -341,7 +343,7 @@ img {
 }
 .main-menu-item:nth-child(2n) {
   border-right: 0;
-  border-bottom: 2px solid #ccc;
+  border-bottom: 1px solid #ccc;
 }
 .main-menu-item:nth-child(7), .main-menu-item:nth-child(8) {
   border-bottom: 0;
@@ -354,7 +356,6 @@ img {
   width: 100%;
   height: 100%;
   padding: 20px 0 0 14px;
-  letter-spacing: -1px;
   box-sizing: border-box;
 }
 .main-menu-link .link-title {
@@ -459,6 +460,7 @@ img {
 
 /* zoom barcode */
 .zoom-barcode {
+  display: none;
   width: 100%;
   height: 100%;
   position: fixed;
@@ -468,6 +470,9 @@ img {
   z-index: 99990;
   transform: translate(0, 100%);
   transition: transform 0.3s ease-out;
+}
+.zoom-barcode.on {
+  display: block;
 }
 .zoom-barcode.up {
   transform: translate(0, 0);

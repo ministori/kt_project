@@ -11,48 +11,7 @@ include "_head.html"
   </div>
 
   include "_side_menu.html"
-  <!-- [D] 사이드메뉴 오픈, 현재 페이지 표시 임시 스크립트 : 개발 적용시 삭제 -->
-  <script>
-    $(function(){
-
-      try {
-        var url = location.href;
-        var urlParse = url.split('?')[1].split('&');
-        $('.mOllehNavigatorList').find('li').eq(urlParse[0] - 1).addClass('on');
-        $('.mOllehNavigator3DepthList').find('li').eq(urlParse[1] - 1).addClass('on');
-      } catch(e){
-        console.log('nothing parse');
-      }
-
-      $('#btnAllmenu').on('click', function(e){
-
-        e.preventDefault();
-
-        $('.mOllehDimm').css('display', 'block');
-        $('.mOllehSideMenuWrap').css({
-          transform : 'translate(0,0)',
-          display : 'block'
-        });
-        $('.mOllehBtnSideMenuClose').css('display', 'block');
-
-      });
-
-      $('.mOllehBtnSideMenuClose').on('click', function(e){
-
-        e.preventDefault();
-
-        $('.mOllehDimm').css('display', 'none');
-        $('.mOllehSideMenuWrap').css({
-          transform : 'translate(-280px,0)',
-          display : 'none'
-        });
-
-
-      });
-
-    });
-  </script>
-  <!--// [D] 사이드메뉴 오픈, 현재 페이지 표시 임시 스크립트 : 개발 적용시 삭제 -->
+  include "_temp_js.html"
 
   <div id="mOllehContainer" class="bg-gray">
 

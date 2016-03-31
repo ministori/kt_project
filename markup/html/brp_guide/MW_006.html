@@ -68,7 +68,7 @@
     </h1>
     <h2 class="mOllehSubTit">
       <a href="http://m.membership.olleh.com/molleh/m_OllehClubInfo.do" onclick="mOlleh.clickTrace('서브공통','^모바일올레닷컴_서브3.0^010_GNB^멤버십');">
-        <span>비즈 멤버십</span>
+        <span></span>
       </a>
     </h2>
     <!-- 검색 박스 영역 -->
@@ -868,10 +868,46 @@
   <script>
     $(function(){
 
-      var url = location.href;
-      var urlParse = url.split('?')[1].split('&');
-      $('.mOllehNavigatorList').find('li').eq(urlParse[0]-1).addClass('on');
-      $('.mOllehNavigator3DepthList').find('li').eq(urlParse[1]-1).addClass('on');
+      var pageName;
+
+      try {
+        var url = location.href;
+        var urlParse = url.split('?')[1].split('&');
+        switch( parseInt(urlParse[0]) ){
+          case 1:
+            pageName = '비즈 멤버십 안내';
+            break;
+          case 2:
+            pageName = '비즈 멤버십 가입';
+            break;
+          case 3:
+            pageName = 'MY';
+            break;
+          case 4:
+            pageName = '더블할인멤버십';
+            break;
+          case 5:
+            pageName = 'VIP초이스';
+            break;
+          case 6:
+            pageName = '제휴할인';
+            break;
+          case 7:
+            pageName = '통신할인';
+            break;
+          case 8:
+            pageName = '단말할인';
+            break;
+          case 9:
+            pageName = '이벤트';
+            break;
+        }
+        $('.mOllehSubTit').text(pageName);
+        $('.mOllehNavigatorList').find('li').eq(urlParse[0] - 1).addClass('on');
+        $('.mOllehNavigator3DepthList').find('li').eq(urlParse[1] - 1).addClass('on');
+      } catch(e){
+        console.log('nothing parse');
+      }
 
       $('#btnAllmenu').on('click', function(e){
 

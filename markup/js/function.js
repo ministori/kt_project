@@ -22,11 +22,18 @@ var BarcodeZoom = function(){
   };
 
   this.moveUpZoomSection = function($zoomBarcodeSection) {
-    $zoomBarcodeSection.addClass('up');
+
+    $zoomBarcodeSection.addClass('on');
+    setTimeout(function(){
+      $zoomBarcodeSection.addClass('up');
+    }, 300)
   };
 
   this.moveDownZoomSection = function($zoomBarcodeSection) {
     $zoomBarcodeSection.removeClass('up');
+    setTimeout(function(){
+      $zoomBarcodeSection.removeClass('on');
+    }, 300)
   };
 
 };

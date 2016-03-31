@@ -2,129 +2,239 @@
 <html>
 <head lang="en">
   <meta charset="UTF-8">
-  <title></title>
+  <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+  <title>KT 법인 멤버십 Markup List</title>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
   <script src="../js/lib/jquery-1.11.0.min.js"></script>
   <script>
     $(function(){
-
-      var folderName;
+      var pageURI;
 
       $('.js-row').on('click', function(){
-
         var pageID = $(this).find('.js-page-id').text();
-        var pageName = $(this).find('.js-page-name').text();
-
-        switch(pageName){
-          case 'MAIN':
-            folderName = 'main';
-            break;
-
-          case 'MY BRP':
-            folderName = 'brp_my';
-            break;
-
-          case 'BRP 안내':
-            folderName = 'brp_guide';
-            break;
-
-          case 'BRP 가입':
-            folderName = 'brp_join';
-            break;
-
-          case '더블할인 멤버십':
-            folderName = 'discount_double';
-            break;
-
-          case 'VIP 초이스':
-            folderName = 'vip_choice';
-            break;
-
-          case '제휴할인':
-            folderName = 'discount_alliance';
-            break;
-
-          case '통신할인':
-            folderName = 'discount_comm';
-            break;
-
-          case '단말할인':
-            folderName = 'discount_terminal';
-            break;
-
-          case '이벤트':
-            folderName = 'event';
-            break;
-
-
+        var pageCategory = $(this).parents('.contents').data('category');
+        pageURI = $(this).find('.js-page-id').data('uri');
+        if(pageURI != undefined){
+          window.open(pageCategory + '/' + pageID + '.html?' + pageURI);
+        } else {
+          window.open(pageCategory + '/' + pageID + '.html');
         }
-
-        window.open(folderName + '/' + pageID+'.html');
-
       });
-
     });
   </script>
+  <style>
+    /**
+     * Eric Meyer's Reset CSS v2.0 (http://meyerweb.com/eric/tools/css/reset/)
+     * http://cssreset.com
+     */
+    html, body, div, span, applet, object, iframe,
+    h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+    a, abbr, acronym, address, big, cite, code,
+    del, dfn, em, img, ins, kbd, q, s, samp,
+    small, strike, strong, sub, sup, tt, var,
+    b, u, i, center,
+    dl, dt, dd, ol, ul, li,
+    fieldset, form, label, legend,
+    table, caption, tbody, tfoot, thead, tr, th, td,
+    article, aside, canvas, details, embed,
+    figure, figcaption, footer, header,
+    menu, nav, output, ruby, section, summary,
+    time, mark, audio, video {
+      margin: 0;
+      padding: 0;
+      border: 0;
+      font: inherit;
+      font-size: 100%;
+      font-family: 'Open Sans', sans-serif;
+    }
+    /* HTML5 display-role reset for older browsers */
+    article, aside, details, figcaption, figure,
+    footer, header, menu, nav, section {
+      display: block;
+    }
+    ol, ul {
+      list-style: none;
+    }
+    blockquote, q {
+      quotes: none;
+    }
+    blockquote:before, blockquote:after,
+    q:before, q:after {
+      content: none;
+    }
+    table {
+      border-collapse: collapse;
+      border-spacing: 0;
+    }
+
+    h1{
+      color:#fff;
+      font-size:15px;
+      text-align:center;
+      margin-bottom:10px;
+      padding:10px 0;
+      border-bottom:1px solid #ed2a25;
+      background:#333;
+    }
+    h2{
+      color:#ed2a25;
+      font-size:15px;
+      margin:0 0 10px 10px;
+    }
+    .list-table{
+      width:100%;
+      font-size:11px;
+      border-collapse: collapse;
+    }
+
+    .list-table caption{
+      display:none;
+    }
+
+    .list-table th{
+      height:30px;
+      text-align:left;
+      padding-left:5px;
+      border-top:1px solid #e2e2e2;
+      border-bottom:1px solid #e2e2e2;
+      background:#f1f1f1;
+    }
+
+    .list-table td{
+      min-height:30px;
+      text-align:left;
+      padding:5px;
+      border-top:1px solid #e2e2e2;
+      border-bottom:1px solid #e2e2e2;
+    }
+
+    .contents{
+      margin-bottom:30px;
+    }
+  </style>
 </head>
 <body>
 
-  <h1>KT 법인 멤버십 모바일 마크업 리스트</h1>
+  <h1 data-title="hahahha">KT 법인 멤버십 Mobile Markup List</h1>
 
-  <h2 class="category">메인</h2>
+  <section class="contents" data-category="main">
+    <h2 class="category">메인</h2>
 
-  <section class="contents">
     <table class="list-table">
       <caption>list table</caption>
       <colgroup>
-        <col />
-        <col />
+        <col style="width:28%;" />
+        <col style="width:49%;" />
+        <col style="width:23%;" />
       </colgroup>
       <thead>
         <tr>
           <th>Page ID</th>
-          <th>Page Name</th>
+          <th>Page Description</th>
+          <th>Date</th>
         </tr>
       </thead>
       <tbody>
         <tr class="list-table-row js-row">
           <td class="js-page-id">MW_001</td>
-          <td class="js-page-name">MAIN</td>
+          <td>메인 페이지</td>
+          <td>2016.03.31</td>
         </tr>
         <tr class="list-table-row js-row">
           <td class="js-page-id">MW_001-1</td>
-          <td class="js-page-name">MAIN</td>
+          <td>메인페이지<br />: 미가입</td>
+          <td>2016.03.31</td>
         </tr>
       </tbody>
     </table>
   </section>
+<!--
+  <h2 class="category">비즈 멤버십 안내</h2>
 
-  <h2 class="category">MY BRP</h2>
+  <h2 class="category">비즈 멤버십 가입</h2>
+-->
+  <section class="contents" data-category="brp_my">
+    <h2 class="category">MY</h2>
 
-  <section class="contents">
     <table class="list-table">
       <caption>list table</caption>
       <colgroup>
-        <col />
-        <col />
+        <col style="width:28%;" />
+        <col style="width:49%;" />
+        <col style="width:23%;" />
       </colgroup>
       <thead>
       <tr>
         <th>Page ID</th>
-        <th>Page Name</th>
+        <th>Page Description</th>
+        <th>Date</th>
       </tr>
       </thead>
       <tbody>
       <tr class="list-table-row js-row">
-        <td class="js-page-id">MW_015</td>
-        <td class="js-page-name">MY BRP</td>
+        <td class="js-page-id" data-uri="3&1">MW_015</td>
+        <td>MY비즈멤버십<br />: VIP초이스</td>
+        <td>2016.03.31</td>
+      </tr>
+      <tr class="list-table-row js-row">
+        <td class="js-page-id" data-uri="3&1">MW_015.no</td>
+        <td>MY비즈멤버십<br />: VIP초이스 - 내역없음</td>
+        <td>2016.03.31</td>
+      </tr>
+      <tr class="list-table-row js-row">
+        <td class="js-page-id" data-uri="3&1">MW_015-1.1</td>
+        <td>MY비즈멤버십<br />: 더블할인멤버십</td>
+        <td>2016.03.31</td>
+      </tr>
+      <tr class="list-table-row js-row">
+        <td class="js-page-id" data-uri="3&1">MW_015-1.2</td>
+        <td>MY비즈멤버십<br />: 포인트사용내역</td>
+        <td>2016.03.31</td>
+      </tr>
+      <tr class="list-table-row js-row">
+        <td class="js-page-id" data-uri="3&1">MW_015-1.2.no</td>
+        <td>MY비즈멤버십<br />: 포인트사용내역 - 내역없음</td>
+        <td>2016.03.31</td>
+      </tr>
+      <tr class="list-table-row js-row">
+        <td class="js-page-id" data-uri="3&2">MW_016</td>
+        <td>카드관리</td>
+        <td>2016.03.31</td>
+      </tr>
+      <tr class="list-table-row js-row">
+        <td class="js-page-id" data-uri="3&2">MW_018</td>
+        <td>카드관리<br />: 모바일카드 신청</td>
+        <td>2016.03.31</td>
+      </tr>
+      <tr class="list-table-row js-row">
+        <td class="js-page-id" data-uri="3&3">MW_019</td>
+        <td>특별포인트 신청</td>
+        <td>2016.03.31</td>
+      </tr>
+      <tr class="list-table-row js-row">
+        <td class="js-page-id" data-uri="3&3">MW_019.no</td>
+        <td>특별포인트 신청<br />: 신청내역없음</td>
+        <td>2016.03.31</td>
+      </tr>
+      <tr class="list-table-row js-row">
+        <td class="js-page-id" data-uri="3&4">MW_020</td>
+        <td>가입상태확인</td>
+        <td>2016.03.31</td>
+      </tr>
+      <tr class="list-table-row js-row">
+        <td class="js-page-id" data-uri="3&4">MW_020-1</td>
+        <td>가입상태확인<br />: 진행중</td>
+        <td>2016.03.31</td>
+      </tr>
+      <tr class="list-table-row js-row">
+        <td class="js-page-id" data-uri="3&4">MW_020-2</td>
+        <td>가입상태확인<br />: 신청내용없음</td>
+        <td>2016.03.31</td>
       </tr>
       </tbody>
     </table>
   </section>
-
-  <h2 class="category">BRP 안내</h2>
-
-  <h2 class="category">BRP 가입</h2>
-
+<!--
   <h2 class="category">더블할인 멤버십</h2>
 
   <h2 class="category">VIP 초이스</h2>
@@ -136,6 +246,6 @@
   <h2 class="category">단말할인</h2>
 
   <h2 class="category">이벤트</h2>
-
+-->
 </body>
 </html>
