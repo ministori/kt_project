@@ -68,7 +68,7 @@
       </h1>
       <h2 class="mOllehSubTit">
         <a href="http://m.membership.olleh.com/molleh/m_OllehClubInfo.do" onclick="mOlleh.clickTrace('서브공통','^모바일올레닷컴_서브3.0^010_GNB^멤버십');">
-          <span>비즈 멤버십</span>
+          <span></span>
         </a>
       </h2>
       <!-- 검색 박스 영역 -->
@@ -128,7 +128,7 @@
                 <a href="#"><span>비즈 멤버십 가입</span></a>
               </li>
               <li>
-                <a href="#"><span>MY 비즈 멤버십</span></a>
+                <a href="#"><span>MY</span></a>
               </li>
               <li>
                 <a href="#"><span>더블할인 멤버십</span></a>
@@ -161,17 +161,20 @@
     </div>
     <div class="mOllehNavigator3Depth">
       <ul class="mOllehNavigator3DepthList mOllehClfix" style="height: 72px;">
-        <li>
-          <a href="#"><span>MY 비즈 멤버십</span></a>
+        <li class="on">
+          <a href="#"><span>비즈 멤버십 안내</span></a>
         </li>
         <li>
-          <a href="#"><span>카드관리</span></a>
+          <a href="#"><span>등급기준</span></a>
         </li>
         <li>
-          <a href="#"><span>특별포인트 신청</span></a>
+          <a href="#"><span>FAQ</span></a>
         </li>
         <li>
-          <a href="#"><span>가입상태 확인</span></a>
+          <a href="#"><span>공지사항</span></a>
+        </li>
+        <li>
+          <a href="#"><span>회원약관</span></a>
         </li>
       </ul>
       <div class="mOllehNavigator3DepthViewMore">
@@ -934,9 +937,41 @@
   <script>
     $(function(){
 
+      var pageName;
+
       try {
         var url = location.href;
         var urlParse = url.split('?')[1].split('&');
+        switch( parseInt(urlParse[0]) ){
+          case 1:
+            pageName = '비즈 멤버십 안내';
+            break;
+          case 2:
+            pageName = '비즈 멤버십 가입';
+            break;
+          case 3:
+            pageName = 'MY';
+            break;
+          case 4:
+            pageName = '더블할인멤버십';
+            break;
+          case 5:
+            pageName = 'VIP초이스';
+            break;
+          case 6:
+            pageName = '제휴할인';
+            break;
+          case 7:
+            pageName = '통신할인';
+            break;
+          case 8:
+            pageName = '단말할인';
+            break;
+          case 9:
+            pageName = '이벤트';
+            break;
+        }
+        $('.mOllehSubTit').text(pageName);
         $('.mOllehNavigatorList').find('li').eq(urlParse[0] - 1).addClass('on');
         $('.mOllehNavigator3DepthList').find('li').eq(urlParse[1] - 1).addClass('on');
       } catch(e){
@@ -975,52 +1010,135 @@
 
   <div id="mOllehContainer" class="bg-gray">
 
-    <section class="search-number top-type">
-      <h3 class="blind">회선번호조회</h3>
-      <label for="phone-number" class="search-number-label">회선번호</label>
-      <select id="phone-number" class="select search-number-select">
-        <option>010-1234-**78</option>
-      </select>
-      <button type="button" class="button search-number-button">조회</button>
-    </section>
-
-    <section class="contents-block">
-      <h3 class="blind">특별포인트 신청</h3>
-      <div class="inner-block">
-        <p>매년 1월 1일 기준, 모바일 가입 만3년, 만6년, 만9년인 회선에 특별포인트를 부여해 드립니다.</p>
-
-        <table class="vt-table mt10" summary="회선번호, 가입년월, 특별포인트 신청 항목을 표시하는 표입니다.">
-          <caption>특별포인트 신청 표</caption>
-          <colgroup>
-            <col style="width:35%" />
-            <col style="width:30%" />
-            <col style="width:35%" />
-          </colgroup>
-          <thead>
-          <tr>
-            <th>회선번호</th>
-            <th>가입년월</th>
-            <th>특별포인트 신청</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-            <td>010-1234-**78</td>
-            <td>2011.11</td>
-            <td>대상아님</td>
-          </tr>
-          </tbody>
-        </table>
-        <p class="description bullet mt5">특별포인트는 신청 익일 지급되며, 지급 내역은 MY  비즈 멤버십 에서 확인 가능합니다.</p>
+    <section class="contents-block top-type">
+      <h3 class="section-title">등급기준 및 포인트 부여시기</h3>
+      <div class="inner-block no-bottom">
+        <article>
+          <table class="vt-table">
+            <colgroup>
+              <col style="width:23%" />
+              <col style="width:50%" />
+              <col style="width:27%" />
+            </colgroup>
+            <thead>
+              <tr>
+                <th>등급</th>
+                <th>연간이용금액</th>
+                <th>연간포인트</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span class="icon-grade gold">Gold</span></td>
+                <td class="left">100만원 이상</td>
+                <td>12만</td>
+              </tr>
+              <tr>
+                <td><span class="icon-grade gold">Silver</span></td>
+                <td class="left">60만원 이상~100만원 미만</td>
+                <td>12만</td>
+              </tr>
+              <tr>
+                <td><span class="icon-grade gold">VIP</span></td>
+                <td class="left">40만원 이상~60만원 미만</td>
+                <td>7만</td>
+              </tr>
+              <tr>
+                <td><span class="icon-grade gold">White</span></td>
+                <td class="left">20만원 이상~40만원 미만</td>
+                <td>5만</td>
+              </tr>
+              <tr>
+                <td><span class="icon-grade gold">일반</span></td>
+                <td class="left">20만원 미만</td>
+                <td>없음</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="toggle-view">
+            <ul class="description-list mt10">
+              <li class="description-list-item">고객님이 이용하시고 계신 올레 모바일 상품의 연간이용요금(최종수납금액)에 따라 고객 등급이 산정됩니다.</li>
+              <ul class="dash-list inner-list">
+                <li class="dash-list-item mt5">모바일 이용요금 산정대상 : 기본료, 국내통화료, 데이터통화료</li>
+                <li class="dash-list-item mt5">연간 이용금액은 이용상품의 연체액, 부가세, 소액결제, 정보이용료, 회수대행, 단말대금 등을 제외한 금액으로, 등급산정 직전 12개월의 합산액임 (요금할인을 적용받은 이용금액은 제외)</li>
+              </ul>
+              <li class="description-list-item mt5">연간 이용금액이 20만 원 미만인 고객 중 모바일 가입기간이 1년 미만인 회선 보유한 고객은 “화이트” 등급 부여</li>
+              <li class="description-list-item mt5">연간 이용금액 기준 예시 : 2016년 등급은 2015년 1월 ~ 2015년 12월 청구액 기준 (14년 12월 ~15년 11월 사용액 기준)</li>
+              <li class="description-list-item mt5">멤버십 연간포인트는 연초에 일괄 부여되며 혜택 기간은 최대 1년간으로 연말에 일괄 종료됩니다.</li>
+            </ul>
+            <p class="description indent mt5">예.시) 2016년 1월  1일 가입 시 연말까지 최대 1년 간 혜택제공 후 종료</p>
+            <p class="description indent mt5">2016년 5월10일 가입 시 가입일부터 연말까지 혜택기간 유지 후 일괄 종료</p>
+            <p class="description indent mt5">(2016년 이후 유무선 마일리지에서 전환된 멤버십포인트도 연말 혜택 기간 종료됨)</p>
+          </div>
+        </article>
+      </div>
+      <div class="toggle-view-btn-wrap mt10">
+        <button type="button" class="toggle-view-btn js-toggle-view">더보기</button>
       </div>
     </section>
 
-    <section class="contents-block top-type last">
-      <h3 class="section-title">특별 포인트 신청 대상 기준</h3>
-      <div class="inner-block">
-        <article>
-          <table class="vt-table" summary="회선번호, 가입년월, 특별포인트 신청 항목을 표시하는 표입니다.">
-            <caption>특별포인트 신청 표</caption>
+    <section class="contents-block top-type">
+      <h3 class="section-title">장기고객 혜택</h3>
+      <div class="inner-block no-bottom">
+        <article class="article-division toggle-article">
+          <h4 class="article-title table">특별포인트 제공 (장기고객)</h4>
+          <table class="vt-table mt10">
+            <colgroup>
+              <col style="width:23%" />
+              <col style="width:50%" />
+              <col style="width:27%" />
+            </colgroup>
+            <thead>
+            <tr>
+              <th>등급</th>
+              <th>연간이용금액</th>
+              <th>연간포인트</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <td><span class="icon-grade gold">Gold</span></td>
+              <td class="left">100만원 이상</td>
+              <td>12만</td>
+            </tr>
+            <tr>
+              <td><span class="icon-grade gold">Silver</span></td>
+              <td class="left">60만원 이상~100만원 미만</td>
+              <td>12만</td>
+            </tr>
+            <tr>
+              <td><span class="icon-grade gold">VIP</span></td>
+              <td class="left">40만원 이상~60만원 미만</td>
+              <td>7만</td>
+            </tr>
+            <tr>
+              <td><span class="icon-grade gold">White</span></td>
+              <td class="left">20만원 이상~40만원 미만</td>
+              <td>5만</td>
+            </tr>
+            <tr>
+              <td><span class="icon-grade gold">일반</span></td>
+              <td class="left">20만원 미만</td>
+              <td>없음</td>
+            </tr>
+            </tbody>
+          </table>
+          <div class="toggle-view">
+            <ul class="description-list mt10">
+              <li class="description-list-item">
+                <p>특별포인트 지급 대상 : 매년 1월1일 기준, 모바일 만 3년/ 만 6년 / 만 9년인 회선</p>
+                <p>예시) 가입일이 2012.01.01~2012.12.31 인 고객인 경우,</p>
+                <p>2016년 1월1일 기준 만 3년 이상 ~ 만 4년 미만 대상 고객임</p>
+              </li>
+              
+              <li class="description-list-item">특별 포인트 소멸 기간은 부여 받은 당해년도 말까지 입니다.</li>
+              <li class="description-list-item">VIP 등급 상향 대상자 기준 일 : 1월1일, 7월1일 (매년 2회)</li>
+            </ul>
+          </div>
+        </article>
+        <article class="article-division toggle-view mt10">
+          <h4 class="article-title table">특별포인트 제공 (상시)</h4>
+          <table class="vt-table mt10">
             <colgroup>
               <col style="width:60%" />
               <col style="width:40%" />
@@ -1033,21 +1151,56 @@
             </thead>
             <tbody>
             <tr>
-              <td class="left">모바일 가입기간 만 3년 이상 ~<br />만 4년 미만 고객</td>
-              <td>멤버십 포인트<br />1만 추가 지급</td>
+              <td class="left vt-top">이벤트 참여 고객</td>
+              <td class="left vt-top">각종 이벤트 참여 시 별도 제공</td>
             </tr>
             <tr>
-              <td class="left">모바일 가입기간 만 6년 이상 ~<br />만 7년 미만 고객</td>
-              <td>멤버십 포인트<br />2만 추가 지급</td>
-            </tr>
-            <tr>
-              <td class="left">모바일 가입기간 만 9년 이상 ~<br />만 10년 미만 고객</td>
-              <td>멤버십 포인트<br />3만 추가 지급</td>
+              <td class="left vt-top">장기 마일리지(구)/<br />보너스마일리지(구) 보유한<br />고객이 올레멤버십 가입 시</td>
+              <td class="left vt-top">모바일 번호당 매월 200P 지급</td>
             </tr>
             </tbody>
           </table>
-          <p class="description mt5">예시) 가입일이 2011.01.01~2011.12.31 인 고객인 경우, 2015년 1월1일 기준 만 3년 이상 ~ 만 4년 미만 대상 고객임</p>
-          <p class="description bullet mt5">특별 포인트 소멸 기간은 부여 받은 당해년도 말까지 입니다.</p>
+        </article>
+        <article class="toggle-view">
+          <h4 class="article-title">프리미엄 요금제 VIP 혜택</h4>
+          <ul class="ordinary-list mt5">
+            <li class="ordinary-list-item">
+              <p>올레멤버십 VIP요금제에 가입하시고 정지없이 익월말까지 유지하신 고객님은 익익월 1일 올레멤버십 VIP 등급을 부여해 드립니다.</p>
+              <p>올레멤버십 VIP요금제에서 타 요금제로 변경하는 경우, 익월 초에 혜택이 중단됩니다.(등급 원상복구 및 포인트 회수)</p>
+              <p>올레멤버십 VIP요금제 유지기간중에 정지가 있는 경우, 정지가 해제된 날부터 다시 익월말까지 계산됩니다.</p>
+            </li>
+            <li class="ordinary-list-item mt5">
+              기존 프리미엄 요금제(90일 유지시 VIP등급 부여)는 15년 7월 1일부터 올레멤버십 VIP요금제로 통합 운영됩니다.
+            </li>
+            <li class="ordinary-list-item mt5">
+              올레멤버십 VIP요금제(가입가능):<br />
+              LTE데이터선택 699/999, 순 완전무한 77/99(LTE, 3G), 완전무한 97/129(3G), 완전무한 97/129(LTE), 광대역 안심무한 100
+            </li>
+            <li class="ordinary-list-item mt5">
+              올레멤버십 VIP요금제(가입불가):<br />
+              음성 2000, Style950, i-프리미엄, 아이폰평생-프리미엄, LTE-1300/1250/1100/1000/950, 모두다올레125/100(LTE)
+            </li>
+          </ul>
+        </article>
+      </div>
+      <div class="toggle-view-btn-wrap mt10">
+        <button type="button" class="toggle-view-btn js-toggle-view">더보기</button>
+      </div>
+    </section>
+
+    <section class="contents-block top-type last">
+      <h3 class="section-title">기타 안내</h3>
+      <div class="inner-block">
+        <article>
+          <h5 class="paragraph-title">포인트 양도</h5>
+          <ul class="description-list mt5">
+            <li class="description-list-item">비즈 멤버십 회원의 멤버십 포인트는 양도/양수 하실 수 없습니다.</li>
+          </ul>
+          <h5 class="paragraph-title mt20">포인트 소멸</h5>
+          <ul class="description-list mt5">
+            <li class="description-list-item">계약해지에 따른 소멸 : 계약해지 시 해당 계약에 제공된 모든 포인트는 즉시 소멸되며, 해지 복구 시 소멸된 포인트는 모두 환원됩니다.</li>
+            <li class="description-list-item">명의변경에 따른 소멸 : 명의 변경 시 해당 계약에 제공된 모든 포인트는 즉시 소멸되며, 명의 변경 취소 시 해당 회선에 적립된 포인트만 환원됩니다.</li>
+          </ul>
         </article>
       </div>
     </section>
@@ -1112,8 +1265,6 @@
   <!--// footer -->
 
 </div>
-
-
 
 </body>
 </html>

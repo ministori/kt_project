@@ -195,12 +195,12 @@ module.exports = function(grunt) {
 					cwd: 'css/',
 					src: ['**', '!*.map'],
 					dest: '_output/css/',
-          options:{
-            process: function(content){
-              return content.replace('/*# sourceMappingURL=biz_membership.css.map */', '');
-            }
-          }
-				}]
+				}],
+				options:{
+					process: function(content){
+						return content.replace('/*# sourceMappingURL=biz_membership.css.map */', '');
+					}
+				}
     	},
 
     	images: {

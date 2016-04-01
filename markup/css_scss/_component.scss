@@ -52,9 +52,15 @@
   font-weight:bold;
   color:#333;
 
-  &.division{
-    padding-bottom:5px;
+  &.table{
+    font-size:12px;
   }
+}
+
+.paragraph-title{
+  font-size:13px;
+  font-weight:bold;
+  color:#333;
 }
 
 .no-contents{
@@ -85,6 +91,47 @@
   &.section-division{
     border-top:1px solid #e2e2e2;
     padding:5px 15px 10px;
+  }
+
+  &.indent{
+    padding-left:8px;
+  }
+}
+
+.toggle-view{
+  display:none;
+
+  &.on{
+    display:block;
+  }
+
+  &-btn{
+    display:inline-block;
+    padding-right:20px;
+
+    &-wrap{
+      padding:10px 0;
+      text-align:center;
+      border-top:1px solid #e2e2e2;
+    }
+
+    &:after{
+      content:"";
+      display:block;
+      width:16px;
+      height:16px;
+      position:absolute;
+      top:-1px;
+      right:0;
+      background:url(../images/common/spr_toggle_view.png) no-repeat 0 0;
+      background-size:cover;
+    }
+
+    &.on{
+      &:after{
+        background-position:-21px 0;
+      }
+    }
   }
 }
 
@@ -233,7 +280,7 @@
 
 }
 
-.ordinary-list{
+.description-list{
   &-item{
     position:relative;
     padding:0 0 0 8px;
@@ -282,6 +329,50 @@
     max-width:292px;
   }
 
+}
+
+.dash-list{
+  &-item{
+    position:relative;
+    padding:0 0 0 8px;
+    font-size:11px;
+    color:#767676;
+    line-height:1.6;
+
+    &:after{
+      content:"-";
+      display:block;
+      position:absolute;
+      top:-1px;
+      left:0;
+    }
+  }
+
+  &.inner-list{
+    padding:0 0 0 8px;
+  }
+}
+
+.ordinary-list{
+  &-item{
+    position:relative;
+    padding:0 0 0 8px;
+    font-size:12px;
+    color:#767676;
+    line-height:1.6;
+
+    &:after{
+      content:"";
+      display:block;
+      width:4px;
+      height:4px;
+      position:absolute;
+      top:6px;
+      left:0;
+      background:url(../images/common/bullet_list.png) no-repeat;
+      background-size:cover;
+    }
+  }
 }
 
 // table
@@ -344,6 +435,10 @@
       &.right{
         padding-right:10px;
         text-align:right;
+      }
+
+      &.vt-top{
+        vertical-align:top;
       }
 
       &.date{

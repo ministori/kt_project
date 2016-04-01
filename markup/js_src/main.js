@@ -37,4 +37,30 @@ $(function(){
 
   });
 
+  /**
+   * toggle view button
+   */
+
+  $('.js-toggle-view').data('view', 'false').on('click', function(){
+
+    if( $(this).data('view') == 'false' ){
+      $(this).parents('.contents-block').find('.toggle-view').addClass('on');
+      $(this).text('닫기').addClass('on').data('view', 'true');
+      // article toggle
+      if( $('.article-division').hasClass('toggle-article') ){
+        $('.article-division.toggle-article').addClass('on');
+      }
+    } else {
+      $(this).parents('.contents-block').find('.toggle-view').removeClass('on');
+      $(this).text('더보기').removeClass('on').data('view', 'false');
+      // article toggle
+      if( $('.article-division').hasClass('toggle-article') ){
+        $('.article-division.toggle-article').removeClass('on');
+      }
+    }
+
+
+
+  });
+
 });

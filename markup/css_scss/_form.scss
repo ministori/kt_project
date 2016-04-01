@@ -66,7 +66,7 @@
   }
 
   &.gray-small{
-    height:18px;
+    height:19px;
     padding:0 15px;
     font-size:10px;
     color:$white;
@@ -90,6 +90,11 @@
     border:1px solid #888;
     border-radius:0;
     background:#fff;
+
+    &.border-gray{
+      color:#888;
+      border-color:#cacaca;
+    }
   }
 
   &.dark-mid-half{
@@ -110,14 +115,32 @@
 
   &.onoff-toggle{
     width:64px;
-    height:19px;
+    height:20px;
     text-indent:-99999em;
     background:url(../images/brp_my/spr_btn_toggle.png) no-repeat;
     background-size:cover;
 
     &.off{
-      background-position:0 -19px;
+      background-position:0 -20px;
     }
   }
+}
 
+.search-more{
+  &-button{
+    display:inline-block;
+    padding-right:20px;
+
+    &:after{
+      content:"";
+      display:block;
+      width:16px;
+      height:16px;
+      position:absolute;
+      top:-1px;
+      right:0;
+      background:url(../images/common/search_more.png) no-repeat 0 0;
+      background-size:cover;
+    }
+  }
 }
