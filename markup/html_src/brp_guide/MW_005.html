@@ -16,8 +16,8 @@ include "_head.html"
   <div id="mOllehContainer" class="bg-gray">
 
     <section class="contents-block top-type">
-      <h3 class="section-title">등급기준 및 포인트 부여시기</h3>
-      <div class="inner-block no-bottom">
+      <h3 class="section-title toggle-view-title js-toggle-view">등급기준 및 포인트 부여시기</h3>
+      <div class="inner-block pt15 toggle-view on">
         <article>
           <table class="vt-table">
             <colgroup>
@@ -60,34 +60,30 @@ include "_head.html"
               </tr>
             </tbody>
           </table>
-          <div class="toggle-view">
-            <ul class="description-list mt10">
-              <li class="description-list-item">고객님이 이용하시고 계신 올레 모바일 상품의 연간이용요금(최종수납금액)에 따라 고객 등급이 산정됩니다.</li>
-              <ul class="dash-list inner-list">
-                <li class="dash-list-item mt5">모바일 이용요금 산정대상 : 기본료, 국내통화료, 데이터통화료</li>
-                <li class="dash-list-item mt5">연간 이용금액은 이용상품의 연체액, 부가세, 소액결제, 정보이용료, 회수대행, 단말대금 등을 제외한 금액으로, 등급산정 직전 12개월의 합산액임 (요금할인을 적용받은 이용금액은 제외)</li>
-              </ul>
-              <li class="description-list-item mt5">연간 이용금액이 20만 원 미만인 고객 중 모바일 가입기간이 1년 미만인 회선 보유한 고객은 “화이트” 등급 부여</li>
-              <li class="description-list-item mt5">연간 이용금액 기준 예시 : 2016년 등급은 2015년 1월 ~ 2015년 12월 청구액 기준 (14년 12월 ~15년 11월 사용액 기준)</li>
-              <li class="description-list-item mt5">멤버십 연간포인트는 연초에 일괄 부여되며 혜택 기간은 최대 1년간으로 연말에 일괄 종료됩니다.</li>
+
+          <ul class="description-list mt10">
+            <li class="description-list-item">고객님이 이용하시고 계신 올레 모바일 상품의 연간이용요금(최종수납금액)에 따라 고객 등급이 산정됩니다.</li>
+            <ul class="dash-list inner-list">
+              <li class="dash-list-item mt7">모바일 이용요금 산정대상 : 기본료, 국내통화료, 데이터통화료</li>
+              <li class="dash-list-item mt5">연간 이용금액은 이용상품의 연체액, 부가세, 소액결제, 정보이용료, 회수대행, 단말대금 등을 제외한 금액으로, 등급산정 직전 12개월의 합산액임 (요금할인을 적용받은 이용금액은 제외)</li>
             </ul>
-            <p class="description indent mt5">예.시) 2016년 1월  1일 가입 시 연말까지 최대 1년 간 혜택제공 후 종료</p>
-            <p class="description indent mt5">2016년 5월10일 가입 시 가입일부터 연말까지 혜택기간 유지 후 일괄 종료</p>
-            <p class="description indent mt5">(2016년 이후 유무선 마일리지에서 전환된 멤버십포인트도 연말 혜택 기간 종료됨)</p>
-          </div>
+            <li class="description-list-item mt5">연간 이용금액이 20만 원 미만인 고객 중 모바일 가입기간이 1년 미만인 회선 보유한 고객은 “화이트” 등급 부여</li>
+            <li class="description-list-item mt5">연간 이용금액 기준 예시 : 2016년 등급은 2015년 1월 ~ 2015년 12월 청구액 기준 (14년 12월 ~15년 11월 사용액 기준)</li>
+            <li class="description-list-item mt5">멤버십 연간포인트는 연초에 일괄 부여되며 혜택 기간은 최대 1년간으로 연말에 일괄 종료됩니다.</li>
+          </ul>
+          <p class="description indent">예시) 2016년 1월  1일 가입 시 연말까지 최대 1년 간 혜택제공 후 종료</p>
+          <p class="description indent">2016년 5월10일 가입 시 가입일부터 연말까지 혜택기간 유지 후 일괄 종료</p>
+          <p class="description indent">(2016년 이후 유무선 마일리지에서 전환된 멤버십포인트도 연말 혜택 기간 종료됨)</p>
         </article>
-      </div>
-      <div class="toggle-view-btn-wrap mt10">
-        <button type="button" class="toggle-view-btn js-toggle-view">더보기</button>
       </div>
     </section>
 
-    <section class="contents-block top-type">
-      <h3 class="section-title">장기고객 혜택</h3>
-      <div class="inner-block no-bottom">
-        <article class="article-division toggle-article">
-          <h4 class="article-title table">특별포인트 제공 (장기고객)</h4>
-          <table class="vt-table mt10">
+    <section class="contents-block">
+      <h3 class="section-title toggle-view-title fold js-toggle-view">장기고객 혜택</h3>
+      <div class="inner-block pt20 toggle-view">
+        <article class="article-division">
+          <h4 class="article-title">특별포인트 제공 (장기고객)</h4>
+          <table class="vt-table mt15">
             <colgroup>
               <col style="width:23%" />
               <col style="width:50%" />
@@ -128,22 +124,21 @@ include "_head.html"
             </tr>
             </tbody>
           </table>
-          <div class="toggle-view">
-            <ul class="description-list mt10">
-              <li class="description-list-item">
-                <p>특별포인트 지급 대상 : 매년 1월1일 기준, 모바일 만 3년/ 만 6년 / 만 9년인 회선</p>
-                <p>예시) 가입일이 2012.01.01~2012.12.31 인 고객인 경우,</p>
-                <p>2016년 1월1일 기준 만 3년 이상 ~ 만 4년 미만 대상 고객임</p>
-              </li>
-              
-              <li class="description-list-item">특별 포인트 소멸 기간은 부여 받은 당해년도 말까지 입니다.</li>
-              <li class="description-list-item">VIP 등급 상향 대상자 기준 일 : 1월1일, 7월1일 (매년 2회)</li>
-            </ul>
-          </div>
+          <ul class="description-list mt20">
+            <li class="description-list-item">
+              <p>특별포인트 지급 대상 : 매년 1월1일 기준, 모바일 만 3년/ 만 6년 / 만 9년인 회선</p>
+              <p>예시) 가입일이 2012.01.01~2012.12.31 인 고객인 경우,</p>
+              <p>2016년 1월1일 기준 만 3년 이상 ~ 만 4년 미만 대상 고객임</p>
+            </li>
+
+            <li class="description-list-item">특별 포인트 소멸 기간은 부여 받은 당해년도 말까지 입니다.</li>
+            <li class="description-list-item">VIP 등급 상향 대상자 기준 일 : 1월1일, 7월1일 (매년 2회)</li>
+          </ul>
+          <a href="#" class="btn link white-small border-gray article-right-top">신청하러가기</a>
         </article>
-        <article class="article-division toggle-view mt10">
-          <h4 class="article-title table">특별포인트 제공 (상시)</h4>
-          <table class="vt-table mt10">
+        <article class="article-division">
+          <h4 class="article-title">특별포인트 제공 (상시)</h4>
+          <table class="vt-table mt15">
             <colgroup>
               <col style="width:60%" />
               <col style="width:40%" />
@@ -188,14 +183,11 @@ include "_head.html"
           </ul>
         </article>
       </div>
-      <div class="toggle-view-btn-wrap mt10">
-        <button type="button" class="toggle-view-btn js-toggle-view">더보기</button>
-      </div>
     </section>
 
-    <section class="contents-block top-type last">
-      <h3 class="section-title">기타 안내</h3>
-      <div class="inner-block">
+    <section class="contents-block last">
+      <h3 class="section-title toggle-view-title fold js-toggle-view">기타 안내</h3>
+      <div class="inner-block pt15 toggle-view">
         <article>
           <h5 class="paragraph-title">포인트 양도</h5>
           <ul class="description-list mt5">

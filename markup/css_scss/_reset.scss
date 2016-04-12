@@ -38,6 +38,7 @@ body {
   font-family:$font-stack;
   font-size:$font-size-base;
   color:$dark-gray;
+  -webkit-tap-highlight-color:rgba(0,0,0,0.2);
 }
 ol, ul {
   list-style: none;
@@ -56,13 +57,31 @@ table {
 // custom reset
 a{
   text-decoration:none;
+  -webkit-tap-highlight-color:rgba(0,0,0,0.2);
 }
+
 select, input, button, textarea {
   display:block;
   font-family:$font-stack;
   font-size:$font-size-base;
   color:$dark-gray;
   box-sizing:border-box;
+}
+
+button{
+  outline:none;
+}
+
+select, input[type=text], textarea{
+  &:focus{
+    -webkit-tap-highlight-color:rgba(0, 0, 0, 0.2);
+    outline:1px solid #ed2a25;
+  }
+}
+
+input[type=text]:disabled,
+input[type=password]:disabled{
+  background:#fff;
 }
 
 embed, object{

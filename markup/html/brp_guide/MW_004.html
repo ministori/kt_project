@@ -60,60 +60,129 @@
 
   <div id="mOllehGnb">
 
-  <div class="mOllehHeader">
-    <h1 class="mOllehSubLogo">
-      <a href="http://m.olleh.com/main/main.do?tab=0" onclick="mOlleh.clickTrace('서브공통','^모바일올레닷컴_서브3.0^010_GNB^010_BI');">
-        <img src="https://m.olleh.com/images/2015main/logo.png" alt="올레">
+    <div class="mOllehHeader">
+      <h1 class="mOllehSubLogo">
+        <a href="http://m.olleh.com/main/main.do?tab=0" onclick="mOlleh.clickTrace('서브공통','^모바일올레닷컴_서브3.0^010_GNB^010_BI');">
+          <img src="https://m.olleh.com/images/2015main/logo.png" alt="올레">
+        </a>
+      </h1>
+      <h2 class="mOllehSubTit">
+        <a href="http://m.membership.olleh.com/molleh/m_OllehClubInfo.do" onclick="mOlleh.clickTrace('서브공통','^모바일올레닷컴_서브3.0^010_GNB^멤버십');">
+          <span></span>
+        </a>
+      </h2>
+      <!-- 검색 박스 영역 -->
+      <script src="https://m.olleh.com/main/SubSearch.do" type="text/javascript" charset="utf-8"></script>
+      <script>akc_init('S');</script>
+      <a href="#" onclick="mOlleh.clickTrace('서브공통','^모바일올레닷컴_서브3.0^010_GNB^020_검색^010_열기');global_search_test();" class="mOllehSearch">
+        <img src="http://m.olleh.com/images/2015main/iconSearchBlack.png" alt="검색">
       </a>
-    </h1>
-    <h2 class="mOllehSubTit">
-      <a href="http://m.membership.olleh.com/molleh/m_OllehClubInfo.do" onclick="mOlleh.clickTrace('서브공통','^모바일올레닷컴_서브3.0^010_GNB^멤버십');">
-        <span></span>
-      </a>
-    </h2>
-    <!-- 검색 박스 영역 -->
-    <script src="https://m.olleh.com/main/SubSearch.do" type="text/javascript" charset="utf-8"></script>
-    <script>akc_init('S');</script>
-    <a href="#" onclick="mOlleh.clickTrace('서브공통','^모바일올레닷컴_서브3.0^010_GNB^020_검색^010_열기');global_search_test();" class="mOllehSearch">
-      <img src="http://m.olleh.com/images/2015main/iconSearchBlack.png" alt="검색">
-    </a>
-    <!-- 검색 박스 영역 -->
-    <div class="mOllehSearchLayer">
-      <div class="mOllehDimm">
-        <img src="http://m.olleh.com/images/2015main/bgDimm.png" alt="" onclick="javascript:fnSearchCancel();">
-      </div>
-      <form name="frmSearch" method="post" onsubmit="return false;">
-        <fieldset>
-          <legend>검색 영역</legend>
-          <div class="mOllehSearchLayerForm">
+      <!-- 검색 박스 영역 -->
+      <div class="mOllehSearchLayer">
+        <div class="mOllehDimm">
+          <img src="http://m.olleh.com/images/2015main/bgDimm.png" alt="" onclick="javascript:fnSearchCancel();">
+        </div>
+        <form name="frmSearch" method="post" onsubmit="return false;">
+          <fieldset>
+            <legend>검색 영역</legend>
+            <div class="mOllehSearchLayerForm">
 
-            <div class="mOllehSearchLayerFormInput">
-              <input type="text" name="txtKeyword" id="txtKeyword" placeholder="갤럭시 S7" onfocus="this.placeholder=&quot;&quot;" value="" title="검색어 입력">
-              <a href="javascript:mOllehGNBSearch.clearKeyword();mOlleh.clickTrace('서브공통','^모바일올레닷컴_서브3.0^010_GNB^020_검색^040_검색어삭제하기');" class="mOllehSearchDel" id="mOllehAKCDel"><span class="mOllehHideTxt">지우기</span></a>
+              <div class="mOllehSearchLayerFormInput">
+                <input type="text" name="txtKeyword" id="txtKeyword" placeholder="갤럭시 S7" onfocus="this.placeholder=&quot;&quot;" value="" title="검색어 입력">
+                <a href="javascript:mOllehGNBSearch.clearKeyword();mOlleh.clickTrace('서브공통','^모바일올레닷컴_서브3.0^010_GNB^020_검색^040_검색어삭제하기');" class="mOllehSearchDel" id="mOllehAKCDel"><span class="mOllehHideTxt">지우기</span></a>
+              </div>
+              <a href="javascript:mOlleh.doSearch();mOlleh.clickTrace('서브공통','^모바일올레닷컴_서브3.0^010_GNB^020_검색^030_검색하기');" class="mOllehSearchBtnSearch">검색</a>
+              <a href="#" onclick="javascript:fnAkcCancel();mOlleh.clickTrace('서브공통','^모바일올레닷컴_서브3.0^010_GNB^020_검색^020_닫기');" id="akcSearchCancel" class="mOllehSearchBtnCancel">취소</a>
+
             </div>
-            <a href="javascript:mOlleh.doSearch();mOlleh.clickTrace('서브공통','^모바일올레닷컴_서브3.0^010_GNB^020_검색^030_검색하기');" class="mOllehSearchBtnSearch">검색</a>
-            <a href="#" onclick="javascript:fnAkcCancel();mOlleh.clickTrace('서브공통','^모바일올레닷컴_서브3.0^010_GNB^020_검색^020_닫기');" id="akcSearchCancel" class="mOllehSearchBtnCancel">취소</a>
 
-          </div>
+            <!-- 자동 완선 리스트 -->
+            <div id="AKCDiv" class="mOllehSearchLayerAutoList">
+              <ul id="AKCIDiv" style="display: none;"></ul>
+              <a href="#" onclick="mOlleh.clickTrace('서브공통','^모바일올레닷컴_서브3.0^010_GNB^020_검색^050_자동완성닫기');" id="akc_chk" onfocus="this.blur();" class="mOllehSearchLayerAutoClose" style="display:none;">
+                <span>자동완성 닫기</span>
+              </a>
+            </div>
+            <!-- 자동 완선 리스트 -->
+          </fieldset>
+        </form>
+      </div>
+      <!-- 검색 박스 영역 -->
 
-          <!-- 자동 완선 리스트 -->
-          <div id="AKCDiv" class="mOllehSearchLayerAutoList">
-            <ul id="AKCIDiv" style="display: none;"></ul>
-            <a href="#" onclick="mOlleh.clickTrace('서브공통','^모바일올레닷컴_서브3.0^010_GNB^020_검색^050_자동완성닫기');" id="akc_chk" onfocus="this.blur();" class="mOllehSearchLayerAutoClose" style="display:none;">
-              <span>자동완성 닫기</span>
-            </a>
-          </div>
-          <!-- 자동 완선 리스트 -->
-        </fieldset>
-      </form>
+      <!-- 검색 박스 영역 -->
+      <a href="#" onclick="mOlleh.clickTrace('서브공통','^모바일올레닷컴_서브3.0^020_사이드메뉴^010_사이드메뉴열기');global_side_test();" class="mOllehAllMenuBtn" id="btnAllmenu">
+        <img src="https://m.olleh.com/images/2015main/btnAllmenu.png" alt="전체메뉴">
+      </a>
     </div>
-    <!-- 검색 박스 영역 -->
-
-    <!-- 검색 박스 영역 -->
-    <a href="#" onclick="mOlleh.clickTrace('서브공통','^모바일올레닷컴_서브3.0^020_사이드메뉴^010_사이드메뉴열기');global_side_test();" class="mOllehAllMenuBtn" id="btnAllmenu">
-      <img src="https://m.olleh.com/images/2015main/btnAllmenu.png" alt="전체메뉴">
-    </a>
-  </div>
+    <div class="mOllehNavigatorArea moveOn">
+      <div class="mOllehGrdPrev"></div>
+      <div class="mOllehGrdNext"></div>
+      <div class="mOllehNavScrollCtrWrap">
+        <div id="mOllehNavScrollCtr" class="mOllehScrollWrap overthrow">
+          <nav class="mOllehNavigator">
+            <ul class="mOllehNavigatorList">
+              <li>
+                <a href="#"><span>비즈 멤버십 안내</span></a>
+              </li>
+              <li>
+                <a href="#"><span>비즈 멤버십 가입</span></a>
+              </li>
+              <li>
+                <a href="#"><span>MY</span></a>
+              </li>
+              <li>
+                <a href="#"><span>더블할인 멤버십</span></a>
+              </li>
+              <li>
+                <a href="#"><span>VIP 초이스</span></a>
+              </li>
+              <li>
+                <a href="#"><span>제휴할인</span></a>
+              </li>
+              <li>
+                <a href="#"><span>통신할인</span></a>
+              </li>
+              <li>
+                <a href="#"><span>단말할인</span></a>
+              </li>
+              <li>
+                <a href="#"><span>이벤트</span></a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+      <a href="#" class="mOllehBtnMenuPrev">
+        <img src="https://m.olleh.com/images/2015main/btnNavGnbPrev.png" alt="이전메뉴">
+      </a>
+      <a href="#" class="mOllehBtnMenuNext">
+        <img src="https://m.olleh.com/images/2015main/btnNavGnbNext.png" alt="다음메뉴">
+      </a>
+    </div>
+    <div class="mOllehNavigator3Depth">
+      <ul class="mOllehNavigator3DepthList mOllehClfix" style="height: 72px;">
+        <li>
+          <a href="#"><span>비즈 멤버십 안내</span></a>
+        </li>
+        <li>
+          <a href="#"><span>등급기준</span></a>
+        </li>
+        <li>
+          <a href="#"><span>FAQ</span></a>
+        </li>
+        <li>
+          <a href="#"><span>공지사항</span></a>
+        </li>
+        <li>
+          <a href="#"><span>회원약관</span></a>
+        </li>
+      </ul>
+      <div class="mOllehNavigator3DepthViewMore">
+        <a href="#">
+          <span>메뉴 더보기</span>
+        </a>
+      </div>
+    </div>
 
   </div>
 
@@ -134,11 +203,11 @@
                 <div class="mOllehMyMenu">
                   <div class="mOllehMyMenuTit">My올레 바로가기</div>
                   <div class="mOllehMyMenuLink mOllehClfix">
-                    <a href="https://m.my.olleh.com:448/kt12/mobile/joinInfo/m_myserviceMYO.jsp" onclick="mOlleh.clickTrace('서브공통','^모바일올레닷컴_서브3.0^020_사이드메뉴^040_자주찾는메뉴^010_My올레바로가기^010_I01_가입정보')">
+                    <a href="#" onclick="mOlleh.clickTrace('서브공통','^모바일올레닷컴_서브3.0^020_사이드메뉴^040_자주찾는메뉴^010_My올레바로가기^010_I01_가입정보')">
                       <img src="https://m.olleh.com/storage/global/main/F01/2_01.jpg" alt="">
                       <span>가입정보</span>
                     </a>
-                    <a href="https://m.my.olleh.com:448/molleh/m_TelTotalUseTime.action" onclick="mOlleh.clickTrace('서브공통','^모바일올레닷컴_서브3.0^020_사이드메뉴^040_자주찾는메뉴^010_My올레바로가기^020_I02_사용량 조회')">
+                    <a href="#" onclick="mOlleh.clickTrace('서브공통','^모바일올레닷컴_서브3.0^020_사이드메뉴^040_자주찾는메뉴^010_My올레바로가기^020_I02_사용량 조회')">
                       <img src="https://m.olleh.com/storage/global/main/F01/3_01.jpg" alt="">
                       <span>사용량 조회</span>
                     </a>
@@ -902,11 +971,11 @@
             pageName = '이벤트';
             break;
         }
-        $('.mOllehSubTit').text(pageName);
+        $('.mOllehSubTit>a>span').text(pageName);
         $('.mOllehNavigatorList').find('li').eq(urlParse[0] - 1).addClass('on');
         $('.mOllehNavigator3DepthList').find('li').eq(urlParse[1] - 1).addClass('on');
       } catch(e){
-        console.log('nothing parse');
+        $('.mOllehSubTit>a>span').text('비즈 멤버십');
       }
 
       $('#btnAllmenu').on('click', function(e){
@@ -942,81 +1011,84 @@
   <div id="mOllehContainer" class="bg-gray">
 
     <section class="contents-block top-type">
+      <h3 class="section-title">더블할인 멤버십</h3>
+      <div class="inner-block pt15 pr100">
+        <article class="bg-db-discount">
+          <p>비즈 멤버십 고객이라면 누구든 원하는 날 원하는 제휴사에서 두배로 할인 받을 수 있는 제휴할인 혜택을 드립니다.</p>
+        </article>
+      </div>
+      <a href="http://www.naver.com" class="link-arrow section-right-top">자세히 보기</a>
+    </section>
+
+    <section class="contents-block top-type">
+      <h3 class="section-title">VIP 초이스</h3>
+      <div class="inner-block pt15 pr100">
+        <article class="bg-vip-choice">
+          <p>VIP 고객님에게 유명제휴사의 연12회(월1회) 자유선택 무료이용(포인트차감) 혜택을 제공하여 드립니다.</p>
+        </article>
+      </div>
+      <a href="#" class="link-arrow section-right-top">자세히 보기</a>
+    </section>
+
+    <section class="contents-block top-type">
       <h3 class="section-title">제휴할인</h3>
-      <div class="inner-block">
+      <div class="inner-block pt15">
         <article>
           <p>영화, 외식, 커피/베이커리, 편의점, 테마파크 등 전국 2만 여개 제휴사에서 다양한 할인 혜택을 누리실 수 있습니다.</p>
-          <ul class="half-image-list mt10">
-            <li class="half-image-list-item">
-              <img src="../../images/brp_guide/alliance_brand_01.png" alt="스타벅스" class="half-image-list-image" />
+          <ul class="image-list mt10">
+            <li class="image-list-item">
+              <img src="../../images/brp_guide/alliance_brand_01.png" alt="스타벅스" class="image-list-image" />
             </li>
-            <li class="half-image-list-item">
-              <img src="../../images/brp_guide/alliance_brand_02.png" alt="커피빈" class="half-image-list-image" />
+            <li class="image-list-item">
+              <img src="../../images/brp_guide/alliance_brand_02.png" alt="커피빈" class="image-list-image" />
             </li>
-            <li class="half-image-list-item">
-              <img src="../../images/brp_guide/alliance_brand_03.png" alt="파리바게트" class="half-image-list-image" />
+            <li class="image-list-item">
+              <img src="../../images/brp_guide/alliance_brand_03.png" alt="파리바게트" class="image-list-image" />
             </li>
-            <li class="half-image-list-item">
-              <img src="../../images/brp_guide/alliance_brand_04.png" alt="뚜레주르" class="half-image-list-image" />
+            <li class="image-list-item">
+              <img src="../../images/brp_guide/alliance_brand_04.png" alt="뚜레주르" class="image-list-image" />
             </li>
-            <li class="half-image-list-item">
-              <img src="../../images/brp_guide/alliance_brand_05.png" alt="CGV" class="half-image-list-image" />
+            <li class="image-list-item">
+              <img src="../../images/brp_guide/alliance_brand_05.png" alt="CGV" class="image-list-image" />
             </li>
-            <li class="half-image-list-item">
-              <img src="../../images/brp_guide/alliance_brand_06.png" alt="롯데시네마" class="half-image-list-image" />
+            <li class="image-list-item">
+              <img src="../../images/brp_guide/alliance_brand_06.png" alt="롯데시네마" class="image-list-image" />
             </li>
-            <li class="half-image-list-item">
-              <img src="../../images/brp_guide/alliance_brand_07.png" alt="GS25" class="half-image-list-image" />
+            <li class="image-list-item">
+              <img src="../../images/brp_guide/alliance_brand_07.png" alt="GS25" class="image-list-image" />
             </li>
-            <li class="half-image-list-item">
-              <img src="../../images/brp_guide/alliance_brand_08.png" alt="세븐일레븐" class="half-image-list-image" />
+            <li class="image-list-item">
+              <img src="../../images/brp_guide/alliance_brand_08.png" alt="세븐일레븐" class="image-list-image" />
             </li>
-            <li class="half-image-list-item">
-              <img src="../../images/brp_guide/alliance_brand_09.png" alt="아웃백" class="half-image-list-image" />
-            </li>
-            <li class="half-image-list-item">
-              <img src="../../images/brp_guide/alliance_brand_10.png" alt="미스터피자" class="half-image-list-image" />
-            </li>
-            <li class="half-image-list-item">
-              <img src="../../images/brp_guide/alliance_brand_11.png" alt="VIPS" class="half-image-list-image" />
-            </li>
-            <li class="half-image-list-item">
-              <img src="../../images/brp_guide/alliance_brand_12.png" alt="에버랜드" class="half-image-list-image" />
+            <li class="image-list-item">
+              <a href="#" class="plus-more">
+                <img src="../../images/brp_guide/alliance_brand_09.png" alt="세븐일레븐" class="image-list-image" />
+              </a>
             </li>
           </ul>
         </article>
       </div>
-      <a href="#" class="btn link white-small section-right-top">바로가기</a>
+      <a href="#" class="link-arrow section-right-top">자세히 보기</a>
     </section>
 
     <section class="contents-block top-type">
       <h3 class="section-title">통신할인</h3>
-      <div class="inner-block">
-        <article>
+      <div class="inner-block pt15 pr100">
+        <article class="bg-comm-discount">
           <p>멤버십 포인트로 100% 할인받는 모바일 LTE 데이터 충전과 휴대폰 A/S 20% 할인까지 모든 혜택을 즐기세요.</p>
         </article>
       </div>
-      <a href="#" class="btn link white-small section-right-top">바로가기</a>
-    </section>
-
-    <section class="contents-block top-type">
-      <h3 class="section-title">단말할인</h3>
-      <div class="inner-block">
-        <article>
-          <p>멤버십 포인트로 최신 핸드폰과 액세서리를 할인된 가격으로 구매할 수 있습니다.</p>
-        </article>
-      </div>
-      <a href="#" class="btn link white-small section-right-top">바로가기</a>
+      <a href="#" class="link-arrow section-right-top">자세히 보기</a>
     </section>
 
     <section class="contents-block top-type last">
-      <h3 class="section-title">VIP초이스</h3>
-      <div class="inner-block">
-        <article>
-          <p>VIP 고객님에게 유명 제휴사릐 연12회(월1회) 자유선택 무료이용(포인트차감) 혜택을 제공하여 드립니다.</p>
+      <h3 class="section-title">단말할인</h3>
+      <div class="inner-block pt15 pr100">
+        <article class="bg-terminal-discount">
+          <p>멤버십 포인트로 최신 핸드폰과 액세서리를 할인된 가격으로 구매할 수 있습니다.</p>
         </article>
       </div>
-      <a href="#" class="btn link white-small section-right-top">바로가기</a>
+      <a href="#" class="link-arrow section-right-top">자세히 보기</a>
     </section>
 
   </div>

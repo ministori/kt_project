@@ -15,26 +15,30 @@ include "_head.html"
 
   <div id="mOllehContainer" class="bg-gray">
 
-    <section class="search-number top-type">
-      <h3 class="blind">회선번호조회</h3>
-      <label for="phone-number" class="search-number-label">회선번호</label>
-      <select id="phone-number" class="select search-number-select">
-        <option>010-1234-**78</option>
-      </select>
-      <button type="button" class="button search-number-button">조회</button>
+    <section class="contents-block top-type bg-gray">
+      <div class="inner-block side-padding">
+        <h3 class="blind">회선번호조회</h3>
+        <div class="search-select-area clearfix">
+          <label for="phone-number" class="label-select">회선번호</label>
+          <select id="phone-number" class="select single-label">
+            <option>010-1234-**78</option>
+          </select>
+          <button type="button" class="btn search-select-red">조회</button>
+        </div>
+      </div>
     </section>
 
     <section class="contents-block">
       <h3 class="blind">특별포인트 신청</h3>
-      <div class="inner-block">
+      <div class="inner-block pt27">
         <p>매년 1월 1일 기준, 모바일 가입 만3년, 만6년, 만9년인 회선에 특별포인트를 부여해 드립니다.</p>
 
-        <table class="vt-table mt10" summary="회선번호, 가입년월, 특별포인트 신청 항목을 표시하는 표입니다.">
+        <table class="vt-table mt15" summary="회선번호, 가입년월, 특별포인트 신청 항목을 표시하는 표입니다.">
           <caption>특별포인트 신청 표</caption>
           <colgroup>
-            <col style="width:35%" />
-            <col style="width:30%" />
-            <col style="width:35%" />
+            <col style="width:37%" />
+            <col style="width:26%" />
+            <col style="width:37%" />
           </colgroup>
           <thead>
           <tr>
@@ -51,13 +55,13 @@ include "_head.html"
           </tr>
           </tbody>
         </table>
-        <p class="description bullet mt5">특별포인트는 신청 익일 지급되며, 지급 내역은 MY  비즈 멤버십 에서 확인 가능합니다.</p>
+        <p class="description bullet mt15">특별포인트는 신청 익일 지급되며, 지급 내역은 MY 비즈 멤버십 에서 확인 가능합니다.</p>
       </div>
     </section>
 
     <section class="contents-block top-type last">
       <h3 class="section-title">특별 포인트 신청 대상 기준</h3>
-      <div class="inner-block">
+      <div class="inner-block pt15">
         <article>
           <table class="vt-table" summary="회선번호, 가입년월, 특별포인트 신청 항목을 표시하는 표입니다.">
             <caption>특별포인트 신청 표</caption>
@@ -86,8 +90,8 @@ include "_head.html"
             </tr>
             </tbody>
           </table>
-          <p class="description mt5">예시) 가입일이 2011.01.01~2011.12.31 인 고객인 경우, 2015년 1월1일 기준 만 3년 이상 ~ 만 4년 미만 대상 고객임</p>
-          <p class="description bullet mt5">특별 포인트 소멸 기간은 부여 받은 당해년도 말까지 입니다.</p>
+          <p class="description mt15">예시) 가입일이 2011.01.01~2011.12.31 인 고객인 경우, 2015년 1월1일 기준 만 3년 이상 ~ 만 4년 미만 대상 고객임</p>
+          <p class="description bullet mt7">특별 포인트 소멸 기간은 부여 받은 당해년도 말까지 입니다.</p>
         </article>
       </div>
     </section>

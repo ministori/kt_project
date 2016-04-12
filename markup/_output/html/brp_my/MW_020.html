@@ -134,7 +134,7 @@
                 <a href="#"><span>더블할인 멤버십</span></a>
               </li>
               <li>
-                <a href="#"><span>VIP초이스</span></a>
+                <a href="#"><span>VIP 초이스</span></a>
               </li>
               <li>
                 <a href="#"><span>제휴할인</span></a>
@@ -200,11 +200,11 @@
                 <div class="mOllehMyMenu">
                   <div class="mOllehMyMenuTit">My올레 바로가기</div>
                   <div class="mOllehMyMenuLink mOllehClfix">
-                    <a href="https://m.my.olleh.com:448/kt12/mobile/joinInfo/m_myserviceMYO.jsp" onclick="mOlleh.clickTrace('서브공통','^모바일올레닷컴_서브3.0^020_사이드메뉴^040_자주찾는메뉴^010_My올레바로가기^010_I01_가입정보')">
+                    <a href="#" onclick="mOlleh.clickTrace('서브공통','^모바일올레닷컴_서브3.0^020_사이드메뉴^040_자주찾는메뉴^010_My올레바로가기^010_I01_가입정보')">
                       <img src="https://m.olleh.com/storage/global/main/F01/2_01.jpg" alt="">
                       <span>가입정보</span>
                     </a>
-                    <a href="https://m.my.olleh.com:448/molleh/m_TelTotalUseTime.action" onclick="mOlleh.clickTrace('서브공통','^모바일올레닷컴_서브3.0^020_사이드메뉴^040_자주찾는메뉴^010_My올레바로가기^020_I02_사용량 조회')">
+                    <a href="#" onclick="mOlleh.clickTrace('서브공통','^모바일올레닷컴_서브3.0^020_사이드메뉴^040_자주찾는메뉴^010_My올레바로가기^020_I02_사용량 조회')">
                       <img src="https://m.olleh.com/storage/global/main/F01/3_01.jpg" alt="">
                       <span>사용량 조회</span>
                     </a>
@@ -968,11 +968,11 @@
             pageName = '이벤트';
             break;
         }
-        $('.mOllehSubTit').text(pageName);
+        $('.mOllehSubTit>a>span').text(pageName);
         $('.mOllehNavigatorList').find('li').eq(urlParse[0] - 1).addClass('on');
         $('.mOllehNavigator3DepthList').find('li').eq(urlParse[1] - 1).addClass('on');
       } catch(e){
-        console.log('nothing parse');
+        $('.mOllehSubTit>a>span').text('비즈 멤버십');
       }
 
       $('#btnAllmenu').on('click', function(e){
@@ -1007,25 +1007,29 @@
 
   <div id="mOllehContainer" class="bg-gray">
 
-    <section class="search-number top-type">
-      <h3 class="blind">회선번호조회</h3>
-      <label for="phone-number" class="search-number-label">회선번호</label>
-      <select id="phone-number" class="select search-number-select">
-        <option>010-1234-**78</option>
-      </select>
-      <button type="button" class="button search-number-button">조회</button>
+    <section class="contents-block top-type bg-gray">
+      <div class="inner-block side-padding">
+        <h3 class="blind">회선번호조회</h3>
+        <div class="search-select-area clearfix">
+          <label for="phone-number" class="label-select">회선번호</label>
+          <select id="phone-number" class="select single-label">
+            <option>010-1234-**78</option>
+          </select>
+          <button type="button" class="btn search-select-red">조회</button>
+        </div>
+      </div>
     </section>
 
     <section class="contents-block">
       <h3 class="blind">가입 상태 확인</h3>
-      <div class="inner-block">
+      <div class="inner-block pt27">
         <p class="description">비즈 멤버십 가입 신청 후 승인 상태 등을 확인하실 수 있습니다.</p>
 
-        <table class="hr-table mt10" summary="카드번호, 카드형태, 발급일자, 카드상태, 상태변경의 항목을 나타내는 표입니다.">
+        <table class="hr-table mt15" summary="카드번호, 카드형태, 발급일자, 카드상태, 상태변경의 항목을 나타내는 표입니다.">
           <caption>카드정보 표</caption>
           <colgroup>
-            <col style="width:30%" />
-            <col style="width:70%" />
+            <col style="width:35%" />
+            <col style="width:65%" />
           </colgroup>
           <tbody>
           <tr>
@@ -1033,23 +1037,19 @@
             <td class="left">010-1234-**78</td>
           </tr>
           <tr>
-            <th class="left"
-              >가입/심사상태</th>
+            <th class="left">가입/심사상태</th>
             <td class="left">가입완료</td>
           </tr>
           <tr>
-            <th class="left"
-              >신청일자</th>
+            <th class="left">신청일자</th>
             <td class="left">2015.01.25</td>
           </tr>
           <tr>
-            <th class="left"
-              >가입일자</th>
+            <th class="left">가입일자</th>
             <td class="left">2015.01.25</td>
           </tr>
           <tr>
-            <th class="left"
-              >카드번호</th>
+            <th class="left">카드번호</th>
             <td class="left">7578-1111-****-1111</td>
           </tr>
           </tbody>
@@ -1059,25 +1059,25 @@
 
     <section class="contents-block top-type last">
       <h3 class="section-title">이용안내</h3>
-      <div class="inner-block">
+      <div class="inner-block pt20">
         <article class="article-division">
           <h4 class="article-title">가입/심사상태</h4>
           <p class="mt5">가입신청 후의 심사상태 정보는 아래와 같습니다.</p>
-          <ul class="description-list mt5">
-            <li class="description-list-item">신청 중 : 가입신청 당일 , 서류 접수 대기 중 상태입니다.</li>
-            <li class="description-list-item">심사 중 : 신청 다음날 접수가 완료되고, 가입신청 내용 심사가 진행되고 있는 상태입니다.</li>
-            <li class="description-list-item">승인반려 : 가입신청 승인이 반려되었을 경우 표시되며, 승인반려 안내문자가 발송 됩니다.</li>
-            <li class="description-list-item">가입완료 : 심사가 완료되어 가입처리가 끝난 상태입니다. 가입완료 일자를 기준으로 등급과 포인트가 부여됩니다.</li>
+          <ul class="ordinary-list mt5">
+            <li class="ordinary-list-item">신청 중 : 가입신청 당일 , 서류 접수 대기 중 상태입니다.</li>
+            <li class="ordinary-list-item">심사 중 : 신청 다음날 접수가 완료되고, 가입신청 내용 심사가 진행되고 있는 상태입니다.</li>
+            <li class="ordinary-list-item">승인반려 : 가입신청 승인이 반려되었을 경우 표시되며, 승인반려 안내문자가 발송 됩니다.</li>
+            <li class="ordinary-list-item">가입완료 : 심사가 완료되어 가입처리가 끝난 상태입니다. 가입완료 일자를 기준으로 등급과 포인트가 부여됩니다.</li>
           </ul>
         </article>
 
         <article class="article-division">
           <h4 class="article-title">승인반려 사유</h4>
           <p class="mt5">비즈 멤버십 회원가입 신청이 반려되는 사유는 일반적으로 아래와 같습니다.</p>
-          <ul class="description-list mt5">
-            <li class="description-list-item">현재 재직중인 회사의 통신대리인 미등록 상태</li>
-            <li class="description-list-item">현재 재직중인 회사의 통신대리인의 승인반려</li>
-            <li class="description-list-item">가입신청서 부적격 등</li>
+          <ul class="ordinary-list mt5">
+            <li class="ordinary-list-item">현재 재직중인 회사의 통신대리인 미등록 상태</li>
+            <li class="ordinary-list-item">현재 재직중인 회사의 통신대리인의 승인반려</li>
+            <li class="ordinary-list-item">가입신청서 부적격 등</li>
           </ul>
         </article>
 
@@ -1085,7 +1085,6 @@
           <h4 class="article-title">모바일등록 URL 문자 재발송</h4>
           <p class="mt5">모바일 기기로 안심등록 URL을 발송하여 가입신청 절차를 다시 진행할 수 있습니다.</p>
           <p class="mt5">심사 상태값이 “신청 중“ 일 경우에만 발송이 가능합니다.</p>
-           
         </article>
       </div>
     </section>

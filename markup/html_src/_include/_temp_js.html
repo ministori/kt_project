@@ -36,11 +36,11 @@
           pageName = '이벤트';
           break;
       }
-      $('.mOllehSubTit').text(pageName);
+      $('.mOllehSubTit>a>span').text(pageName);
       $('.mOllehNavigatorList').find('li').eq(urlParse[0] - 1).addClass('on');
       $('.mOllehNavigator3DepthList').find('li').eq(urlParse[1] - 1).addClass('on');
     } catch(e){
-      console.log('nothing parse');
+      $('.mOllehSubTit>a>span').text('비즈 멤버십');
     }
 
     $('#btnAllmenu').on('click', function(e){

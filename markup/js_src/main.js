@@ -1,4 +1,19 @@
 $(function(){
+  /**
+   * UA
+   */
+  var userAgent = navigator.userAgent;
+  //var vendor = navigator.platform;
+
+  //alert(vendor);
+  //$('body').text(userAgent);
+
+  if (userAgent.match(/Android/i) != null){
+    //alert('samsung');
+    $('html').addClass('android')
+  } else if ( userAgent.match(/iPhone|iPod/i) != null){
+    $('html').addClass('ios');
+  }
 
   /**
    * load zoom barcode
@@ -41,26 +56,38 @@ $(function(){
    * toggle view button
    */
 
-  $('.js-toggle-view').data('view', 'false').on('click', function(){
+  $('.js-toggle-view').data('view', 'false').each(function(i){
+    if( !$(this).hasClass('fold') ){
+      $(this).data('view', 'true');
+    }
+  }).on('click', function(){
+
+    $(this).parents('.contents-block, .js-board-list')
+      .siblings('.contents-block, .js-board-list').find('.toggle-view').removeClass('on');
+    $(this).parents('.contents-block, .js-board-list')
+      .siblings('.contents-block, .js-board-list').find('.js-toggle-view').data('view', 'false').addClass('fold');
 
     if( $(this).data('view') == 'false' ){
-      $(this).parents('.contents-block').find('.toggle-view').addClass('on');
-      $(this).text('닫기').addClass('on').data('view', 'true');
-      // article toggle
-      if( $('.article-division').hasClass('toggle-article') ){
-        $('.article-division.toggle-article').addClass('on');
-      }
+      $(this).data('view', 'true').removeClass('fold').next('.toggle-view').addClass('on');
     } else {
-      $(this).parents('.contents-block').find('.toggle-view').removeClass('on');
-      $(this).text('더보기').removeClass('on').data('view', 'false');
-      // article toggle
-      if( $('.article-division').hasClass('toggle-article') ){
-        $('.article-division.toggle-article').removeClass('on');
-      }
+      $(this).data('view', 'false').addClass('fold').next('.toggle-view').removeClass('on');
     }
+  });
 
+  /**
+   * board category scroll
+   */
 
-
+  $('.boardCategoryScrollWrap').on('scroll', function(){
+    var scrollWidth = $('.boardCategoryList').width() - $('.boardCategoryScrollWrap').width() - 5;
+    if( $(this).scrollLeft() >= 5 && $(this).scrollLeft() <= scrollWidth ){
+      $('.boardCategoryPrev').show();
+      $('.boardCategoryNext').show();
+    } else if( $(this).scrollLeft() < 5 ) {
+      $('.boardCategoryPrev').hide();
+    } else if( $(this).scrollLeft() > scrollWidth ){
+      $('.boardCategoryNext').hide();
+    }
   });
 
 });

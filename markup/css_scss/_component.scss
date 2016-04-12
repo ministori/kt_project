@@ -1,31 +1,74 @@
 // simple component
 .icon-plus,
 .icon-minus{
-  display:inline-block;
-  position:relative;
-  padding-left:16px;
+  line-height:1;
 
-  &:after{
+  &:before{
     content:"";
-    display:block;
+    display:inline-block;
     width:13px;
     height:13px;
-    position:absolute;
-    top:1px;
-    left:0;
+    //position:relative;
+    //top:-1px;
+    //left:0;
+    //margin-top:-7px;
     background:url(../images/common/spr_icon_plusminus.png) no-repeat;
     background-size:cover;
+    vertical-align:middle;
+    margin-right:3px;
   }
 }
 
-.icon-minus:after{
+.icon-minus:before{
   background-position:-13px 0;
+}
+
+.icon-time{
+  &.grade-desc{
+    position:relative;
+    padding-left:12px;
+    line-height:1;
+    vertical-align:baseline;
+
+    &:after{
+      content:"";
+      display:inline-block;
+      width:9px;
+      height:9px;
+      position:absolute;
+      top:50%;
+      left:0;
+      margin-top:-5px;
+      background:url(../images/common/icon_time.png) no-repeat;
+      background-size:9px;
+    }
+  }
+
+  &.def-list-usage-item.date{
+    //position:relative;
+    padding-left:16px;
+    line-height:1;
+    vertical-align:baseline;
+
+    &:after{
+      content:"";
+      display:inline-block;
+      width:12px;
+      height:12px;
+      position:absolute;
+      top:50%;
+      left:0;
+      margin-top:-6px;
+      background:url(../images/common/icon_time.png) no-repeat;
+      background-size:12px;
+    }
+  }
 }
 
 .section-title{
   position:relative;
-  padding:12px 0 12px 15px;
-  font-size:14px;
+  padding:12px 0 9px 10px;
+  font-size:16px;
   font-weight:bold;
   border-bottom:1px solid #e2e2e2;
 
@@ -38,7 +81,7 @@
       width:15px;
       height:15px;
       position:absolute;
-      top:12px;
+      top:13px;
       left:15px;
       background:url(../images/common/icon_alarm.png) no-repeat;
       background-size:cover;
@@ -48,12 +91,12 @@
 }
 
 .article-title{
-  font-size:14px;
+  font-size:15px;
   font-weight:bold;
   color:#333;
 
   &.table{
-    font-size:12px;
+    font-size:14px;
   }
 }
 
@@ -64,19 +107,19 @@
 }
 
 .no-contents{
-  padding:30px 0;
+  padding:36px 0;
   text-align:center;
 }
 
 .description{
-  font-size:11px;
+  font-size:12px;
   color:#767676;
 
   &.bullet {
     position: relative;
-    padding: 0 0 0 8px;
-    font-size: 11px;
-    color: #767676;
+    padding: 0 0 0 7px;
+    //font-size: 13px;
+    //color: #767676;
     line-height: 1.6;
 
     &:after {
@@ -105,8 +148,34 @@
     display:block;
   }
 
+  &-title{
+
+    &:after{
+      content:"";
+      display:block;
+      width:10px;
+      height:6px;
+      position:absolute;
+      top:16px;
+      right:15px;
+      background:url(../images/common/toggle_arrow.png) no-repeat 0 0;
+      background-size:cover;
+    }
+
+    &:active{
+      background:rgba(0,0,0,0.2);
+    }
+    &.fold{
+      border-bottom:0;
+
+      &:after{
+        background-position:0 -6px;
+      }
+    }
+  }
+
   &-btn{
-    display:inline-block;
+    width:100%;
     padding-right:20px;
 
     &-wrap{
@@ -122,16 +191,45 @@
       height:16px;
       position:absolute;
       top:-1px;
-      right:0;
+      left:50%;
+      margin-left:10px;
       background:url(../images/common/spr_toggle_view.png) no-repeat 0 0;
       background-size:cover;
     }
 
     &.on{
       &:after{
+        margin-left:5px;
         background-position:-21px 0;
       }
     }
+  }
+}
+
+.link-arrow{
+  &:active,
+  &:focus,
+  &:hover,
+  &:link,
+  &:visited{
+    font-size:13px;
+    color:#767676;
+
+    &:after{
+      content:"";
+      display:inline-block;
+      width:6px;
+      height:10px;
+      margin-left:10px;
+      background:url(../images/common/link_arrow.png) no-repeat;
+      background-size:cover;
+    }
+  }
+
+  &.section-right-top{
+    position:absolute;
+    top:13px;
+    right:15px;
   }
 }
 
@@ -161,8 +259,9 @@
 
   &-link{
     display:block;
-    height:39px;
-    padding-top:13px;
+    height:40px;
+    padding-top:11px;
+
     border:{
       bottom:1px solid #e2e2e2;
     }
@@ -191,6 +290,7 @@
       display:inline-block;
       height:100%;
       position:relative;
+      //font-size:12px;
     }
 
   }
@@ -198,12 +298,15 @@
 
 // list
 .def-list{
-
-  padding:{
-    top:11px;
-    bottom:8px;
-  }
+  padding:11px 0 10px;
   border-bottom:1px solid #f0f0f0;
+
+  &-wrap{
+    border:{
+      top:1px solid #e2e2e2;
+      bottom:1px solid #e2e2e2;
+    }
+  }
 
   &:after{
     content:"";
@@ -216,13 +319,15 @@
       top:0;
       bottom:9px;
     }
-    font-size:14px;
+    font-size:16px;
     font-weight:bold;
     color: $dark-gray;
     border-bottom:1px solid #e2e2e2;
 
     >.def-list-desc{
-      font-size:16px;
+      position:relative;
+      top:-1px;
+      font-size:17px;
     }
   }
 
@@ -236,45 +341,51 @@
   }
 
   &-desc{
+    position:relative;
+    top:-1px;
     float:right;
-    font-size:13px;
+    font-size:15px;
   }
 
-}
+  &-usage{
+    width:100%;
+    height:66px;
+    position:relative;
+    border-bottom:1px solid #f0f0f0;
 
-.def-list-usage{
-  width:100%;
-  height:49px;
-  position:relative;
-  border-bottom:1px solid #f0f0f0;
-
-  &:last-child{
-    border-bottom:0;
-  }
-
-  &-item{
-    position:absolute;
-
-    &.title{
-      top:10px;
-      left:0;
-      color:#333;
+    &:last-child{
+      border-bottom:0;
     }
-    &.point{
-      top:10px;
-      right:0;
-      font-size:13px;
-      color:$dark-gray;
-    }
-    &.date{
-      bottom:10px;
-      left:0;
-      font-size:11px;
-    }
-    &.usage{
-      right:0;
-      bottom:10px;
-      font-size:11px;
+
+    &-item{
+      position:absolute;
+
+      &.title{
+        top:15px;
+        left:0;
+        color:#333;
+      }
+      &.point{
+        top:15px;
+        right:0;
+        //font-size:15px;
+        color:$dark-gray;
+        >.number{
+          font-size:15px;
+          vertical-align:top;
+        }
+      }
+      &.date{
+        bottom:15px;
+        left:0;
+        font-size:12px;
+        color:#555;
+      }
+      &.usage{
+        right:0;
+        bottom:15px;
+        font-size:12px;
+      }
     }
   }
 
@@ -284,7 +395,7 @@
   &-item{
     position:relative;
     padding:0 0 0 8px;
-    font-size:11px;
+    font-size:12px;
     color:#767676;
     line-height:1.6;
 
@@ -298,7 +409,7 @@
   }
 }
 
-.half-image-list{
+.image-list{
   border-top:1px solid #e2e2e2;
 
   &:after{
@@ -308,25 +419,32 @@
   }
 
   &-item{
-    width:50%;
+    width:33.33%;
     position:relative;
     float:left;
+    text-align:center;
     border-bottom:1px solid #e2e2e2;
-    &:nth-child(2n+1):after{
-      content:"";
-      display:block;
-      width:1px;
-      height:100%;
-      position:absolute;
-      top:0;
-      right:0;
-      background:#e2e2e2;
+
+    &:nth-child(3n+1),
+    &:nth-child(3n+2){
+      &:after{
+        content:"";
+        display:block;
+        width:1px;
+        height:100%;
+        position:absolute;
+        top:0;
+        right:0;
+        background:#e2e2e2;
+      }
     }
   }
 
   &-image{
+    display:inline-block;
     width:100%;
     max-width:292px;
+    padding-bottom:1px;
   }
 
 }
@@ -335,7 +453,7 @@
   &-item{
     position:relative;
     padding:0 0 0 8px;
-    font-size:11px;
+    font-size:12px;
     color:#767676;
     line-height:1.6;
 
@@ -357,7 +475,7 @@
   &-item{
     position:relative;
     padding:0 0 0 8px;
-    font-size:12px;
+    //font-size:14px;
     color:#767676;
     line-height:1.6;
 
@@ -367,7 +485,7 @@
       width:4px;
       height:4px;
       position:absolute;
-      top:6px;
+      top:8px;
       left:0;
       background:url(../images/common/bullet_list.png) no-repeat;
       background-size:cover;
@@ -404,8 +522,9 @@
 
   thead{
     th{
-      height:35px;
+      height:39px;
       font-weight:bold;
+      color:#444;
       text-align:center;
       border:{
         top:1px solid #e2e2e2;
@@ -418,7 +537,7 @@
   tbody{
     td{
       min-height:38px;
-      padding:10px 0;
+      padding:15px 10px 16px;
       color:$dark-gray;
       text-align:center;
 
@@ -442,11 +561,13 @@
       }
 
       &.date{
-        font-size:11px;
+        padding-left:10px;
+        color:#555;
+        text-align:left;
       }
 
       &.point{
-        font-size:13px;
+        //font-weight:bold;
       }
 
     }
@@ -463,29 +584,15 @@
     }
   }
 
-  &.inner-wrap{
-    thead{
-      th{
-        border-top:0
-      }
-    }
-
-    tbody{
-      tr:last-child{
-        td{
-          border-bottom: 0;
-        }
-      }
-    }
-  }
-
   tbody{
     th{
       height:35px;
       font-weight:bold;
+      color:#444;
       text-align:center;
       border:{
         top:1px solid #e2e2e2;
+        right:1px solid #e2e2e2;
         bottom:1px solid #e2e2e2;
       }
       background:#f9f9f9;
@@ -520,4 +627,186 @@
     }
   }
 
+}
+
+// search area
+.search-select-area{
+  position:relative;
+  padding:15px 50px 15px 0;
+
+  &.border-v-side{
+    border:{
+      top:1px solid #e2e2e2;
+      bottom:1px solid #e2e2e2;
+    }
+  }
+
+}
+
+.search-board{
+  &-form{
+    padding:17px 10px;
+    &:after{
+      content:"";
+      display:block;
+      clear:both;
+    }
+  }
+
+  &-select{
+    width:95px;
+    float:left;
+    border:2px solid #777;
+    border-right:1px solid #777;
+    border-radius:3px 0 0 3px;
+  }
+
+  &-notice{
+    //line-height:1;
+    //border-top:1px solid #f0f0f0;
+    background:#f9f9f9;
+    //vertical-align:top;
+
+    span{
+      //display:block;
+    }
+
+    &.search-board-result-list-item > .top{
+      padding:15px 40px 15px 15px;
+    }
+
+    .title{
+      >span{
+        font-weight:bold;
+        vertical-align:middle;
+      }
+
+      &:before{
+        content:"";
+        display:inline-block;
+        width:16px;
+        height:14px;
+        margin-right:10px;
+        background:url(../images/brp_guide/icon_notice.png) no-repeat;
+        background-size:cover;
+        vertical-align:middle;
+      }
+    }
+
+    .date{
+      padding-left:25px;
+      color:#555;
+    }
+  }
+
+  &-result{
+    border:{
+      top:1px solid #f0f0f0;
+      bottom:1px solid #f0f0f0;
+    }
+
+    &-list{
+      &-item{
+        border-bottom:1px solid #f0f0f0;
+
+        &:last-child{
+          border-bottom:0;
+        }
+
+        >.top{
+          position:relative;
+          padding:15px 40px 15px 15px;
+          color:#555;
+          &:active{
+            -webkit-tap-highlight-color:rgba(0,0,0,0.2);
+            //background:rgba(0,0,0,0.2);
+          }
+
+          &:after{
+            content:"";
+            display:block;
+            width:10px;
+            height:6px;
+            position:absolute;
+            top:50%;
+            right:15px;
+            margin-top:-3px;
+            background:url(../images/common/toggle_arrow.png) no-repeat 0 0;
+            background-size:cover;
+          }
+          &.fold{
+            border-bottom:0;
+
+            &:after{
+              background-position:0 -6px;
+            }
+          }
+
+          >span{
+            display:block;
+          }
+        }
+
+        >.bottom{
+          padding:15px 40px 15px 15px;
+          border-top:1px solid #f0f0f0;
+          background:#f7f7f7;
+        }
+      }
+    }
+
+    >.no-contents{
+      >span{
+        display:block;
+      }
+      &:before{
+        content:"";
+        display:inline-block;
+        width:77px;
+        height:77px;
+        background:url(../images/brp_guide/bg_faq_no_contents.png) no-repeat;
+        background-size:77px;
+      }
+    }
+  }
+}
+
+.cs-center{
+  padding-bottom:10px;
+  //margin-bottom:25px;
+  border-bottom:1px solid #e2e2e2;
+  background:#f9f9f9;
+
+  .section-title{
+    border-bottom:0;
+  }
+
+  .inner-block{
+    padding-bottom:0;
+    margin-bottom:25px;
+  }
+
+  .inner-padding{
+    padding:10px 20px;
+    margin:0 10px;
+    border:1px solid #e2e2e2;
+    background:#fff;
+  }
+
+  .inner-padding{
+    div:last-child{
+      padding-left:20px;
+      border-left:1px solid #e2e2e2;
+    }
+  }
+
+  p{
+    font-size:11px;
+    line-height:1.4;
+    &.number{
+      font-size:15px;
+      font-weight:bold;
+      color:$main-red;
+    }
+  }
 }

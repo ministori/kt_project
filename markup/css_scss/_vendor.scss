@@ -1,0 +1,33 @@
+/* Android revision */
+.android{
+  .icon-time{
+    &.grade-desc{
+      padding-top:2px;
+    }
+  }
+
+  .rating-menu-link{
+    padding-top:17px;
+  }
+
+  .search-more-button{
+    padding-top:1px;
+  }
+
+  .vt-mid{
+    display:inline-block;
+    padding-top:2px;
+  }
+
+  .btn{
+    padding-top:2px !important;
+
+    &.link{
+      padding-top:4px !important;
+    }
+  }
+
+  .join-guide-text:nth-child(4){
+    padding-top:3px;
+  }
+}

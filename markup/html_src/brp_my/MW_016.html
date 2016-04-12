@@ -15,22 +15,26 @@ include "_head.html"
 
   <div id="mOllehContainer" class="bg-gray">
 
-    <section class="search-number top-type">
-      <h3 class="blind">회선번호조회</h3>
-      <label for="phone-number" class="search-number-label">회선번호</label>
-      <select id="phone-number" class="select search-number-select">
-        <option>010-1234-**78</option>
-      </select>
-      <button type="button" class="button search-number-button">조회</button>
+    <section class="contents-block top-type bg-gray">
+      <div class="inner-block side-padding">
+        <h3 class="blind">회선번호조회</h3>
+        <div class="search-select-area clearfix">
+          <label for="phone-number" class="label-select">회선번호</label>
+          <select id="phone-number" class="select single-label">
+            <option>010-1234-**78</option>
+          </select>
+          <button type="button" class="btn search-select-red">조회</button>
+        </div>
+      </div>
     </section>
 
     <section class="contents-block">
       <h3 class="section-title icon-alarm">사용내역알림 수신 설정</h3>
       <button type="button" class="btn onoff-toggle section-right-top js-onoff">ON</button>
-      <div class="inner-block no-top">
-        <p class="description bullet mt5">사용내역알림은 회선별로 설정됩니다.</p>
+      <div class="inner-block pt7">
+        <p class="description bullet">사용내역알림은 회선별로 설정됩니다.</p>
 
-        <article class="article-card mt5">
+        <article class="article-card mt15">
           <h4 class="card-title"><span class="icon-mobile">모바일 카드</span></h4>
           <dl class="card-number">
             <dt>카드번호</dt>
@@ -53,7 +57,7 @@ include "_head.html"
           </dl>
         </article>
 
-        <article class="article-card mt10">
+        <article class="article-card mt15">
           <h4 class="card-title"><span class="icon-plastic">플라스틱 카드</span></h4>
           <dl class="card-number">
             <dt>카드번호</dt>
@@ -80,24 +84,24 @@ include "_head.html"
 
     <section class="contents-block top-type last">
       <h3 class="section-title">이용안내</h3>
-      <div class="inner-block">
+      <div class="inner-block pt20">
         <article class="article-division">
           <h4 class="article-title">플라스틱 카드 관리</h4>
-          <p class="mt5">플라스틱 카드 신규 및 재발급은 비즈 멤버십 웹사이트에서만 신청 가능합니다.</p>
+          <p class="mt7">플라스틱 카드 신규 및 재발급은 비즈 멤버십 웹사이트에서만 신청 가능합니다.</p>
           <p class="mt5">플라스틱 카드 분실 등의 사유로 잠시 이용중지가 필요하실 경우, "이용중지" 신청을 해주세요.</p>
           <p class="mt5">카드 사용을 원하지 않으실 경우, "해지" 신청을 해주세요.</p>
         </article>
 
         <article class="article-division">
           <h4 class="article-title">모바일 카드 관리</h4>
-          <p class="mt5">모바일 카드의 이용 중지 및 해지를 선택하시면 즉시 반영됩니다.</p>
+          <p class="mt7">모바일 카드의 이용 중지 및 해지를 선택하시면 즉시 반영됩니다.</p>
           <p class="mt5">모바일 카드 발급은 1일 1회만 가능합니다.</p>
           <p class="mt5">당일 카드발급 및 해지하실 경우  다음날 모바일 카드 재발급 신청이 가능합니다.</p>
         </article>
 
         <article>
           <h4 class="article-title">사용내역 알림 변경</h4>
-          <p class="mt5">포인트 사용내역 및 비즈멤버십 혜택 안내에 대한 SMS 수신 동의입니다.</p>
+          <p class="mt7">포인트 사용내역 및 비즈멤버십 혜택 안내에 대한 SMS 수신 동의입니다.</p>
           <p class="mt5">SMS 수신설정은 선택하신 회선에 등록된 모든 카드에 적용됩니다.</p>
           <p class="mt5">kt 모바일상품으로 발급받은 카드에 한해서 서비스가 제공됩니다.</p>
         </article>

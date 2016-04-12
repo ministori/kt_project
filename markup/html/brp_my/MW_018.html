@@ -134,7 +134,7 @@
                 <a href="#"><span>더블할인 멤버십</span></a>
               </li>
               <li>
-                <a href="#"><span>VIP초이스</span></a>
+                <a href="#"><span>VIP 초이스</span></a>
               </li>
               <li>
                 <a href="#"><span>제휴할인</span></a>
@@ -200,11 +200,11 @@
                 <div class="mOllehMyMenu">
                   <div class="mOllehMyMenuTit">My올레 바로가기</div>
                   <div class="mOllehMyMenuLink mOllehClfix">
-                    <a href="https://m.my.olleh.com:448/kt12/mobile/joinInfo/m_myserviceMYO.jsp" onclick="mOlleh.clickTrace('서브공통','^모바일올레닷컴_서브3.0^020_사이드메뉴^040_자주찾는메뉴^010_My올레바로가기^010_I01_가입정보')">
+                    <a href="#" onclick="mOlleh.clickTrace('서브공통','^모바일올레닷컴_서브3.0^020_사이드메뉴^040_자주찾는메뉴^010_My올레바로가기^010_I01_가입정보')">
                       <img src="https://m.olleh.com/storage/global/main/F01/2_01.jpg" alt="">
                       <span>가입정보</span>
                     </a>
-                    <a href="https://m.my.olleh.com:448/molleh/m_TelTotalUseTime.action" onclick="mOlleh.clickTrace('서브공통','^모바일올레닷컴_서브3.0^020_사이드메뉴^040_자주찾는메뉴^010_My올레바로가기^020_I02_사용량 조회')">
+                    <a href="#" onclick="mOlleh.clickTrace('서브공통','^모바일올레닷컴_서브3.0^020_사이드메뉴^040_자주찾는메뉴^010_My올레바로가기^020_I02_사용량 조회')">
                       <img src="https://m.olleh.com/storage/global/main/F01/3_01.jpg" alt="">
                       <span>사용량 조회</span>
                     </a>
@@ -968,11 +968,11 @@
             pageName = '이벤트';
             break;
         }
-        $('.mOllehSubTit').text(pageName);
+        $('.mOllehSubTit>a>span').text(pageName);
         $('.mOllehNavigatorList').find('li').eq(urlParse[0] - 1).addClass('on');
         $('.mOllehNavigator3DepthList').find('li').eq(urlParse[1] - 1).addClass('on');
       } catch(e){
-        console.log('nothing parse');
+        $('.mOllehSubTit>a>span').text('비즈 멤버십');
       }
 
       $('#btnAllmenu').on('click', function(e){
@@ -1007,47 +1007,49 @@
 
   <div id="mOllehContainer" class="bg-gray">
 
-    <section class="search-number top-type">
-      <h3 class="blind">회선번호조회</h3>
-      <label for="phone-number" class="search-number-label">회선번호</label>
-      <select id="phone-number" class="select search-number-select">
-        <option>010-1234-**78</option>
-      </select>
-      <button type="button" class="button search-number-button">조회</button>
+    <section class="contents-block top-type bg-gray">
+      <div class="inner-block side-padding">
+        <h3 class="blind">회선번호조회</h3>
+        <div class="search-select-area clearfix">
+          <label for="phone-number" class="label-select">회선번호</label>
+          <select id="phone-number" class="select single-label">
+            <option>010-1234-**78</option>
+          </select>
+          <button type="button" class="btn search-select-red">조회</button>
+        </div>
+      </div>
     </section>
 
     <section class="contents-block">
-      <div class="inner-block">
-        <div class="no-contents">
-          <p class="mb10">보유한 카드가 없습니다.</p>
-          <button type="button" class="btn gray-mid">모바일카드신청</button>
-        </div>
+      <div class="no-contents">
+        <p class="mb10">보유한 카드가 없습니다.</p>
+        <button type="button" class="btn gray-mid">모바일카드신청</button>
       </div>
-      <div class="section-division">
+      <div class="section-division last">
         <p class="description bullet">플라스틱 카드는 비즈 멤버십 웹사이트에서 신청 가능합니다.</p>
       </div>
     </section>
 
     <section class="contents-block top-type last">
       <h3 class="section-title">이용안내</h3>
-      <div class="inner-block">
+      <div class="inner-block pt20">
         <article class="article-division">
           <h4 class="article-title">플라스틱 카드 관리</h4>
-          <p class="mt5">플라스틱 카드 신규 및 재발급은 비즈 멤버십 웹사이트에서만 신청 가능합니다.</p>
+          <p class="mt7">플라스틱 카드 신규 및 재발급은 비즈 멤버십 웹사이트에서만 신청 가능합니다.</p>
           <p class="mt5">플라스틱 카드 분실 등의 사유로 잠시 이용중지가 필요하실 경우, "이용중지" 신청을 해주세요.</p>
           <p class="mt5">카드 사용을 원하지 않으실 경우, "해지" 신청을 해주세요.</p>
         </article>
 
         <article class="article-division">
           <h4 class="article-title">모바일 카드 관리</h4>
-          <p class="mt5">모바일 카드의 이용 중지 및 해지를 선택하시면 즉시 반영됩니다.</p>
+          <p class="mt7">모바일 카드의 이용 중지 및 해지를 선택하시면 즉시 반영됩니다.</p>
           <p class="mt5">모바일 카드 발급은 1일 1회만 가능합니다.</p>
           <p class="mt5">당일 카드발급 및 해지하실 경우  다음날 모바일 카드 재발급 신청이 가능합니다.</p>
         </article>
 
         <article>
           <h4 class="article-title">사용내역 알림 변경</h4>
-          <p class="mt5">포인트 사용내역 및 비즈멤버십 혜택 안내에 대한 SMS 수신 동의입니다.</p>
+          <p class="mt7">포인트 사용내역 및 비즈멤버십 혜택 안내에 대한 SMS 수신 동의입니다.</p>
           <p class="mt5">SMS 수신설정은 선택하신 회선에 등록된 모든 카드에 적용됩니다.</p>
           <p class="mt5">kt 모바일상품으로 발급받은 카드에 한해서 서비스가 제공됩니다.</p>
         </article>

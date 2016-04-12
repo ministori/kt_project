@@ -134,7 +134,7 @@
                 <a href="#"><span>더블할인 멤버십</span></a>
               </li>
               <li>
-                <a href="#"><span>VIP초이스</span></a>
+                <a href="#"><span>VIP 초이스</span></a>
               </li>
               <li>
                 <a href="#"><span>제휴할인</span></a>
@@ -200,11 +200,11 @@
                 <div class="mOllehMyMenu">
                   <div class="mOllehMyMenuTit">My올레 바로가기</div>
                   <div class="mOllehMyMenuLink mOllehClfix">
-                    <a href="https://m.my.olleh.com:448/kt12/mobile/joinInfo/m_myserviceMYO.jsp" onclick="mOlleh.clickTrace('서브공통','^모바일올레닷컴_서브3.0^020_사이드메뉴^040_자주찾는메뉴^010_My올레바로가기^010_I01_가입정보')">
+                    <a href="#" onclick="mOlleh.clickTrace('서브공통','^모바일올레닷컴_서브3.0^020_사이드메뉴^040_자주찾는메뉴^010_My올레바로가기^010_I01_가입정보')">
                       <img src="https://m.olleh.com/storage/global/main/F01/2_01.jpg" alt="">
                       <span>가입정보</span>
                     </a>
-                    <a href="https://m.my.olleh.com:448/molleh/m_TelTotalUseTime.action" onclick="mOlleh.clickTrace('서브공통','^모바일올레닷컴_서브3.0^020_사이드메뉴^040_자주찾는메뉴^010_My올레바로가기^020_I02_사용량 조회')">
+                    <a href="#" onclick="mOlleh.clickTrace('서브공통','^모바일올레닷컴_서브3.0^020_사이드메뉴^040_자주찾는메뉴^010_My올레바로가기^020_I02_사용량 조회')">
                       <img src="https://m.olleh.com/storage/global/main/F01/3_01.jpg" alt="">
                       <span>사용량 조회</span>
                     </a>
@@ -968,11 +968,11 @@
             pageName = '이벤트';
             break;
         }
-        $('.mOllehSubTit').text(pageName);
+        $('.mOllehSubTit>a>span').text(pageName);
         $('.mOllehNavigatorList').find('li').eq(urlParse[0] - 1).addClass('on');
         $('.mOllehNavigator3DepthList').find('li').eq(urlParse[1] - 1).addClass('on');
       } catch(e){
-        console.log('nothing parse');
+        $('.mOllehSubTit>a>span').text('비즈 멤버십');
       }
 
       $('#btnAllmenu').on('click', function(e){
@@ -1007,16 +1007,20 @@
 
   <div id="mOllehContainer" class="bg-gray">
 
-    <section class="search-number top-type">
-      <h3 class="blind">회선번호조회</h3>
-      <label for="phone-number" class="search-number-label">회선번호</label>
-      <select id="phone-number" class="select search-number-select">
-        <option>010-1234-**78</option>
-      </select>
-      <button type="button" class="button search-number-button">조회</button>
+    <section class="contents-block top-type bg-gray">
+      <div class="inner-block side-padding">
+        <h3 class="blind">회선번호조회</h3>
+        <div class="search-select-area clearfix">
+          <label for="phone-number" class="label-select">회선번호</label>
+          <select id="phone-number" class="select single-label">
+            <option>010-1234-**78</option>
+          </select>
+          <button type="button" class="btn search-select-red">조회</button>
+        </div>
+      </div>
     </section>
 
-    <section class="contents-block">
+    <section class="contents-block no-border">
       <h3 class="blind">등급</h3>
       <div class="rating">
         <div class="grade sub">
@@ -1052,7 +1056,7 @@
 
     <section class="contents-block">
       <h3 class="blind">잔여포인트</h3>
-      <div class="inner-block">
+      <div class="inner-block pt27">
         <dl class="def-list total">
           <dt class="def-list-title">잔여포인트</dt>
           <dd class="def-list-desc">225,438 P</dd>
@@ -1075,7 +1079,7 @@
     <section class="contents-block top-type last">
       <ul class="tab-block">
         <li class="tab-block-list">
-          <a href="#" class="tab-block-link on"><span>VIP초이스</span></a>
+          <a href="#" class="tab-block-link on"><span>VIP 초이스</span></a>
         </li>
         <li class="tab-block-list">
           <a href="#" class="tab-block-link"><span>더블할인 멤버십</span></a>
@@ -1084,10 +1088,10 @@
           <a href="#" class="tab-block-link"><span>포인트 사용내역</span></a>
         </li>
       </ul>
-      <h3 class="blind">VIP초이스</h3>
-      <div class="inner-block">
+      <h3 class="blind">VIP 초이스</h3>
+      <div class="inner-block pt27">
         <article>
-          <h4 class="blind">VIP초이스 잔여횟수</h4>
+          <h4 class="blind">VIP 초이스 잔여횟수</h4>
           <dl class="def-list total">
             <dt class="def-list-title">VIP 초이스 잔여 횟수</dt>
             <dd class="def-list-desc">9 회</dd>
@@ -1101,14 +1105,14 @@
             <dd class="def-list-desc">3 회</dd>
           </dl>
 
-          <ul class="description-list mt5">
+          <ul class="description-list mt15">
             <li class="description-list-item">제공 횟수는 비즈 멤버십 가입시점 및 VIP 승급시점에 따라 월할 계산되어 부여됩니다.</li>
-            <li class="description-list-item">VIP 초이스는 월 1회 사용이 가능하며, 해당월 VIP 초이스 혜택 미 사용시 잔여 횟수에서 차감됩니다.</li>
+            <li class="description-list-item mt7">VIP 초이스는 월 1회 사용이 가능하며, 해당월 VIP 초이스 혜택 미 사용시 잔여 횟수에서 차감됩니다.</li>
           </ul>
         </article>
-        <article class="mt20">
-          <h4 class="article-title">VIP초이스 상세이용내역</h4>
-          <div class="vt-table-wrap mt10">
+        <article class="mt30">
+          <h4 class="article-title">VIP 초이스 상세이용내역</h4>
+          <div class="def-list-wrap mt7">
             <p class="no-contents">사용 내역이 없습니다.</p>
           </div>
         </article>

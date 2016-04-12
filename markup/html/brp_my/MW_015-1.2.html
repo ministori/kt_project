@@ -134,7 +134,7 @@
                 <a href="#"><span>더블할인 멤버십</span></a>
               </li>
               <li>
-                <a href="#"><span>VIP초이스</span></a>
+                <a href="#"><span>VIP 초이스</span></a>
               </li>
               <li>
                 <a href="#"><span>제휴할인</span></a>
@@ -200,11 +200,11 @@
                 <div class="mOllehMyMenu">
                   <div class="mOllehMyMenuTit">My올레 바로가기</div>
                   <div class="mOllehMyMenuLink mOllehClfix">
-                    <a href="https://m.my.olleh.com:448/kt12/mobile/joinInfo/m_myserviceMYO.jsp" onclick="mOlleh.clickTrace('서브공통','^모바일올레닷컴_서브3.0^020_사이드메뉴^040_자주찾는메뉴^010_My올레바로가기^010_I01_가입정보')">
+                    <a href="#" onclick="mOlleh.clickTrace('서브공통','^모바일올레닷컴_서브3.0^020_사이드메뉴^040_자주찾는메뉴^010_My올레바로가기^010_I01_가입정보')">
                       <img src="https://m.olleh.com/storage/global/main/F01/2_01.jpg" alt="">
                       <span>가입정보</span>
                     </a>
-                    <a href="https://m.my.olleh.com:448/molleh/m_TelTotalUseTime.action" onclick="mOlleh.clickTrace('서브공통','^모바일올레닷컴_서브3.0^020_사이드메뉴^040_자주찾는메뉴^010_My올레바로가기^020_I02_사용량 조회')">
+                    <a href="#" onclick="mOlleh.clickTrace('서브공통','^모바일올레닷컴_서브3.0^020_사이드메뉴^040_자주찾는메뉴^010_My올레바로가기^020_I02_사용량 조회')">
                       <img src="https://m.olleh.com/storage/global/main/F01/3_01.jpg" alt="">
                       <span>사용량 조회</span>
                     </a>
@@ -968,11 +968,11 @@
             pageName = '이벤트';
             break;
         }
-        $('.mOllehSubTit').text(pageName);
+        $('.mOllehSubTit>a>span').text(pageName);
         $('.mOllehNavigatorList').find('li').eq(urlParse[0] - 1).addClass('on');
         $('.mOllehNavigator3DepthList').find('li').eq(urlParse[1] - 1).addClass('on');
       } catch(e){
-        console.log('nothing parse');
+        $('.mOllehSubTit>a>span').text('비즈 멤버십');
       }
 
       $('#btnAllmenu').on('click', function(e){
@@ -1007,16 +1007,20 @@
 
   <div id="mOllehContainer" class="bg-gray">
 
-    <section class="search-number top-type">
-      <h3 class="blind">회선번호조회</h3>
-      <label for="phone-number" class="search-number-label">회선번호</label>
-      <select id="phone-number" class="select search-number-select">
-        <option>010-1234-**78</option>
-      </select>
-      <button type="button" class="button search-number-button">조회</button>
+    <section class="contents-block top-type bg-gray">
+      <div class="inner-block side-padding">
+        <h3 class="blind">회선번호조회</h3>
+        <div class="search-select-area clearfix">
+          <label for="phone-number" class="label-select">회선번호</label>
+          <select id="phone-number" class="select single-label">
+            <option>010-1234-**78</option>
+          </select>
+          <button type="button" class="btn search-select-red">조회</button>
+        </div>
+      </div>
     </section>
 
-    <section class="contents-block">
+    <section class="contents-block no-border">
       <h3 class="blind">등급</h3>
       <div class="rating">
         <div class="grade sub">
@@ -1052,7 +1056,7 @@
 
     <section class="contents-block">
       <h3 class="blind">잔여포인트</h3>
-      <div class="inner-block">
+      <div class="inner-block pt27">
         <dl class="def-list total">
           <dt class="def-list-title">잔여포인트</dt>
           <dd class="def-list-desc">225,438 P</dd>
@@ -1075,7 +1079,7 @@
     <section class="contents-block top-type last">
       <ul class="tab-block">
         <li class="tab-block-list">
-          <a href="#" class="tab-block-link"><span>VIP초이스</span></a>
+          <a href="#" class="tab-block-link"><span>VIP 초이스</span></a>
         </li>
         <li class="tab-block-list">
           <a href="#" class="tab-block-link"><span>더블할인 멤버십</span></a>
@@ -1085,48 +1089,50 @@
         </li>
       </ul>
       <h3 class="blind">포인트 사용내역</h3>
-      <div class="inner-block">
+      <div class="inner-block no-bottom pt27">
         <article>
           <h4 class="article-title">포인트 사용/적립내역 조회</h4>
+
           <div class="search-top mt10">
-            <div class="search-point clearfix">
+            <div class="search-select-area border-v-side clearfix">
               <select class="select half fl" title="년도선택">
                 <option>2015년</option>
               </select>
               <select class="select half fl ml5" title="월선택">
                 <option>전체</option>
               </select>
-              <button type="button" class="search-number-button dark right">조회</button>
+              <button type="button" class="btn search-select-dark">조회</button>
             </div>
-            <p class="search-point-desc">해당 연도 전체 및 1개월 단위로 조회할 수 있습니다.</p>
+            <p class="description bullet mt5">해당 연도 전체 및 1개월 단위로 조회할 수 있습니다.</p>
           </div>
-          <div class="search-point-result">
+
+          <div class="def-list-wrap mt15">
 
             <dl class="def-list-usage">
               <dt class="def-list-usage-item title">파리바게트</dt>
-              <dd class="def-list-usage-item point"><span class="icon-minus">1,800P</span></dd>
-              <dd class="def-list-usage-item date"><span class="icon-time">2015.11.16 16:53</span></dd>
+              <dd class="def-list-usage-item point icon-minus"><span class="number">10,000P</span></dd>
+              <dd class="def-list-usage-item date icon-time">2015.11.16 16:53</dd>
               <dd class="def-list-usage-item usage">완료</dd>
             </dl>
 
             <dl class="def-list-usage">
-              <dt class="def-list-usage-item title">롯데 VIP초이스 예매1인</dt>
-              <dd class="def-list-usage-item point"><span class="icon-plus">10,000P</span></dd>
-              <dd class="def-list-usage-item date"><span class="icon-time">2015.11.16 16:53</span></dd>
+              <dt class="def-list-usage-item title">롯데 VIP 초이스 예매1인</dt>
+              <dd class="def-list-usage-item point icon-minus"><span class="number">10,000P</span></dd>
+              <dd class="def-list-usage-item date icon-time">2015.11.16 16:53</dd>
               <dd class="def-list-usage-item usage">완료</dd>
             </dl>
 
             <dl class="def-list-usage">
               <dt class="def-list-usage-item title">스타벅스 MY초이스 사이즈업</dt>
-              <dd class="def-list-usage-item point"><span class="icon-minus">1,800P</span></dd>
-              <dd class="def-list-usage-item date"><span class="icon-time">2015.11.16 16:53</span></dd>
+              <dd class="def-list-usage-item point icon-plus"><span class="number">1,800P</span></dd>
+              <dd class="def-list-usage-item date icon-time">2015.11.16 16:53</dd>
               <dd class="def-list-usage-item usage">완료</dd>
             </dl>
 
           </div>
 
-          <div class="search-point-more">
-            <button type="button" class="search-more-button">더보기</button>
+          <div class="btn-view-more-wrap">
+            <button type="button" class="btn-view-more">더보기</button>
           </div>
 
 

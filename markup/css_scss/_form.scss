@@ -1,5 +1,13 @@
+.label{
+  &-select{
+    position:absolute;
+    top:22px;
+    left:0;
+    line-height:1;
+  }
+}
 .select {
-  height:25px;
+  height:31px;
   padding:0 25px 0 10px;
 
   line-height:25px;
@@ -15,6 +23,12 @@
   -moz-appearance: none;
   appearance: none;
 
+  &.single-label{
+    width: calc(100% - 53px);
+    height: 30px;
+    margin: 0 0 0 53px;
+  }
+
   &.half{
     width:50%;
     &:nth-child(2){
@@ -23,8 +37,9 @@
   }
 }
 
-.input{
-  height: 25px;
+input[type=text].input,
+input[type=password].input{
+  height: 31px;
   padding: 0 5px 0 5px;
 
   font-size:13px;
@@ -41,6 +56,20 @@
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+
+  &.single-label{
+    width: calc(100% - 53px);
+    height: 30px;
+    margin: 0 0 0 53px;
+  }
+
+  &.search-board-input{
+    width:calc(100% - 160px);
+    float:left;
+    border:2px solid #777;
+    border-left:0;
+    border-radius:0 3px 3px 0;
+  }
 }
 
 .btn{
@@ -65,28 +94,99 @@
     background:$main-red;
   }
 
-  &.gray-small{
-    height:19px;
+  &.search-select{
+    &-red{
+      display: block;
+      width: 45px;
+      height: 30px;
+      position: absolute;
+      top: 15px;
+      right: 0;
+      color: #fff;
+      line-height: 25px;
+      border-radius: 3px;
+      background: #ed2a25;
+      box-sizing: border-box;
+    }
+    &-dark{
+      display: block;
+      width: 45px;
+      height: 30px;
+      position: absolute;
+      top: 15px;
+      right: 0;
+      color: #fff;
+      line-height: 25px;
+      border-radius: 3px;
+      background: #404040;
+      box-sizing: border-box;
+    }
+  }
+
+  &.dark-mid{
+    height:31px;
     padding:0 15px;
-    font-size:10px;
+    font-size:13px;
+    color:$white;
+    background:#404040;
+    border-radius:0;
+
+    &.icon-search{
+
+      position:relative;
+      border-radius:3px;
+      padding:0 28px 0 10px;
+
+      &:after{
+        content:"";
+        display:block;
+        width:12px;
+        height:12px;
+        position:absolute;
+        top:9px;
+        right:10px;
+        background:url(../images/common/icon_search.png) no-repeat;
+        background-size:cover;
+      }
+    }
+
+    &.whole{
+      width:100%;
+    }
+
+    &.half{
+      width:calc(50% - 3px);
+      height:25px;
+      font-size:11px;
+      color:$white;
+      text-align:center;
+      background:#404040;
+      border-radius:0;
+    }
+  }
+
+  &.gray-small{
+    height:24px;
+    padding:0 15px;
+    font-size:13px;
     color:$white;
     background:#888;
     border-radius:0;
   }
 
   &.gray-mid{
-    height:25px;
-    padding:0 15px;
-    font-size:11px;
+    height:31px;
+    padding:0 25px;
+    font-size:13px;
     color:$white;
     background:#888;
     border-radius:0;
   }
 
   &.white-small{
-    height:19px;
+    height:24px;
     padding:0 15px;
-    font-size:10px;
+    font-size:13px;
     border:1px solid #888;
     border-radius:0;
     background:#fff;
@@ -97,20 +197,18 @@
     }
   }
 
-  &.dark-mid-half{
-    width:calc(50% - 3px);
-    height:25px;
-    font-size:11px;
-    color:$white;
-    text-align:center;
-    background:#404040;
+  &.white-mid{
+    height:31px;
+    padding:0 25px;
+    font-size:13px;
+    border:1px solid #888;
+    background:#fff;
     border-radius:0;
-  }
 
-  &.section-right-top{
-    position:absolute;
-    top:11px;
-    right:15px;
+    &.border-gray{
+      color:#888;
+      border-color:#cacaca;
+    }
   }
 
   &.onoff-toggle{
@@ -124,23 +222,46 @@
       background-position:0 -20px;
     }
   }
+
+  &.section-right-top{
+    position:absolute;
+    right:10px;
+    top:10px;
+  }
+
+  &.article-right-top{
+    position:absolute;
+    right:0;
+    top:-2px;
+  }
 }
 
-.search-more{
-  &-button{
-    display:inline-block;
-    padding-right:20px;
-
-    &:after{
-      content:"";
-      display:block;
-      width:16px;
-      height:16px;
-      position:absolute;
-      top:-1px;
-      right:0;
-      background:url(../images/common/search_more.png) no-repeat 0 0;
-      background-size:cover;
-    }
+.btn-view-more{
+  &-wrap{
+    padding-bottom:15px;
+    text-align:center;
   }
+
+  display:inline-block;
+  width:100%;
+  height:16px;
+  padding-right:20px;
+  margin-top:15px;
+  font-size:13px;
+  color:#555;
+  line-height:1;
+
+  &:after{
+    content:"";
+    display:block;
+    width:16px;
+    height:16px;
+    position:absolute;
+    top:0;
+    left:50%;
+    margin-left:15px;
+    background:url(../images/common/search_more.png) no-repeat 0 0;
+    background-size:cover;
+  }
+
 }

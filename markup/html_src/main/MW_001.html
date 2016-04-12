@@ -9,48 +9,21 @@ include "_head.html"
   </div>
 
   include "_side_menu.html"
-  <!-- [D] 사이드메뉴 오픈, 임시 스크립트 : 개발 적용시 삭제 -->
-  <script>
-    $(function(){
-
-      $('#btnAllmenu').on('click', function(e){
-
-        e.preventDefault();
-
-        $('.mOllehDimm').css('display', 'block');
-        $('.mOllehSideMenuWrap').css({
-          transform : 'translate(0,0)',
-          display : 'block'
-        });
-        $('.mOllehBtnSideMenuClose').css('display', 'block');
-
-      });
-
-      $('.mOllehBtnSideMenuClose').on('click', function(e){
-
-        e.preventDefault();
-
-        $('.mOllehDimm').css('display', 'none');
-        $('.mOllehSideMenuWrap').css({
-          transform : 'translate(-280px,0)',
-          display : 'none'
-        });
-
-
-      });
-
-    });
-  </script>
-  <!--// [D] 사이드메뉴 오픈, 임시 스크립트 : 개발 적용시 삭제 -->
+  include "_temp_js.html"
 
   <div id="mOllehContainer">
 
-    <section class="search-number">
-      <label for="phone-number" class="search-number-label">회선번호</label>
-      <select id="phone-number" class="select search-number-select">
-        <option>010-1234-**78</option>
-      </select>
-      <button type="button" class="button search-number-button">조회</button>
+    <section class="contents-block bg-gray">
+      <div class="inner-block side-padding">
+        <h3 class="blind">회선번호조회</h3>
+        <div class="search-select-area clearfix">
+          <label for="phone-number" class="label-select">회선번호</label>
+          <select id="phone-number" class="select single-label">
+            <option>010-1234-**78</option>
+          </select>
+          <button type="button" class="btn search-select-red">조회</button>
+        </div>
+      </div>
     </section>
 
     <section class="rating">
@@ -85,10 +58,21 @@ include "_head.html"
         <div class="barcode-number">
           7578-1170-7510-2290
         </div>
-        <button class="barcode-zoom-button">확대</button>
     </section>
 
     <ul class="main-menu">
+      <li class="main-menu-item">
+        <a href="#" class="main-menu-link my-brp">
+          <span class="link-title">MY</span>
+          <span class="link-desc">나의 멤버십 정보</span>
+        </a>
+      </li>
+      <li class="main-menu-item">
+        <a href="#" class="main-menu-link brp-guide">
+          <span class="link-title">비즈멤버십 안내</span>
+          <span class="link-desc">멤버십 혜택확인</span>
+        </a>
+      </li>
       <li class="main-menu-item">
         <a href="#" class="main-menu-link double-discount">
           <span class="link-title">더블할인 멤버십</span>
@@ -99,18 +83,6 @@ include "_head.html"
         <a href="#" class="main-menu-link vip-choice">
           <span class="link-title">VIP 초이스</span>
           <span class="link-desc">VIP 특급 무료혜택</span>
-        </a>
-      </li>
-      <li class="main-menu-item">
-        <a href="#" class="main-menu-link my-brp">
-          <span class="link-title">MY 비즈 멤버십</span>
-          <span class="link-desc">나의 멤버십 정보</span>
-        </a>
-      </li>
-      <li class="main-menu-item">
-        <a href="#" class="main-menu-link brp-guide">
-          <span class="link-title">비즈 멤버십 안내</span>
-          <span class="link-desc">멤버십 혜택확인</span>
         </a>
       </li>
       <li class="main-menu-item">
@@ -138,15 +110,6 @@ include "_head.html"
         </a>
       </li>
     </ul>
-
-    <div class="zoom-barcode">
-      <div class="zoom-barcode-logo">olleh</div>
-      <div class="zoom-barcode-section">
-        <img src="../../images/main/zoom_barcode.png" alt="" class="zoom-barcode-image" />
-        <div class="zoom-barcode-number">7578 - 1170 - 7510 - 2290</div>
-      </div>
-      <button type="button" class="zoom-barcode-close"><span>close</span></button>
-    </div>
   </div>
 
   include "_footer.html"
