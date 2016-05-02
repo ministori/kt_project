@@ -1,4 +1,12 @@
 /* main layout */
+#mOllehContainer:after{
+  content:"";
+  display:block;
+  width:100%;
+  height:12px;
+  //border-top:1px solid #e2e2e2;
+  background:#fff;
+}
 //rating
 .rating{
   font-size:15px;
@@ -7,17 +15,22 @@
     width:50%;
     height:70px;
     float:left;
-    padding:15px 10px;
+    padding:12px 13px 0 13px;
     color:$white;
     background:$dark-gray;
 
     box-sizing:border-box;
 
+    &-link{
+      display:block;
+    }
+
     &-text{
       display:block;
+      color:$white;
 
       &.bottom{
-        margin-top:6px;
+        margin-top:5px;
       }
     }
 
@@ -31,7 +44,7 @@
 
       &.grade-mark{
         text-indent:-99999em;
-        background:url(../images/common/spr_grade_text.png) no-repeat;
+        background:url(../smart/images/common/spr_grade_text.png) no-repeat;
         background-size:cover;
       }
 
@@ -78,14 +91,25 @@
     width:50%;
     height:70px;
     float:left;
-    padding:15px;
+    padding:12px 13px 0 13px;
     color:$white;
     background:$mid-gray;
 
     box-sizing:border-box;
 
+    &-link{
+      display:block;
+
+      &:after{
+        content:"";
+        display:block;
+        clear:both;
+      }
+    }
+
     &-text{
       display:block;
+      color:$white;
     }
 
     &-number{
@@ -93,6 +117,7 @@
       float:right;
       padding:0 26px 0 0;
       font-size:20px;
+      color:$white;
 
       &.bottom{
         margin-top:5px;
@@ -106,7 +131,7 @@
         position:absolute;
         top:1px;
         right:0;
-        background:url(../images/common/icon_point.png) no-repeat;
+        background:url(../smart/images/common/icon_point.png) no-repeat;
         background-size:cover;
       }
     }
@@ -123,21 +148,30 @@
 .barcode{
   &-section {
     position:relative;
-    padding: 23px 0 20px;
+    padding: 35px 0 12px;
+  }
+
+  &-logo{
+    width:90px;
+    height:12px;
+    position:absolute;
+    top:15px;
+    left:50%;
+    margin-left:38px;
   }
 
   &-image{
     display:inline-block;
     width:100%;
     &-section {
-      width:80%;
+      width:70%;
       margin:0 auto;
       text-align: center;
     }
   }
 
   &-number{
-    margin-top:16px;
+    margin-top:5px;
     font-size:18px;
     text-align:center;
   }
@@ -151,7 +185,7 @@
     right:50%;
     margin-right:-95px;
     text-indent:-99999em;
-    background:url(../images/common/btn_barcode_zoom.png) no-repeat;
+    background:url(../smart/images/common/btn_barcode_zoom.png) no-repeat;
     background-size:cover;
   }
 }
@@ -161,14 +195,45 @@
 
   &-section{
     padding: 20px 0 50px 20px;
-    background:url(../images/main/bg_non_member.png) no-repeat right bottom;
+    background:url(../smart/images/main/bg_non_member.png) no-repeat right bottom;
     background-size:contain;
+
+    &.no-card{
+      padding:36px 0;
+      text-align:center;
+      background:none;
+    }
   }
 
   &-link{
     display:block;
-    width:100%;
-    height:100%;
+    //width:100%;
+    //height:100%;
+
+    &.no-card{
+      display:inline-block;
+      position:relative;
+      padding-left:100px;
+      text-align:left;
+
+      &:before{
+        content: "";
+        display:block;
+        width: 77px;
+        height: 77px;
+        position:absolute;
+        top:0;
+        left:0;
+        background: url(../smart/images/main/bg_no_card.png) no-repeat;
+        background-size: 77px;
+      }
+
+      &>.msg{
+        font-size:15px;
+        //display:block;
+        //text-align:center;
+      }
+    }
   }
 
   &-text{
@@ -213,7 +278,7 @@
 
 // menu
 .main-menu{
-  margin-bottom: 25px;
+  //margin-bottom: 25px;
   border-top:4px solid #d6d6d6;
   border-bottom:1px solid #d6d6d6;
 
@@ -302,64 +367,69 @@
       color:#888;
     }
 
-    &.double-discount:after{
-      content:"";
-      display:block;
-      width:29px;
-      height:32px;
-      position:absolute;
-      top:16px;
-      right:15px;
-      background:url(../images/main/spr_icon_main_menu.png) no-repeat;
-      background-size:cover;
-    }
-
-    &.vip-choice:after{
-      content:"";
-      display:block;
-      width:33px;
-      height:32px;
-      position:absolute;
-      top:17px;
-      right:11px;
-      background:url(../images/main/spr_icon_main_menu.png) no-repeat -33px 0;
-      background-size:cover;
+    &:after{
+      top:50%;
+      //margin-top:-16px;
     }
 
     &.my-brp:after{
       content:"";
       display:block;
-      width:36px;
+      width:32px;
       height:32px;
       position:absolute;
-      top:16px;
       right:10px;
-      background:url(../images/main/spr_icon_main_menu.png) no-repeat -71px 0;
-      background-size:cover;
+      margin-top:-20px;
+      background:url(../smart/images/main/spr_icon_main_menu.png) no-repeat -71px 0;
+      background-size:auto 100%;
     }
 
     &.brp-guide:after{
       content:"";
       display:block;
-      width:34px;
+      width:30px;
       height:32px;
       position:absolute;
-      top:17px;
       right:11px;
-      background:url(../images/main/spr_icon_main_menu.png) no-repeat -112px 0;
-      background-size:cover;
+      margin-top:-20px;
+      background:url(../smart/images/main/spr_icon_main_menu.png) no-repeat -107px 0;
+      background-size:auto 100%;
+    }
+
+    &.double-discount:after{
+      content:"";
+      display:block;
+      width:32px;
+      height:32px;
+      position:absolute;
+      right:11px;
+      margin-top:-20px;
+      background:url(../smart/images/main/spr_icon_main_menu.png) no-repeat;
+      background-size:auto 100%;
+    }
+
+    &.vip-choice:after{
+      content:"";
+      display:block;
+      width:26px;
+      height:32px;
+      position:absolute;
+      right:12px;
+      margin-top:-20px;
+      background:url(../smart/images/main/spr_icon_main_menu.png) no-repeat -37px 0;
+      background-size:auto 100%;
     }
 
     &.alliance-discount:after{
       content:"";
       display:block;
-      width:34px;
+      width:33px;
       height:32px;
       position:absolute;
-      top:19px;
       right:10px;
-      background:url(../images/main/spr_icon_main_menu.png) no-repeat -151px 0;
-      background-size:cover;
+      margin-top:-20px;
+      background:url(../smart/images/main/spr_icon_main_menu.png) no-repeat -141px 0;
+      background-size:auto 100%;
     }
 
     &.comm-discount:after{
@@ -368,34 +438,34 @@
       width:30px;
       height:32px;
       position:absolute;
-      top:18px;
-      right:13px;
-      background:url(../images/main/spr_icon_main_menu.png) no-repeat -190px 0;
-      background-size:cover;
+      right:7px;
+      margin-top:-17px;
+      background:url(../smart/images/main/spr_icon_main_menu.png) no-repeat -179px 0;
+      background-size:auto 100%;
     }
 
     &.terminal-discount:after{
       content:"";
       display:block;
-      width:24px;
+      width:32px;
       height:32px;
       position:absolute;
-      top:20px;
-      right:18px;
-      background:url(../images/main/spr_icon_main_menu.png) no-repeat -225px 0;
-      background-size:cover;
+      right:12px;
+      margin-top:-22px;
+      background:url(../smart/images/main/spr_icon_main_menu.png) no-repeat -213px 0;
+      background-size:auto 100%;
     }
 
     &.event:after{
       content:"";
       display:block;
-      width:31px;
+      width:29px;
       height:32px;
       position:absolute;
-      top:19px;
       right:12px;
-      background:url(../images/main/spr_icon_main_menu.png) no-repeat -255px 0;
-      background-size:cover;
+      margin-top:-22px;
+      background:url(../smart/images/main/spr_icon_main_menu.png) no-repeat -246px 0;
+      background-size:auto 100%;
     }
   }
 }
@@ -430,7 +500,7 @@
     top:10px;
     left:10px;
     text-indent:-99999em;
-    background:url(../images/main/olleh_logo_barcode.png) no-repeat;
+    background:url(../smart/images/main/olleh_logo_barcode.png) no-repeat;
     background-size:cover;
   }
 
@@ -496,6 +566,7 @@
   .grade.sub{
     width:65%;
     height:89px;
+    padding-top:16px;
     border-right:1px solid #bfbfbf;
 
     .grade-text.bottom{
@@ -531,7 +602,7 @@
         content:"";
         display:block;
         position:absolute;
-        background:url(../images/brp_my/spr_icon_rating.png) no-repeat;
+        background:url(../smart/images/my/spr_icon_rating.png) no-repeat;
         background-size:cover;
       }
 
@@ -564,6 +635,24 @@
     border-top:1px solid #e2e2e2;
   }
 
+  &.bottom-type{
+    margin-bottom:7px;
+    border-top:1px solid #e2e2e2;
+
+    &.fold{
+      margin-bottom:0;
+      border-bottom:0;
+    }
+
+    &.last{
+      margin-bottom:0;
+
+      &.fold{
+        border-bottom:1px solid #e2e2e2;
+      }
+    }
+  }
+
   &.no-border{
     border-bottom:0;
   }
@@ -573,7 +662,7 @@
   }
 
   &.last{
-    border-bottom:0;
+    //border-bottom:0;
 
     >.inner-block{
       padding-bottom:25px;
@@ -593,7 +682,7 @@
     position:relative;
     padding:{
       right:10px;
-      bottom:30px;
+      bottom:27px;
       left:10px;
     }
 
@@ -603,6 +692,14 @@
 
     &.side-padding{
       padding:0 10px;
+    }
+
+    &.bg-white{
+      background:#fff;
+    }
+
+    &.border{
+      border-bottom:1px solid #e2e2e2;
     }
   }
 }
@@ -648,7 +745,7 @@
         text-align:center;
         border-bottom:1px solid #5c5c5c;
         border-radius:8px 0 0 0;
-        background:#4e4e4e url(../images/brp_my/bg_card_title.png) no-repeat;
+        background:#4e4e4e url(../smart/images/my/bg_card_title.png) no-repeat;
         background-size:cover;
         box-sizing:border-box;
 
@@ -665,7 +762,7 @@
             position:absolute;
             top:0;
             left:50%;
-            background:url(../images/brp_my/spr_icon_card.png) no-repeat;
+            background:url(../smart/images/my/spr_icon_card.png) no-repeat;
             background-size:cover;
           }
 

@@ -1,0 +1,68 @@
+include "_head.html"
+<body>
+<div id="mOllehWrap">
+
+  <div id="mOllehGnb">
+
+    include "_gnb_header.html"
+    include "_gnb_depth1.html"
+    include "_gnb_depth2-4.html"
+
+  </div>
+
+  include "_side_menu.html"
+  include "_temp_js.html"
+
+  <div id="mOllehContainer" class="bg-gray">
+
+    <section class="contents-block top-type last">
+      <h3 class="section-title center">CGV 강남</h3>
+      <div class="map-area">
+        <!-- 임시 지도 -->
+        <!--
+          * Daum 지도 - 약도서비스
+          * 한 페이지 내에 약도를 2개 이상 넣을 경우에는
+          * 약도의 수 만큼 소스를 새로 생성, 삽입해야 합니다.
+        -->
+        <!-- 1. 약도 노드 -->
+        <div id="daumRoughmapContainer1461734996017" class="root_daum_roughmap root_daum_roughmap_landing" style="width:100%"></div>
+
+        <!-- 2. 설치 스크립트 -->
+        <script charset="UTF-8" class="daum_roughmap_loader_script" src="http://dmaps.daum.net/map_js_init/roughmapLoader.js"></script>
+
+        <!-- 3. 실행 스크립트 -->
+        <script charset="UTF-8">
+          new daum.roughmap.Lander({
+            "timestamp" : "1461734996017",
+            "key" : "aakv",
+            "mapHeight" : "200"
+          }).render();
+        </script>
+      </div>
+
+      <div class="inner-block pt20">
+        <dl class="map-info-list">
+          <dt class="map-info-list-title">전화번호</dt>
+          <dd class="map-info-list-data"><a href="tel:02-1234-5678">02-1234-5678</a></dd>
+        </dl>
+        <dl class="map-info-list mt10">
+          <dt class="map-info-list-title">주소</dt>
+          <dd class="map-info-list-data">서울특별시 강남구 강남대로 438 스타플렉스 4층</dd>
+        </dl>
+        <dl class="map-info-list mt10">
+          <dt class="map-info-list-title">오시는길</dt>
+          <dd class="map-info-list-data">강남역 1번 출구 5분</dd>
+        </dl>
+      </div>
+
+      <a href="#" class="btn link white-small long border-gray section-left-top">이전</a>
+    </section>
+
+  </div>
+
+  include "_footer.html"
+
+</div>
+
+</body>
+</html>

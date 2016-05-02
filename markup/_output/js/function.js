@@ -68,8 +68,6 @@ $(function(){
     }, 300);
   });
 
-  $(window).orientationchange();
-
   $('.barcode-zoom-button').on('click', function(){
     barcodeZoom.moveUpZoomSection( $('.zoom-barcode') );
   });
@@ -109,13 +107,21 @@ $(function(){
 
     if( $(this).data('view') == 'false' ){
       $(this).data('view', 'true').removeClass('fold').next('.toggle-view').addClass('on');
+      $(this).parents('.js-contents').removeClass('fold')
+        .siblings('.js-contents').addClass('fold');
+      // scrolling
+      var top = $(this).parents('.contents-block').offset().top;
+      $('html, body').stop().animate({
+        scrollTop : top
+      }, 500);
     } else {
       $(this).data('view', 'false').addClass('fold').next('.toggle-view').removeClass('on');
+      $(this).parents('.js-contents').addClass('fold');
     }
   });
 
   /**
-   * board category scroll
+   * board category horizontal scroll
    */
 
   $('.boardCategoryScrollWrap').on('scroll', function(){
@@ -128,6 +134,26 @@ $(function(){
     } else if( $(this).scrollLeft() > scrollWidth ){
       $('.boardCategoryNext').hide();
     }
+  });
+
+  /**
+   * tab view
+   */
+
+  $(window).on('load', function(){
+    var $tab = $('.tab-block-list');
+    if( $tab.size() != 0 ){
+      var numTab = $tab.size();
+      $tab.css({
+        width : (100 / numTab) + '%'
+      });
+    }
+  });
+
+  $('.js-tab').on('click', function(){
+    $('.js-tab').removeClass('on');
+    $(this).addClass('on');
+    $('.js-tab-view').removeClass('on').eq( $(this).parents('.tab-block-list').index()).addClass('on');;
   });
 
 });

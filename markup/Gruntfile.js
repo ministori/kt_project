@@ -29,80 +29,60 @@ module.exports = function(grunt) {
 				}
 			},
 
-			brp_guide: {
-				cwd:'html_src/brp_guide',
+			info: {
+				cwd:'html_src/info',
 				src: ['*.html'],
-				dest: 'html/brp_guide',
+				dest: 'html/info',
 				options: {
 					flatten:true,
 					includePath: 'html_src/_include'
 				}
 			},
 
-			brp_join: {
-				cwd:'html_src/brp_join',
+			join: {
+				cwd:'html_src/join',
 				src: ['*.html'],
-				dest: 'html/brp_join',
+				dest: 'html/join',
 				options: {
 					flatten:true,
 					includePath: 'html_src/_include'
 				}
 			},
 
-			brp_my: {
-				cwd:'html_src/brp_my',
+			my: {
+				cwd:'html_src/my',
 				src: ['*.html'],
-				dest: 'html/brp_my',
+				dest: 'html/my',
 				options: {
 					flatten:true,
 					includePath: 'html_src/_include'
 				}
 			},
 
-			discount_alliance: {
-				cwd:'html_src/discount_alliance',
+			benefit: {
+				cwd:'html_src/benefit',
 				src: ['*.html'],
-				dest: 'html/discount_alliance',
+				dest: 'html/benefit',
 				options: {
 					flatten:true,
 					includePath: 'html_src/_include'
 				}
 			},
 
-			discount_comm: {
-				cwd:'html_src/discount_comm',
-				src: ['*.html'],
-				dest: 'html/discount_comm',
-				options: {
-					flatten:true,
-					includePath: 'html_src/_include'
-				}
-			},
-
-      discount_double: {
-        cwd:'html_src/discount_double',
+      double: {
+        cwd:'html_src/double',
         src: ['*.html'],
-        dest: 'html/discount_double',
+        dest: 'html/double',
         options: {
           flatten:true,
           includePath: 'html_src/_include'
         }
       },
 
-      discount_terminal: {
-        cwd:'html_src/discount_terminal',
+      vip: {
+        cwd:'html_src/vip',
         src: ['*.html'],
-        dest: 'html/discount_terminal',
-        options: {
-          flatten:true,
-          includePath: 'html_src/_include'
-        }
-      },
-
-      vip_choice: {
-        cwd:'html_src/vip_choice',
-        src: ['*.html'],
-        dest: 'html/vip_choice',
+        dest: 'html/vip',
         options: {
           flatten:true,
           includePath: 'html_src/_include'
@@ -205,7 +185,7 @@ module.exports = function(grunt) {
 
     	images: {
     		expand: true,
-    		src:'images/**',
+    		src:'smart/**',
     		dest:'_output/'
     	}
 

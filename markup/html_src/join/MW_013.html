@@ -1,0 +1,118 @@
+include "_head.html"
+<body>
+<div id="mOllehWrap">
+
+  <div id="mOllehGnb">
+
+    include "_gnb_header.html"
+
+  </div>
+
+  include "_side_menu.html"
+  include "_temp_js.html"
+
+  <div id="mOllehContainer" class="bg-gray">
+
+    <section class="contents-block no-border pb15">
+      <ul class="step-list">
+        <li class="step-list-item">
+          <span class="step-number step1"><span>STEP 1</span></span>
+          <span class="step-name">회선선택</span>
+        </li>
+        <li class="step-list-item prev">
+          <span class="step-number step2"><span>STEP 2</span></span>
+          <span class="step-name">약관동의</span>
+        </li>
+        <li class="step-list-item current">
+          <span class="step-number step3"><span>STEP 3</span></span>
+          <span class="step-name">정보입력</span>
+        </li>
+        <li class="step-list-item">
+          <span class="step-number step4"><span>STEP 4</span></span>
+          <span class="step-name">가입완료</span>
+        </li>
+      </ul>
+    </section>
+
+    <section class="contents-block no-border">
+      <h3 class="section-title join-info-title">정보입력</h3>
+
+      <dl class="join-info-contents border pt15 pb15">
+        <dt class="fl font-bold">가입회선</dt>
+        <dd class="fl ml10">010-1234-**78</dd>
+      </dl>
+      <dl class="join-info-contents border pt15 pb15">
+        <dt class="fl font-bold">등록서류</dt>
+        <dd class="fl ml10">
+          <div class="font-bold">신분증사본, 가입신청서</div>
+          <div class="block mt10"><button type="button" class="btn gray-small">가입신청서 다운로드</button></div>
+        </dd>
+      </dl>
+      <dl class="join-info-contents border pt15 pb15">
+        <dt class="font-bold fl">등록방법</dt>
+        <dd class="fl ml10">
+          <div>
+            <input type="radio" class="radio-input" id="radio1-1" name="radio1" />
+            <label for="radio1-1" class="radio-label font-bold">모바일 안심등록</label>
+          </div>
+          <p class="mt5 ml20">스마트폰 고객님들을 위한 간편등록방법입니다. 가입신청 완료 후 고객님의 스마트폰으로 전송된 SMS의 URL로 접속하여, 등록서류를 사진으로 찍어 등록할 수 있습니다.</p>
+          <div class="mt15">
+            <input type="radio" class="radio-input" id="radio1-2" name="radio1" />
+            <label for="radio1-2" class="radio-label font-bold">FAX 등록</label>
+          </div>
+          <p class="mt5 ml20">팩스를 통한 등록방법입니다. 가입신청 완료 후 <span class="em-red">030XX-XXXX</span>로 가입 등록서류를 보내주시기 바랍니다.</p>
+        </dd>
+      </dl>
+      <div class="description-wrap border mt10 pb25">
+        <p class="description bullet">모바일 안심등록 선택 시 가입신청하신 회선으로 안심등록 URL 문자가 전송됩니다.</p>
+        <p class="description bullet">모바일 안심등록은 스마트폰 고객님들을 위한 등록 방법으로 피처폰에서는 이용하실 수 없습니다.</p>
+        <p class="description bullet">등록서류는 선택하신 방법(모바일 안심등록 혹은 FAX 등록)으로 가입신청일을 포함하여 4일 이내로 등록해주시기 바랍니다.<br />기간 내 미 전송 시, 신청내역은 자동 취소 됩니다.</p>
+      </div>
+    </section>
+    <section class="contents-block">
+      <h3 class="section-title">카드선택</h3>
+
+      <dl class="join-info-contents border pt15 pb15">
+        <dt class="fl font-bold">카드유형</dt>
+        <dd class="fl ml10">
+          <span>
+            <input type="radio" class="radio-input" id="radio2-1" name="radio2" />
+            <label for="radio2-1" class="radio-label font-bold">모바일 카드</label>
+          </span>
+          <p class="mt5 ml20">가입승인 완료 즉시 사용하실 수 있습니다. 단, 피처폰 고객님께는 가입승인 완료 후 모바일카드 바코드를 MMS로 발송해 드립니다.</p>
+          <p class="description bullet ml20">플라스틱카드는 비즈 멤버십 웹사이트(PC)에서 신청이 가능합니다.</p>
+        </dd>
+      </dl>
+
+      <dl class="join-info-contents border pt15 pb15">
+        <dt class="fl font-bold">SMS수신</dt>
+        <dd class="fl ml10">
+          <span>
+          <input type="radio" class="radio-input" id="radio3-1" name="radio3" />
+          <label for="radio3-1" class="radio-label">수신</label>
+        </span>
+        <span class="ml10">
+          <input type="radio" class="radio-input" id="radio3-2" name="radio3" />
+          <label for="radio3-2" class="radio-label">수신하지 않음</label>
+        </span>
+        </dd>
+      </dl>
+
+      <div class="description-wrap border pt10 pb25">
+        <p class="description bullet">포인트 사용내역 및 비즈 멤버십 혜택 안내에 대한 수신 동의 입니다.</p>
+      </div>
+
+      <div class="align-center mt10 pb25">
+        <button type="button" class="btn white-mid border-gray">이전</button>
+        <button type="button" class="btn dark-mid ml2">다음</button>
+      </div>
+    </section>
+
+  </div>
+
+  include "_footer.html"
+
+</div>
+
+</body>
+</html>

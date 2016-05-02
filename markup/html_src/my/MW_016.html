@@ -1,0 +1,133 @@
+include "_head.html"
+<body>
+<div id="mOllehWrap">
+
+  <div id="mOllehGnb">
+
+    include "_gnb_header.html"
+    include "_gnb_depth1.html"
+    include "_gnb_depth2-2.html"
+
+  </div>
+
+  include "_side_menu.html"
+  include "_temp_js.html"
+
+  <div id="mOllehContainer" class="bg-gray">
+
+    <section class="contents-block top-type bg-gray">
+      <div class="inner-block side-padding">
+        <h3 class="blind">회선번호조회</h3>
+        <div class="search-select-area clearfix">
+          <label for="phone-number" class="label-select">회선번호</label>
+          <select id="phone-number" class="select single-label">
+            <option>010-1234-**78</option>
+          </select>
+          <button type="button" class="btn search-select-red">조회</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="contents-block">
+      <h3 class="section-title icon-alarm">사용내역알림 수신 설정</h3>
+      <button type="button" class="btn onoff-toggle section-right-top js-onoff">ON</button>
+      <div class="inner-block pt7">
+        <p class="description bullet">사용내역알림은 회선별로 설정됩니다.</p>
+
+        <article class="article-card mt15">
+          <h4 class="card-title"><span class="icon-plastic">플라스틱 카드</span></h4>
+          <dl class="card-number">
+            <dt>카드번호</dt>
+            <dd>7578-1111-4545-1111</dd>
+          </dl>
+          <dl class="card-date">
+            <dt>카드 발급일</dt>
+            <dd>2015.01.25</dd>
+          </dl>
+          <dl class="card-status-current">
+            <dt>카드상태</dt>
+            <dd>이용중지</dd>
+          </dl>
+          <dl class="card-status-change">
+            <dt>상태변경</dt>
+            <dd>
+              <button type="button" class="btn gray-small">사용하기</button>
+              <button type="button" class="btn white-small border-gray">카드해지</button>
+            </dd>
+          </dl>
+        </article>
+
+        <article class="article-card mt15">
+          <h4 class="card-title"><span class="icon-mobile">모바일 카드</span></h4>
+          <dl class="card-number">
+            <dt>카드번호</dt>
+            <dd>7578-1111-4545-1111</dd>
+          </dl>
+          <dl class="card-date">
+            <dt>카드 발급일</dt>
+            <dd>2015.01.25</dd>
+          </dl>
+          <dl class="card-status-current">
+            <dt>카드상태</dt>
+            <dd>사용중</dd>
+          </dl>
+          <dl class="card-status-change">
+            <dt>상태변경</dt>
+            <dd>
+              <button type="button" class="btn gray-small">이용중지</button>
+              <button type="button" class="btn white-small border-gray">카드해지</button>
+            </dd>
+          </dl>
+        </article>
+
+        <p class="description bullet mt20">플라스틱 카드는 비즈 멤버십 웹사이트(PC)에서 신청 가능합니다.</p>
+        <div class="align-center mt10">
+          <button type="button" class="btn dark-mid">모바일카드신청</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="contents-block top-type last">
+      <h3 class="section-title">이용안내</h3>
+      <div class="inner-block pt20">
+        <article class="article-division">
+          <h4 class="article-title">플라스틱 카드 관리</h4>
+          <ul class="ordinary-list mt7">
+            <li class="ordinary-list-item">플라스틱 카드 신규  및 재발급은 비즈 멤버십 웹사이트(PC)에서만 신청가능합니다.</li>
+            <li class="ordinary-list-item mt7">플라스틱 카드 분실 등의 사유로 잠시 이용중지가 필요하실 경우, "이용중지" 신청을 해주세요.</li>
+            <li class="ordinary-list-item mt7">카드 사용을 원하지 않으실 경우, "카드 해지" 신청을 해주세요.플라스틱 카드를 해지하시면  해지된 카드는 다시 사용이 불가합니다.</li>
+            <li class="ordinary-list-item mt7">사용하시던 카드를 해지하더라도 비즈 멤버십은 해지되지 않습니다.</li>
+            <li class="ordinary-list-item mt7">실사용자(회선을 등록한 올레ID)가 변경되었을 경우, 기존 발급된 카드는 일괄 해지됩니다.</li>
+            <li class="ordinary-list-item mt7">배송된 카드를 받으시고 한번이라도 사용하시면 카드상태가 ‘발송중’에서 ‘사용중’으로 변경됩니다.</li>
+          </ul>
+        </article>
+
+        <article class="article-division">
+          <h4 class="article-title">모바일 카드 관리</h4>
+          <ul class="ordinary-list mt7">
+            <li class="ordinary-list-item">모바일 카드는 발급 즉시 고객센터 앱 및 m.olleh.com에서 사용 가능합니다.</li>
+            <li class="ordinary-list-item mt7">모바일 카드의 이용 중지 및 해지를 신청하시면 즉시 적용됩니다.</li>
+            <li class="ordinary-list-item mt7">모바일 카드는 일 1회만 발급 가능하오니 카드 해지 시 주의해 주시기 바랍니다.</li>
+          </ul>
+        </article>
+
+        <article>
+          <h4 class="article-title">사용내역 알림 변경</h4>
+          <ul class="ordinary-list mt7">
+            <li class="ordinary-list-item">포인트 사용내역 및 비즈 멤버십 혜택 안내에 대한 SMS 수신 동의입니다.</li>
+            <li class="ordinary-list-item mt7">SMS 수신설정은 선택하신 회선에 등록된 모든 카드에 적용됩니다.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+  </div>
+
+  include "_footer.html"
+
+</div>
+
+
+
+</body>
+</html>

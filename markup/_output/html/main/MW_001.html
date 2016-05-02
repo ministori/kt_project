@@ -51,7 +51,6 @@
   <link rel="stylesheet" href="../../css/biz_membership.css" />
 
   <!-- 법인 멤버십 Js -->
-  <script src="../../js/lib/jquery.mobile.min.js"></script>
   <script src="../../js/function.js"></script>
 
 </head>
@@ -884,7 +883,7 @@
             pageName = 'MY';
             break;
           case 4:
-            pageName = '더블할인멤버십';
+            pageName = '더블할인 멤버십';
             break;
           case 5:
             pageName = 'VIP초이스';
@@ -956,36 +955,40 @@
 
     <section class="rating">
       <article class="grade">
-        <span class="grade-text">홍길*님 등급은</span>
+        <a href="#" class="grade-link">
+          <span class="grade-text">홍길*님 등급은</span>
 
-        <span class="grade-text bottom clearfix">
-          <!-- [D] 5개중 한가지 선택 표시 -->
-          <span class="grade-word grade-mark gold">Gold</span>
-          <!-- 임시 주석
-          <span class="grade-word grade-mark vip">VIP</span>
-          <span class="grade-word grade-mark gold">Gold</span>
-          <span class="grade-word grade-mark silver">Silver</span>
-          <span class="grade-word grade-mark white">White</span>
-          <span class="grade-word grade-mark general">일반</span>
-          -->
-          <!--// [D] 5개중 한가지 선택 표시 -->
-          <span class="grade-word">입니다.</span>
-        </span>
-
+          <span class="grade-text bottom clearfix">
+            <!-- [D] 5개중 한가지 선택 표시 -->
+            <span class="grade-word grade-mark gold">Gold</span>
+            <!-- 임시 주석
+            <span class="grade-word grade-mark vip">VIP</span>
+            <span class="grade-word grade-mark gold">Gold</span>
+            <span class="grade-word grade-mark silver">Silver</span>
+            <span class="grade-word grade-mark white">White</span>
+            <span class="grade-word grade-mark general">일반</span>
+            -->
+            <!--// [D] 5개중 한가지 선택 표시 -->
+            <span class="grade-word">입니다.</span>
+          </span>
+        </a>
       </article>
       <article class="point">
-        <span class="point-text">잔여포인트</span>
-        <span class="point-text point-number bottom">225,000</span>
+        <a href="#" class="point-link">
+          <span class="point-text">잔여포인트</span>
+          <span class="point-text point-number bottom">225,000</span>
+        </a>
       </article>
     </section>
 
     <section class="barcode-section">
-        <div class="barcode-image-section">
-          <img src="../../images/common/barcode.png" alt="bar code" class="barcode-image" />
-        </div>
-        <div class="barcode-number">
-          7578-1170-7510-2290
-        </div>
+      <img src="../../smart/images/main/barcode_logo.png" alt="kt biz membership" class="barcode-logo">
+      <div class="barcode-image-section">
+        <img src="../../smart/images/common/barcode.png" alt="bar code" class="barcode-image" />
+      </div>
+      <div class="barcode-number">
+        7578 - 1170 - 7510 - 2290
+      </div>
     </section>
 
     <ul class="main-menu">

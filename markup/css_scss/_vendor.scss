@@ -20,14 +20,103 @@
   }
 
   .btn{
-    padding-top:2px !important;
+    padding-top:1px !important;
 
-    &.link{
-      padding-top:4px !important;
+    &.multiline{
+      padding-top:7px !important;
+      padding-bottom:3px !important;
     }
   }
 
   .join-guide-text:nth-child(4){
     padding-top:3px;
+  }
+
+  .search-board-select{
+    width:110px;
+  }
+
+  input[type=text].input,
+  input[type=password].input{
+    padding-top:2px;
+  }
+
+  input[type=text].input.search-board-input,
+  input[type=password].input.search-board-input{
+    width:calc(100% - 175px);
+
+    &.single-button{
+      width:calc(100% - 68px);
+    }
+  }
+
+  .grade{
+    &-wrap{
+      >span:not(.grade-icon){
+        position:relative;
+        top:2px;
+        vertical-align:middle;
+      }
+    }
+
+    &-icon{
+      padding:6px 0 2px;
+    }
+  }
+
+  .rating .grade{
+    padding:13px;
+
+    &.sub{
+      padding-top:17px;
+    }
+  }
+
+  .rating .point{
+    padding:13px;
+  }
+
+  .vt-table tbody td{
+    padding-top:16px;
+    padding-bottom:14px;
+  }
+
+  .hr-table tbody th{
+    padding-top:12px;
+    padding-bottom:8px;
+  }
+
+  .hr-table tbody td{
+    padding-top:12px;
+    padding-bottom:8px;
+
+    &.button{
+      padding-top:10px;
+      padding-bottom:10px;
+    }
+  }
+
+  .tab-block-link.multiline{
+    height:54px;
+  }
+
+  .label-select{
+    top:24px;
+  }
+
+  .ordinary-list-item:after{
+    top:5px;
+  }
+
+  .def-list{
+    padding:14px 0 8px;
+  }
+
+  .tab-block-link{
+    padding-top:13px;
+  }
+
+  .btn.white-small.link{
+    line-height:23px;
   }
 }

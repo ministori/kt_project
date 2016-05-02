@@ -35,7 +35,7 @@
     position:absolute;
     top:10px;
     right:7px;
-    background:url(../images/brp_guide/spr_bg_guide_section_01.png) no-repeat;
+    background:url(../smart/images/info/spr_bg_guide_section_01.png) no-repeat;
     background-size:cover;
   }
 
@@ -52,7 +52,7 @@
     position:absolute;
     top:10px;
     right:7px;
-    background:url(../images/brp_guide/spr_bg_guide_section_01.png) no-repeat 0 -84px;
+    background:url(../smart/images/info/spr_bg_guide_section_01.png) no-repeat 0 -84px;
     background-size:cover;
   }
 }
@@ -68,7 +68,7 @@
     position:absolute;
     top:10px;
     right:7px;
-    background:url(../images/brp_guide/spr_bg_guide_section_01.png) no-repeat 0 -190px;
+    background:url(../smart/images/info/spr_bg_guide_section_01.png) no-repeat 0 -190px;
     background-size:cover;
   }
 }
@@ -84,7 +84,66 @@
     position:absolute;
     top:10px;
     right:7px;
-    background:url(../images/brp_guide/spr_bg_guide_section_01.png) no-repeat 0 -309px;
+    background:url(../smart/images/info/spr_bg_guide_section_01.png) no-repeat 0 -300px;
     background-size:cover;
   }
+}
+
+// bg double discount
+.bg-db-discount-banner{
+  background:#f9f9f9;
+
+  &:after{
+    content:"";
+    display:block;
+    width:103px;
+    height:100px;
+    position:absolute;
+    top:50%;
+    right:15px;
+    margin-top:-55px;
+    background:url(../smart/images/double/bg_db_discount.png) no-repeat;
+    background-size:cover;
+  }
+}
+
+// bg vip choice
+.bg-vip-choice-banner{
+  background:#f9f9f9;
+  &:before{
+    content:"";
+    display:block;
+    width:320px;
+    height:145px;
+    position:absolute;
+    bottom:0;
+    right:0;
+    background:url(../smart/images/vip/bg_vip_choice.png) no-repeat;
+    background-size:cover;
+  }
+}
+
+// link
+
+a.red-under-link{
+  color:$main-red;
+  text-decoration:underline;
+}
+
+.text-wrap-gray{
+  background:#f9f9f9;
+}
+
+// style
+
+.em-red{
+  color:$main-red;
+}
+
+.em-black{
+  color:#000;
+}
+
+.font-bold{
+  font-weight:bold;
 }

@@ -1,20 +1,20 @@
 .label{
   &-select{
     position:absolute;
-    top:22px;
+    top:23px;
     left:0;
     line-height:1;
   }
 }
 .select {
-  height:31px;
+  height:30px;
   padding:0 25px 0 10px;
 
-  line-height:25px;
+  line-height:28px;
 
   border:1px solid  #ccc;
   border-radius:3px;
-  background: #fff url(../images/common/arrow_selectbox.png) no-repeat right center;
+  background: #fff url(../smart/images/common/arrow_selectbox.png) no-repeat right center;
   background-size:25px 25px;
 
   box-sizing:border-box;
@@ -25,7 +25,7 @@
 
   &.single-label{
     width: calc(100% - 53px);
-    height: 30px;
+    //height: 31px;
     margin: 0 0 0 53px;
   }
 
@@ -35,18 +35,93 @@
       width:calc(50% - 5px);
     }
   }
+
+  &.whole{
+    width:100%;
+  }
+}
+
+.chk{
+  &-box{
+    display:none;
+
+    &-wrap{
+      padding:15px 10px 0;
+    }
+
+    &+.chk-label{
+      display:inline-block;
+
+      span{
+        position:relative;
+        top:1px;
+      }
+
+      &:before{
+        content:"";
+        display:inline-block;
+        width:14px;
+        height:14px;
+        margin:-1px 4px 0 0;
+        vertical-align:middle;
+        background:url(../smart/images/common/spr_chk_box.png) no-repeat;
+        background-size:28px;
+        cursor:pointer;
+      }
+    }
+
+    &:checked+.chk-label{
+      &:before{
+        background-position:-14px 0;
+      }
+    }
+  }
+
+}
+
+.radio{
+  &-input{
+    display:none;
+
+    &-wrap{
+      padding:15px 10px 0;
+    }
+
+    &+.radio-label{
+      display:inline-block;
+
+      &:before{
+        content:"";
+        display:inline-block;
+        width:15px;
+        height:15px;
+        margin:-1px 4px 0 0;
+        vertical-align:middle;
+        background:url(../smart/images/common/spr_radio.png) no-repeat;
+        background-size:30px;
+        cursor:pointer;
+      }
+    }
+
+    &:checked+.radio-label{
+      &:before{
+        background-position:-15px 0;
+      }
+    }
+  }
+
 }
 
 input[type=text].input,
 input[type=password].input{
-  height: 31px;
+  height: 30px;
   padding: 0 5px 0 5px;
 
   font-size:13px;
   color: #666;
-  line-height: 25px;
+  line-height: 30px;
 
-  border: solid 1px #b5b5b5;
+  border: solid 1px #ccc;
   border-radius: 3px;
 
   -moz-box-sizing: border-box;
@@ -66,9 +141,15 @@ input[type=password].input{
   &.search-board-input{
     width:calc(100% - 160px);
     float:left;
-    border:2px solid #777;
+    border:1px solid #777;
     border-left:0;
     border-radius:0 3px 3px 0;
+
+    &.single-button{
+      width:calc(100% - 68px);
+      border:1px solid #777;
+      border-radius:3px;
+    }
   }
 }
 
@@ -81,7 +162,11 @@ input[type=password].input{
 
   &.link{
     display:block;
-    padding-top:2px !important;
+    //padding-top:2px !important;
+
+    &.inline{
+      display:inline-block;
+    }
   }
 
   &.ellipse{
@@ -125,11 +210,16 @@ input[type=password].input{
 
   &.dark-mid{
     height:31px;
-    padding:0 15px;
+    padding:0 20px;
     font-size:13px;
     color:$white;
+    //line-height:31px;
     background:#404040;
     border-radius:0;
+
+    &.link{
+      line-height:31px;
+    }
 
     &.icon-search{
 
@@ -145,7 +235,7 @@ input[type=password].input{
         position:absolute;
         top:9px;
         right:10px;
-        background:url(../images/common/icon_search.png) no-repeat;
+        background:url(../smart/images/common/icon_search.png) no-repeat;
         background-size:cover;
       }
     }
@@ -157,12 +247,27 @@ input[type=password].input{
     &.half{
       width:calc(50% - 3px);
       height:25px;
-      font-size:11px;
+      //font-size:11px;
       color:$white;
       text-align:center;
       background:#404040;
       border-radius:0;
     }
+
+    &.multiline{
+      height:auto;
+      padding:5px 0;
+      line-height:1.4;
+    }
+  }
+
+  &.dark-small{
+    height:24px;
+    padding:0 15px;
+    font-size:13px;
+    color:$white;
+    background:$dark-gray;
+    border-radius:0;
   }
 
   &.gray-small{
@@ -172,13 +277,18 @@ input[type=password].input{
     color:$white;
     background:#888;
     border-radius:0;
+
+    &.link{
+      line-height:24px;
+    }
   }
 
   &.gray-mid{
     height:31px;
-    padding:0 25px;
+    padding:0 20px;
     font-size:13px;
     color:$white;
+    line-height:31px;
     background:#888;
     border-radius:0;
   }
@@ -195,12 +305,21 @@ input[type=password].input{
       color:#888;
       border-color:#cacaca;
     }
+
+    &.link{
+      line-height:22px;
+    }
+
+    &.long{
+      padding:0 20px;
+    }
   }
 
   &.white-mid{
     height:31px;
-    padding:0 25px;
+    padding:0 20px;
     font-size:13px;
+    //line-height:31px;
     border:1px solid #888;
     background:#fff;
     border-radius:0;
@@ -213,14 +332,20 @@ input[type=password].input{
 
   &.onoff-toggle{
     width:64px;
-    height:20px;
+    height:19px;
     text-indent:-99999em;
-    background:url(../images/brp_my/spr_btn_toggle.png) no-repeat;
+    background:url(../smart/images/my/spr_btn_toggle.png) no-repeat;
     background-size:cover;
 
     &.off{
       background-position:0 -20px;
     }
+  }
+
+  &.section-left-top{
+    position:absolute;
+    left:10px;
+    top:8px;
   }
 
   &.section-right-top{
@@ -259,8 +384,8 @@ input[type=password].input{
     position:absolute;
     top:0;
     left:50%;
-    margin-left:15px;
-    background:url(../images/common/search_more.png) no-repeat 0 0;
+    margin-left:10px;
+    background:url(../smart/images/common/search_more.png) no-repeat 0 0;
     background-size:cover;
   }
 
